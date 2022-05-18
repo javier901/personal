@@ -13,11 +13,11 @@ html {
 body {
   background-color: $dt-background-dark-color;
   color: $dt-text-color-high-emphasis;
-  font-size: 1rem;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 header {
+  font-size: 18px;
   @include flex-spaced-between;
   top: 0;
   padding: 10px 20px 10px 10px;
@@ -28,6 +28,7 @@ header {
   .logo__container {
     h2 {
       font-family: "Inter", sans-serif;
+      font-size: 2rem;
       span {
         color: $dt-accent-color;
       }
@@ -46,8 +47,7 @@ header {
     justify-content: space-between;
 
     // Make nav and dt slider closer if screen < 750px
-
-    @media screen and (max-width: 750px) {
+    @media (max-width: 750px) {
       & {
         gap: 20px;
       }
@@ -61,12 +61,25 @@ header {
     gap: 20px;
     font-weight: 500;
 
-    p {
+    label {
       cursor: pointer;
     }
 
+    // Hover on nav children
+    @media (hover: hover) and (pointer: fine) {
+      label:hover {
+        color: $dt-accent-color;
+        font-size: 1.1rem;
+        transition: all 0.08s ease;
+        @include shadow;
+      }
+    }
+    label:active {
+      color: $dt-accent-color;
+    }
+
     // Hide nav component if screen < 450 px
-    @media screen and (max-width: 450px) {
+    @media (max-width: 450px) {
       & {
         display: none;
       }
@@ -165,7 +178,7 @@ header {
     display: none;
   }
   // Insert hamburger container menu if screen < 450px
-  @media screen and (max-width: 450px) {
+  @media (max-width: 450px) {
     & {
       padding-right: 10px;
       .hamburger-x__container {
@@ -192,6 +205,7 @@ header {
     color: $dt-accent-color;
     stroke-width: 1.2px;
     cursor: pointer;
+    z-index: 100;
 
     svg {
       width: 24px;
@@ -201,6 +215,7 @@ header {
       transition: all 0.1s ease;
     }
 
+    // If hovering and pointer. Solves sticky hover problem in touch devices.
     @media (hover: hover) and (pointer: fine) {
       svg:hover {
         @include hover-active;
@@ -217,26 +232,163 @@ header {
   right: 10px;
   @include vertical-banners__common-styles;
   color: $dt-text-color-low-emphasis;
+  z-index: 100;
 }
 
 // main content
 main {
-  margin: 50px auto 0 auto;
   width: 100vw;
-  padding-left: 150px;
-  padding-right: 150px;
-  border: solid 2px $dt-text-color-low-emphasis;
-  @media screen and (max-width: 800px) {
-    & {
-      padding-left: 100px;
-      padding-right: 100px;
+  padding: 20vh 10vw 0 10vw;
+
+  // MOBILE RESPONSIVE
+  @media (max-width: 480px) {
+    padding: 0 5vw 0 5vw;
+  }
+}
+
+// section 1
+/// vs code art
+.section1 {
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 400px;
+
+    // MOBILE RESPONSIVE
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 80vh;
+    }
+    // grid-template-rows: 1fr 1fr;
+    align-items: center;
+
+    .introduction {
+      position: relative;
+      justify-self: end;
+      z-index: 4;
+      // MOBILE RESPONSIVE
+      @media (max-width: 480px) {
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 25%;
+          height: 100%;
+          background: linear-gradient(
+            to top,
+            $dt-background-dark-color,
+            rgba(0, 0, 0, 0)
+          );
+          z-index: -10;
+          width: 100vw;
+          transform: translateX(-50px);
+        }
+      }
+    }
+
+    aside {
+      position: relative;
+      justify-self: start;
+      grid-column: 2 / -1;
+
+      // MOBILE RESPONSIVE
+      @media (max-width: 480px) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        padding-top: 50px;
+      }
+      width: 100%;
+      height: 100%;
     }
   }
-  @media screen and (max-width: 750px) {
-    & {
-      padding-left: 50px;
-      padding-right: 50px;
+
+  .vscode-art__container__back,
+  .vscode-art__container__front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    // MOBILE RESPONSIVE
+    @media (max-width: 480px) {
+      max-width: 80vw;
+      z-index: 0;
     }
+    background-color: $dt-background-lighter-color;
+    border-radius: 10px;
+    @include shadow;
+
+    .vscode-art__bar {
+      width: 100%;
+      height: 30px;
+      background-color: $dt-background-lightest-color;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom: solid 2px #141414;
+
+      .vscode-art__bar__dots__container {
+        display: flex;
+        gap: 10px;
+        height: 100%;
+        align-items: center;
+        padding: 12px;
+      }
+
+      .vscode-art__bar__dots {
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+      }
+
+      .red-dot {
+        background-color: #ff5f57;
+      }
+      .yellow-dot {
+        background-color: #feb930;
+      }
+      .green-dot {
+        background-color: #2ece3a;
+      }
+    }
+  }
+
+  .vscode-art__container__back {
+    left: 10%;
+    margin-right: 10px;
+  }
+  .vscode-art__container__front {
+    top: 20%;
+    // MOBILE RESPONSIVE
+    @media (max-width: 480px) {
+      top: 50%;
+    }
+  }
+}
+
+// Text
+.introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 25px;
+  padding-left: 25px;
+  width: 100%;
+  height: 100%;
+  gap: 12px;
+
+  h2 {
+    font-size: clamp(2vh, 8rem, 5vw);
+    color: $dt-accent-color;
+  }
+  h3 {
+    font-size: clamp(1vh, 2rem, 3vw);
+    font-weight: 400;
+    color: $dt-accent-color;
+  }
+
+  p {
+    font-weight: 300;
+    line-height: 1.2;
+    font-size: 18px;
   }
 }
 
@@ -245,4 +397,8 @@ main {
 .invisible {
   transition: opacity 0.4s ease;
   opacity: 0;
+}
+
+.for-main__header-active {
+  margin-top: 50px;
 }
