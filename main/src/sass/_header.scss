@@ -1,0 +1,220 @@
+@mixin header {
+  header {
+    font-size: 18px;
+    @include flex-spaced-between;
+    top: 0;
+    padding: 10px 20px 10px 10px;
+    height: 50px;
+    transition: all 0.2s ease;
+    overflow: hidden;
+
+    .logo__container {
+      h2 {
+        font-family: "Inter", sans-serif;
+        font-size: 2rem;
+        span {
+          color: $dt-accent-color;
+        }
+      }
+    }
+
+    .logo__container {
+      @include flex-spaced-between;
+      align-items: center;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 15vw;
+      justify-content: space-between;
+
+      // Make nav and dt slider closer if screen < 750px
+      @media (max-width: 750px) {
+        & {
+          gap: 20px;
+        }
+      }
+    }
+
+    nav {
+      @include flex-spaced-between;
+      flex-shrink: 1;
+      align-items: center;
+      gap: 20px;
+      font-weight: 500;
+
+      label {
+        cursor: pointer;
+      }
+
+      // Hover on nav children
+      @media (hover: hover) and (pointer: fine) {
+        label:hover {
+          color: $dt-accent-color;
+          font-size: 1.1rem;
+          transition: all 0.08s ease;
+          @include shadow;
+        }
+      }
+      label:active {
+        color: $dt-accent-color;
+      }
+
+      // Hide nav component if screen < 450 px
+      @media (max-width: 450px) {
+        & {
+          display: none;
+        }
+      }
+    }
+
+    // Moon / Sun visibility
+    .moon-sun__icons-container {
+      position: relative;
+      width: 24px;
+      height: 60px;
+      width: 25px;
+      svg {
+        position: absolute;
+        stroke-width: 1.5px;
+        transition: all 0.4s ease;
+        opacity: 1;
+      }
+
+      .dt__moon,
+      .dt__sun {
+        top: 18px;
+      }
+
+      & .dt__sun__disabled {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      & .dt__moon__disabled {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+    }
+
+    // Hamburger / X visibility
+
+    .hamburger-x__container {
+      position: relative;
+      overflow: hidden;
+      height: 30px;
+      width: 30px;
+      svg {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        transform: all 0.3s ease;
+      }
+    }
+
+    .slider-component {
+      @include flex-spaced-between;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      overflow: hidden;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .dark-theme-slider__container {
+        display: flex;
+        align-items: center;
+        width: 46px;
+        height: 26px;
+        background-color: #ccc;
+        cursor: pointer;
+        border-radius: 34px;
+        position: relative;
+        padding-left: 4px;
+
+        &::before {
+          content: "";
+          background-color: #fff;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+        }
+      }
+
+      // slider toggler
+      .slider__active {
+        background-color: $dt-background-lightest-color;
+        transition: all 0.3s ease;
+      }
+
+      .slider__active::before {
+        transition: all 0.3s ease;
+        transform: translateX(18px);
+      }
+    }
+
+    .hamburger-x__container {
+      display: none;
+    }
+    // Insert hamburger container menu if screen < 450px
+    @media (max-width: 450px) {
+      & {
+        padding-right: 10px;
+        .hamburger-x__container {
+          display: block;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .dt-fixed-header {
+    // Dark theme fixed header style
+    @include fixed-header;
+    background-color: rgb(43, 43, 43, 0.3);
+  }
+
+  .vertical-banner__left {
+    @include vertical-banners__common-styles;
+    left: 10px;
+    z-index: 100;
+    .vertical-banner__left__icons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      color: $dt-accent-color;
+      stroke-width: 1.2px;
+      cursor: pointer;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        opacity: 0.8;
+        backdrop-filter: blur(5px);
+        transition: all 0.1s ease;
+      }
+
+      // If hovering and pointer. Solves sticky hover problem in touch devices.
+      @media (hover: hover) and (pointer: fine) {
+        svg:hover {
+          @include hover-active;
+        }
+      }
+      svg:active {
+        @include hover-active;
+      }
+    }
+  }
+
+  .vertical-banner__right {
+    writing-mode: vertical-lr;
+    right: 10px;
+    @include vertical-banners__common-styles;
+    color: $dt-text-color-low-emphasis;
+    z-index: 100;
+  }
+}

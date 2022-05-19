@@ -1,0 +1,132 @@
+@mixin content {
+  // main content
+  main {
+    width: 100vw;
+    padding: 20vh 10vw 0 10vw;
+
+    // TABLET RESPONSIVE
+    @media (max-width: 950px) and (min-width: 480px) {
+      padding-top: 30px;
+    }
+  }
+
+  // section 1
+  /// vs code art
+  .section1 {
+    article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      height: clamp(250px, 50vh, 400px);
+      align-items: center;
+
+      .introduction {
+        position: relative;
+        justify-self: end;
+        z-index: 4;
+      }
+
+      aside {
+        position: relative;
+        justify-self: start;
+        grid-column: 2 / -1;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .code-art__container__back,
+    .code-art__container__front {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      max-width: 500px;
+      overflow: hidden;
+      background-color: $dt-background-lighter-color;
+      border-radius: 10px;
+      @include shadow;
+
+      .code-art__bar {
+        width: 100%;
+        height: 30px;
+        background-color: $dt-background-lightest-color;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom: solid 2px #141414;
+
+        .code-art__bar__dots__container {
+          display: flex;
+          gap: 10px;
+          height: 100%;
+          align-items: center;
+          padding: 12px;
+        }
+
+        .code-art__bar__dots {
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+        }
+
+        .red-dot {
+          background-color: #ff5f57;
+        }
+        .yellow-dot {
+          background-color: #feb930;
+        }
+        .green-dot {
+          background-color: #2ece3a;
+        }
+      }
+    }
+
+    .code-art__container__back {
+      // left: 10%;
+      transform: translateX(40px);
+      @media (max-width: 660px) and (min-width: 480px) {
+        left: 3%;
+      }
+    }
+    .code-art__container__front {
+      transform: translateY(100px);
+      .code-art__content {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        padding: 10px;
+        font-family: "Consolas";
+        font-size: 12px;
+        line-height: 1.3;
+        color: #ffffff8b;
+      }
+    }
+  }
+
+  // Text
+  .introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 25px;
+    padding-left: 25px;
+    width: 100%;
+    height: 100%;
+    gap: 12px;
+
+    h2 {
+      font-size: clamp(2vh, 8rem, 5vw);
+      color: $dt-accent-color;
+    }
+    h3 {
+      font-size: clamp(1vh, 2rem, 3vw);
+      font-weight: 400;
+      color: $dt-accent-color;
+    }
+
+    p {
+      font-weight: 300;
+      line-height: 1.2;
+      font-size: 18px;
+    }
+  }
+}

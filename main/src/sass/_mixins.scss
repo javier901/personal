@@ -26,3 +26,117 @@
   height: 36px;
   opacity: 1;
 }
+
+@mixin tablet-responsive {
+  // RESPONSIVE
+  // TABLET RESPONSIVE
+  .section1 article {
+    @media (max-width: 950px) and (min-width: 660px) {
+      grid-template-columns: 0.5fr 1fr;
+    }
+    @media (max-width: 660px) and (min-width: 480px) {
+      grid-template-columns: 0fr 1fr;
+    }
+  }
+  // TABLET RESPONSIVE
+  @media (max-width: 950px) {
+    .introduction {
+      width: 55vw;
+      // Make introduction to fit its content and not take 100% cell height. Needed to align-self: end
+      height: fit-content;
+      align-self: end;
+    }
+
+    .section1 article aside {
+      position: absolute;
+      right: 15vw;
+      width: clamp(300px, 50vw, 600px);
+      height: clamp(300px, 50vh, 400px);
+      top: clamp(50px, 15vh, 200px);
+
+      &::after {
+        position: absolute;
+        content: "";
+        height: calc(100% + 100px);
+        width: calc(100% + 50px);
+        background: linear-gradient(
+          to top,
+          $dt-background-dark-color,
+          rgba(0, 0, 0, 0)
+        );
+        z-index: 1;
+      }
+    }
+  }
+}
+
+@mixin mobile-responsive {
+  //////////////////////////////////////
+  // MOBILE RESPONSIVE
+  @media (max-width: 480px) {
+    main {
+      padding: 0;
+    }
+
+    .section1 {
+      max-width: 80vw;
+      z-index: 0;
+
+      article {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 80vh;
+      }
+    }
+
+    .section1 article {
+      // width: 100%;
+      grid-template-columns: 1fr 1fr;
+      .introduction {
+        align-self: center;
+        justify-self: left;
+        grid-column: 1 / -1;
+        width: 100vw;
+        padding-left: 50px;
+        p {
+          width: 70vw;
+          height: 100%;
+        }
+      }
+
+      aside {
+        position: relative;
+        justify-self: center;
+        align-self: center;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        top: 0;
+        padding-top: 50px;
+        right: 0;
+
+        @media (max-width: 320px) {
+          max-width: 80vw;
+
+          .code-art__container__back {
+            filter: blur(2px);
+            transform: translate(10px, 0);
+          }
+        }
+
+        &::after {
+          transform: translateX(-30px);
+          width: calc(100% + 70px);
+        }
+      }
+      .code-art__container__front {
+        transform: translate(20px, 80px);
+      }
+
+      .code-art__container__back {
+        left: 0;
+        margin: 0;
+        transform: translateX(-20px);
+      }
+    }
+  }
+}
