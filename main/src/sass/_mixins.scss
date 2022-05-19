@@ -40,31 +40,32 @@
   }
   // TABLET RESPONSIVE
   @media (max-width: 950px) {
-    .introduction {
-      width: 55vw;
-      // Make introduction to fit its content and not take 100% cell height. Needed to align-self: end
-      height: fit-content;
-      align-self: end;
-    }
+    .section1 article {
+      .introduction {
+        width: 60vw;
+        background-color: rgba(18, 18, 18, 0.735);
+        padding: 20px;
+        @include shadow();
+        border-radius: 15px;
+        // Make introduction to fit its content and not take 100% cell height. Needed to align-self: end
+        height: fit-content;
+        align-self: end;
+      }
 
-    .section1 article aside {
-      position: absolute;
-      right: 15vw;
-      width: clamp(300px, 50vw, 600px);
-      height: clamp(300px, 50vh, 400px);
-      top: clamp(50px, 15vh, 200px);
-
-      &::after {
+      aside {
         position: absolute;
-        content: "";
-        height: calc(100% + 100px);
-        width: calc(100% + 50px);
-        background: linear-gradient(
-          to top,
-          $dt-background-dark-color,
-          rgba(0, 0, 0, 0)
-        );
-        z-index: 1;
+        right: 15vw;
+        width: clamp(300px, 50vw, 600px);
+        height: clamp(300px, 50vh, 400px);
+        top: clamp(50px, 15vh, 200px);
+        &::after {
+          position: absolute;
+          content: "";
+          height: calc(100% + 100px);
+          width: calc(100% + 50px);
+          background: linear-gradient(to top, $dt-background-dark-color, #0000);
+          z-index: 1;
+        }
       }
     }
   }
@@ -98,6 +99,8 @@
         grid-column: 1 / -1;
         width: 100vw;
         padding-left: 50px;
+        background-color: transparent;
+        box-shadow: none;
         p {
           width: 70vw;
           height: 100%;
@@ -139,4 +142,15 @@
       }
     }
   }
+}
+
+@mixin code-art__content {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  padding: 10px;
+  font-family: "Consolas";
+  font-size: 13px;
+  line-height: 1.3;
+  color: hsla(0, 0%, 100%, 0.861);
 }

@@ -12,8 +12,6 @@ class Header extends Views {
       this.toggleFixedHeader(e);
     });
 
-    console.log(this.navChildren);
-
     this.navChildren.forEach((child) =>
       child.addEventListener("mouseenter", (e) => {
         this.navOnMouseEnter(e);

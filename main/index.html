@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Omar Moquete</title>
-
+    <base href="/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./src/sass/style.scss" />
+    <link rel="stylesheet" href="../main/src/sass/style.scss" />
 
     <!-- Script -->
     <script defer type="module" src="./src/js/MVC/controller.js"></script>
@@ -203,6 +203,75 @@
                   <div class="code-art__bar__dots yellow-dot"></div>
                   <div class="code-art__bar__dots green-dot"></div>
                 </div>
+                <div class="code-art__content__back">
+                  <p>
+                    <span class="function-word__attribute__decor"
+                      >function</span
+                    >
+                    <span class="function__decor">Expenses</span>(<span
+                      class="parameter__decor"
+                      >props</span
+                    >) {<br />
+                    &nbsp;<span class="import__return__custom-component__decor"
+                      >return</span
+                    >
+                    (<br />
+                    &nbsp;&nbsp; &lt;<span
+                      class="import__return__custom-component__decor"
+                      >Card</span
+                    >
+                    <span class="function-word__attribute__decor"
+                      >className</span
+                    >>="<span class="string__decor">expenses</span>>"&gt;<br />
+                    &nbsp;&nbsp; &lt;<span
+                      class="import__return__custom-component__decor"
+                      >ExpensesFilter</span
+                    ><br />
+                    &nbsp;&nbsp;&nbsp;
+                    <span class="function-word__attribute__decor">expenses</span
+                    >={props.expenses}<br />
+                    &nbsp;&nbsp;&nbsp;
+                    <span class="function-word__attribute__decor"
+                      >selectedYear</span
+                    >={props.selectedYear}<br />
+                    &nbsp;&nbsp;&nbsp;
+                    <span class="function-word__attribute__decor"
+                      >onFilterChange</span
+                    >={props.filterHandler}<br />
+                    &nbsp;&nbsp;&nbsp;
+                    <span class="function-word__attribute__decor">onChange</span
+                    >={props.setSelectedYear}<br />
+                    &nbsp;&nbsp; /&gt;<br />
+                    &nbsp;&nbsp; &lt;<span
+                      class="import__return__custom-component__decor"
+                      >ExpensesChart</span
+                    >
+                    <span class="function-word__attribute__decor">expenses</span
+                    >={props.matchedExpenses} /&gt;<br />
+                    &nbsp;&nbsp; &lt;<span
+                      class="import__return__custom-component__decor"
+                      >ExpensesList</span
+                    ><br />
+                    &nbsp;&nbsp;
+                    <span class="function-word__attribute__decor">items</span
+                    >={props.matchedExpenses}<br />
+                    &nbsp;&nbsp;<span class="function-word__attribute__decor"
+                      >selectedYear</span
+                    >={props.selectedYear}<br />
+                    &nbsp;&nbsp; &gt;<br />
+                    &nbsp; &lt;/<span
+                      class="import__return__custom-component__decor"
+                      >Card</span
+                    >&gt;<br />
+                    &nbsp; );<br />
+                    }<br />
+                    <span class="import__return__custom-component__decor"
+                      >export default</span
+                    >
+                    <span class="function-word__attribute__decor">Expenses</span
+                    >;<br />
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -215,28 +284,9 @@
                   <div class="code-art__bar__dots yellow-dot"></div>
                   <div class="code-art__bar__dots green-dot"></div>
                 </div>
-                <div class="code-art__content">
-                  <p>
-                    function Expenses(props) {<br />
-                    &nbsp;return (<br />
-                    &nbsp;&nbsp; &lt;Card className="expenses"&gt;<br />
-                    &nbsp;&nbsp; &lt;ExpensesFilter<br />
-                    &nbsp;&nbsp;&nbsp; expenses={props.expenses}<br />
-                    &nbsp;&nbsp;&nbsp; selectedYear={props.selectedYear}<br />
-                    &nbsp;&nbsp;&nbsp; onFilterChange={props.filterHandler}<br />
-                    &nbsp;&nbsp;&nbsp; onChange={props.setSelectedYear}<br />
-                    &nbsp;&nbsp; /&gt;<br />
-                    &nbsp;&nbsp; &lt;ExpensesChart
-                    expenses={props.matchedExpenses} /&gt;<br />
-                    &nbsp;&nbsp; &lt;ExpensesList<br />
-                    &nbsp;&nbsp; items={props.matchedExpenses}<br />
-                    &nbsp;&nbsp; selectedYear={props.selectedYear}<br />
-                    &nbsp;&nbsp; &gt;<br />
-                    &nbsp; &lt;/Card&gt;<br />
-                    &nbsp; );<br />
-                    }<br />
-                    export default Expenses;<br />
-                  </p>
+
+                <div class="code-art__content__front">
+                  <pre class="typewriter"></pre>
                 </div>
               </div>
             </div>

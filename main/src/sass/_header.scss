@@ -175,7 +175,7 @@
   .dt-fixed-header {
     // Dark theme fixed header style
     @include fixed-header;
-    background-color: rgb(43, 43, 43, 0.3);
+    background-color: rgba(43, 43, 43, 0.3);
   }
 
   .vertical-banner__left {
