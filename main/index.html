@@ -196,24 +196,47 @@
           </div>
           <aside>
             <!-- Back -->
-            <div class="vscode-art__container__back">
-              <div class="vscode-art__bar">
-                <div class="vscode-art__bar__dots__container">
-                  <div class="vscode-art__bar__dots red-dot"></div>
-                  <div class="vscode-art__bar__dots yellow-dot"></div>
-                  <div class="vscode-art__bar__dots green-dot"></div>
+            <div class="code-art__container__back">
+              <div class="code-art__bar">
+                <div class="code-art__bar__dots__container">
+                  <div class="code-art__bar__dots red-dot"></div>
+                  <div class="code-art__bar__dots yellow-dot"></div>
+                  <div class="code-art__bar__dots green-dot"></div>
                 </div>
               </div>
             </div>
 
             <!-- Front -->
 
-            <div class="vscode-art__container__front">
-              <div class="vscode-art__bar">
-                <div class="vscode-art__bar__dots__container">
-                  <div class="vscode-art__bar__dots red-dot"></div>
-                  <div class="vscode-art__bar__dots yellow-dot"></div>
-                  <div class="vscode-art__bar__dots green-dot"></div>
+            <div class="code-art__container__front">
+              <div class="code-art__bar">
+                <div class="code-art__bar__dots__container">
+                  <div class="code-art__bar__dots red-dot"></div>
+                  <div class="code-art__bar__dots yellow-dot"></div>
+                  <div class="code-art__bar__dots green-dot"></div>
+                </div>
+                <div class="code-art__content">
+                  <p>
+                    function Expenses(props) {<br />
+                    &nbsp;return (<br />
+                    &nbsp;&nbsp; &lt;Card className="expenses"&gt;<br />
+                    &nbsp;&nbsp; &lt;ExpensesFilter<br />
+                    &nbsp;&nbsp;&nbsp; expenses={props.expenses}<br />
+                    &nbsp;&nbsp;&nbsp; selectedYear={props.selectedYear}<br />
+                    &nbsp;&nbsp;&nbsp; onFilterChange={props.filterHandler}<br />
+                    &nbsp;&nbsp;&nbsp; onChange={props.setSelectedYear}<br />
+                    &nbsp;&nbsp; /&gt;<br />
+                    &nbsp;&nbsp; &lt;ExpensesChart
+                    expenses={props.matchedExpenses} /&gt;<br />
+                    &nbsp;&nbsp; &lt;ExpensesList<br />
+                    &nbsp;&nbsp; items={props.matchedExpenses}<br />
+                    &nbsp;&nbsp; selectedYear={props.selectedYear}<br />
+                    &nbsp;&nbsp; &gt;<br />
+                    &nbsp; &lt;/Card&gt;<br />
+                    &nbsp; );<br />
+                    }<br />
+                    export default Expenses;<br />
+                  </p>
                 </div>
               </div>
             </div>

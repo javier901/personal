@@ -1,5 +1,10 @@
 @import "mixins";
 @import "variables";
+@font-face {
+  font-family: "Consolas";
+  src: url("../../../assets/fonts/consola.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -240,6 +245,11 @@ main {
   width: 100vw;
   padding: 20vh 10vw 0 10vw;
 
+  // TABLET RESPONSIVE
+  @media (max-width: 950px) and (min-width: 480px) {
+    padding-top: 30px;
+  }
+
   // MOBILE RESPONSIVE
   @media (max-width: 480px) {
     padding: 0 5vw 0 5vw;
@@ -252,6 +262,16 @@ main {
   article {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    // TABLET RESPONSIVE
+    @media (max-width: 950px) and (min-width: 660px) {
+      grid-template-columns: 0.5fr 1fr;
+    }
+    // TABLET RESPONSIVE
+    @media (max-width: 660px) and (min-width: 480px) {
+      grid-template-columns: 0fr 1fr;
+    }
+
     height: 400px;
 
     // MOBILE RESPONSIVE
@@ -267,6 +287,30 @@ main {
       position: relative;
       justify-self: end;
       z-index: 4;
+
+      // TABLET RESPONSIVE
+      @media (max-width: 950px) and (min-width: 480px) {
+        & {
+          position: absolute;
+          width: 55vw;
+          left: 15vw;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 100%;
+          left: -30%;
+          background: linear-gradient(
+            to top,
+            $dt-background-dark-color,
+            rgba(0, 0, 0, 0)
+          );
+          z-index: -10;
+          width: 100vw;
+        }
+      }
+
       // MOBILE RESPONSIVE
       @media (max-width: 480px) {
         &::after {
@@ -274,6 +318,7 @@ main {
           position: absolute;
           bottom: 25%;
           height: 100%;
+          left: 0;
           background: linear-gradient(
             to top,
             $dt-background-dark-color,
@@ -302,12 +347,13 @@ main {
     }
   }
 
-  .vscode-art__container__back,
-  .vscode-art__container__front {
+  .code-art__container__back,
+  .code-art__container__front {
     position: absolute;
     width: 100%;
     height: 100%;
     max-width: 500px;
+    overflow: hidden;
     // MOBILE RESPONSIVE
     @media (max-width: 480px) {
       max-width: 80vw;
@@ -317,7 +363,7 @@ main {
     border-radius: 10px;
     @include shadow;
 
-    .vscode-art__bar {
+    .code-art__bar {
       width: 100%;
       height: 30px;
       background-color: $dt-background-lightest-color;
@@ -325,7 +371,7 @@ main {
       border-top-left-radius: 10px;
       border-bottom: solid 2px #141414;
 
-      .vscode-art__bar__dots__container {
+      .code-art__bar__dots__container {
         display: flex;
         gap: 10px;
         height: 100%;
@@ -333,7 +379,7 @@ main {
         padding: 12px;
       }
 
-      .vscode-art__bar__dots {
+      .code-art__bar__dots {
         height: 12px;
         width: 12px;
         border-radius: 50%;
@@ -351,12 +397,26 @@ main {
     }
   }
 
-  .vscode-art__container__back {
+  .code-art__container__back {
     left: 10%;
     margin-right: 10px;
+
+    @media (max-width: 660px) and (min-width: 480px) {
+      left: 3%;
+    }
   }
-  .vscode-art__container__front {
+  .code-art__container__front {
     top: 20%;
+    .code-art__content {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      padding: 10px;
+      font-family: "Consolas";
+      font-size: 12px;
+      line-height: 1.3;
+      color: rgba(255, 255, 255, 0.387);
+    }
     // MOBILE RESPONSIVE
     @media (max-width: 480px) {
       top: 50%;
