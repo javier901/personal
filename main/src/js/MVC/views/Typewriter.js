@@ -1,40 +1,41 @@
-import Views from "./Views";
-
+import Views from "./Views.js";
+import { SCRIPT, WRITING_SPEED_IN_MILLISECONDS } from "../../config.js";
 class Typewriter extends Views {
-  targetElement = document.querySelector(".typewriter");
-
-  code = `
-import Developer from "./Developer";
-
-class OmarMoquete extends Developer {
-  constructor() {
-    this.fullName = "Omar Moquete";
-    this.age = new Date().getFullYear() - 1997;
-    this.skills = {
-      teamOriented: 10,
-      determination: 10,
-      persistance: 10,
-      criticalThinking: 10,
-    };
-    this.hasPassion = true;
-  }
-  code(hrs) {...
-  }
-  drinkCoffee(cups) {...
-  }
-}
-
-export default OmarMoquete();`;
-
   addHandler() {
-    this.start();
+    this.writeScript(SCRIPT);
   }
 
-  start() {
-    this.targetElement.innerHTML = code;
-  }
+  writeScript(script) {
+    const charArray = [];
+    let i = 0;
 
-  stop() {}
+    script.forEach((word) => {
+      const typewriter = document.querySelector(".typewriter");
+
+      const caret = document.querySelector(".typewriter__caret");
+
+      const wordElement = document.createElement("label");
+
+      wordElement.classList.add(`${word.at(0)}`);
+
+      const insertedElement = typewriter.insertBefore(wordElement, caret);
+
+      // make an array of characters of current word
+      const chars = [...word.at(1).split()[0]];
+      chars.forEach((char, i) => {
+        charArray.push([char, insertedElement]);
+      });
+    });
+
+    setInterval(() => {
+      if (!charArray[i]) {
+        clearInterval(1);
+        return;
+      }
+      charArray.at(i).at(1).textContent += charArray.at(i).at(0);
+      i++;
+    }, WRITING_SPEED_IN_MILLISECONDS);
+  }
 }
 
 export default new Typewriter();
