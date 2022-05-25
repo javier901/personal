@@ -86,6 +86,9 @@
         top: 18px;
       }
 
+      .dt__sun {
+        stroke: #e9c46a;
+      }
       & .dt__sun__disabled {
         opacity: 0;
         transform: translateY(-40px);

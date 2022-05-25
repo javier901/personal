@@ -105,8 +105,8 @@ class DarkModeView extends Views {
       );
 
       root.style.setProperty(
-        "--dot-inactive",
-        COLORS.darkThemeColors.dotInactive
+        "--inactive-dot",
+        COLORS.darkThemeColors.inactiveDot
       );
 
       root.style.setProperty("--shadow", COLORS.darkThemeColors.shadow);
@@ -114,6 +114,10 @@ class DarkModeView extends Views {
       root.style.setProperty(
         "--code-art__base-color",
         COLORS.darkThemeColors.codeArtBaseColor
+      );
+      root.style.setProperty(
+        "--caret-fill-color",
+        COLORS.darkThemeColors.caretFillColor
       );
     } else {
       root.style.setProperty(
@@ -177,8 +181,8 @@ class DarkModeView extends Views {
       );
 
       root.style.setProperty(
-        "--dot-inactive",
-        COLORS.lightThemeColors.dotInactive
+        "--inactive-dot",
+        COLORS.lightThemeColors.inactiveDot
       );
 
       root.style.setProperty("--shadow", COLORS.lightThemeColors.shadow);
@@ -186,6 +190,10 @@ class DarkModeView extends Views {
       root.style.setProperty(
         "--code-art__base-color",
         COLORS.lightThemeColors.codeArtBaseColor
+      );
+      root.style.setProperty(
+        "--caret-fill-color",
+        COLORS.lightThemeColors.caretFillColor
       );
     }
   }
