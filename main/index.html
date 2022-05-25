@@ -204,73 +204,28 @@
                   <div class="code-art__bar__dots green-dot"></div>
                 </div>
                 <div class="code-art__content__back">
-                  <p>
-                    <span class="function-word__attribute__decor"
-                      >function</span
-                    >
-                    <span class="function__decor">Expenses</span>(<span
-                      class="parameter__decor"
-                      >props</span
-                    >) {<br />
-                    &nbsp;<span class="import__return__custom-component__decor"
-                      >return</span
-                    >
-                    (<br />
-                    &nbsp;&nbsp; &lt;<span
-                      class="import__return__custom-component__decor"
-                      >Card</span
-                    >
-                    <span class="function-word__attribute__decor"
-                      >className</span
-                    >>="<span class="string__decor">expenses</span>>"&gt;<br />
-                    &nbsp;&nbsp; &lt;<span
-                      class="import__return__custom-component__decor"
-                      >ExpensesFilter</span
-                    ><br />
-                    &nbsp;&nbsp;&nbsp;
-                    <span class="function-word__attribute__decor">expenses</span
-                    >={props.expenses}<br />
-                    &nbsp;&nbsp;&nbsp;
-                    <span class="function-word__attribute__decor"
-                      >selectedYear</span
-                    >={props.selectedYear}<br />
-                    &nbsp;&nbsp;&nbsp;
-                    <span class="function-word__attribute__decor"
-                      >onFilterChange</span
-                    >={props.filterHandler}<br />
-                    &nbsp;&nbsp;&nbsp;
-                    <span class="function-word__attribute__decor">onChange</span
-                    >={props.setSelectedYear}<br />
-                    &nbsp;&nbsp; /&gt;<br />
-                    &nbsp;&nbsp; &lt;<span
-                      class="import__return__custom-component__decor"
-                      >ExpensesChart</span
-                    >
-                    <span class="function-word__attribute__decor">expenses</span
-                    >={props.matchedExpenses} /&gt;<br />
-                    &nbsp;&nbsp; &lt;<span
-                      class="import__return__custom-component__decor"
-                      >ExpensesList</span
-                    ><br />
-                    &nbsp;&nbsp;
-                    <span class="function-word__attribute__decor">items</span
-                    >={props.matchedExpenses}<br />
-                    &nbsp;&nbsp;<span class="function-word__attribute__decor"
-                      >selectedYear</span
-                    >={props.selectedYear}<br />
-                    &nbsp;&nbsp; &gt;<br />
-                    &nbsp; &lt;/<span
-                      class="import__return__custom-component__decor"
-                      >Card</span
-                    >&gt;<br />
-                    &nbsp; );<br />
-                    }<br />
-                    <span class="import__return__custom-component__decor"
-                      >export default</span
-                    >
-                    <span class="function-word__attribute__decor">Expenses</span
-                    >;<br />
-                  </p>
+                  <pre>
+<span class="gray">@</span><span class="red">mixin</span> <span class="green">header</span> {
+  <span class="green">header</span> {
+    font-size: <span class="purple">18</span><span class="red">px</span>;
+    <span class="gray">@</span><span class="red">include</span> <span class="green">flex-spaced-between</span>;
+    top: <span class="purple">0</span>;
+    padding: <span class="purple">10</span><span class="red">px</span> <span class="purple">20</span><span class="red">px</span> <span class="purple">10</span><span class="red">px</span> <span class="purple">10</span><span class="red">px</span>;
+    height: <span class="purple">50</span><span class="red">px</span>;
+    transition: <span class="red">all</span> <span class="purple">0.2</span><span class="red">s</span> <spam class="blue">ease</spam>;
+    overflow: <spam class="blue">hidden</spam>;
+
+    <span class="green">.logo__container</span> {
+      <span class="red">h2</span> {
+        font-family: "<span class="yellow">Inter</span>", <span class="blue">sans-serif</span>;
+        font-size: <span class="purple">2</span><span class="red">rem</span>;
+        span {
+          color: <span class="orange">$accent-color</span>;
+        }
+      }
+    }
+  }
+                  </pre>
                 </div>
               </div>
             </div>

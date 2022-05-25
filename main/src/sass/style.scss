@@ -21,7 +21,6 @@
 body {
   background-color: $dt-background-dark-color;
   color: $dt-text-color-high-emphasis;
-  user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 @include header;

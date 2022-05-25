@@ -4,12 +4,7 @@
   // main content
   main {
     width: 100vw;
-    padding: 20vh 10vw 0 10vw;
-
-    // TABLET RESPONSIVE
-    @media (max-width: 950px) and (min-width: 480px) {
-      padding-top: 30px;
-    }
+    padding: 14vh 10vw 0 10vw;
   }
 
   @include section-1;
