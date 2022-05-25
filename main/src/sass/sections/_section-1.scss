@@ -103,7 +103,7 @@
         }
 
         .inactive-dot {
-          background-color: var(--dot--inactive);
+          background-color: var(--inactive-dot);
         }
       }
     }
@@ -131,10 +131,9 @@
 .typewriter__caret {
   height: 1rem;
   position: absolute;
-  // width: 50px;
-  // transform: translate(-23px, 3.5px);
   transform: translateY(-1px);
   animation: blinker 0.8s linear infinite;
+  fill: var(--caret-fill-color);
 
   @keyframes blinker {
     50% {
