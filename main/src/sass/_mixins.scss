@@ -3,14 +3,10 @@
   justify-content: space-between;
 }
 
-@mixin shadow {
-  box-shadow: 0px 3px 22px 0px rgba(0, 0, 0, 0.7);
-}
-
 @mixin fixed-header {
   position: fixed;
   width: 100vw;
-  @include shadow();
+  box-shadow: var(--shadow);
   backdrop-filter: blur(5px);
   transition: all 0.2s ease;
 }
@@ -35,6 +31,39 @@
   font-family: "Consolas";
   font-size: 13px;
   line-height: 1.2;
+  pre {
+    white-space: pre-wrap;
+  }
+}
+
+@mixin btn-hover-active {
+  transition: all 0.2s ease;
+  background-color: var(--accent-color-transparent);
+  cursor: pointer;
+  padding-left: 35px;
+  padding-right: 35px;
+  transform: translateX(-10px);
+}
+@mixin btn {
+  height: fit-content;
+  width: fit-content;
+  padding: 10px 25px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: solid 1px var(--accent-color);
+  background-color: transparent;
+  color: var(--accent-color);
+  border-radius: 4px;
+
+  // If hovering and pointer. Solves sticky hover problem in touch devices.
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @include btn-hover-active;
+    }
+  }
+  &:active {
+    @include btn-hover-active;
+  }
 }
 
 @mixin tablet-responsive {
@@ -57,9 +86,9 @@
       height: fit-content;
       padding: 16px;
       border-radius: 10px;
-      background-color: #2b2b2b9d;
+      background-color: var(--introduction-window-color);
       backdrop-filter: blur(2px);
-      @include shadow;
+      box-shadow: var(--shadow);
     }
   }
 }
@@ -85,7 +114,7 @@
         width: 100vw;
         left: -10vw;
         // width: calc(100% + 50px);
-        background: linear-gradient(to top, $dt-background-dark-color, #0000);
+        background: linear-gradient(to top, var(--background-color), #0000);
         z-index: 1;
       }
 
@@ -99,19 +128,19 @@
         overflow: hidden;
       }
 
-      pre {
-        white-space: pre-wrap;
-      }
-
       .introduction {
         position: absolute;
         justify-content: flex-end;
-        bottom: -18vh;
+        top: 200px;
         padding-right: 50px;
       }
 
       .introduction h2 {
         font-size: 2rem;
+      }
+
+      .introduction .say-hi {
+        margin: 0;
       }
     }
   }
