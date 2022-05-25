@@ -1,8 +1,39 @@
 // dark theme colors
-$dt-background-dark-color: #121212;
-$dt-background-lighter-color: #2b2b2b;
-$dt-background-lightest-color: #3b3b3b;
-$dt-accent-color: #64ffda;
-$dt-text-color-high-emphasis: rgba(255, 255, 255, 0.87);
-$dt-text-color-medium-emphasis: rgba(255, 255, 255, 0.6);
-$dt-text-color-low-emphasis: rgba(255, 255, 255, 0.38);
+:root {
+  // Dark theme
+
+  --background-color: #121212;
+  --background-lighter-color: #2b2b2b;
+  --background-lightest-color: #3b3b3b;
+  --accent-color: #64ffda;
+  --accent-color-transparent: rgba(100, 255, 219, 0.168);
+  --slider-background-color: rgba(255, 255, 255, 0.38);
+  --text-color-high-emphasis: rgba(255, 255, 255, 0.87);
+  --text-color-medium-emphasis: rgba(255, 255, 255, 0.6);
+  --text-color-low-emphasis: rgba(255, 255, 255, 0.38);
+  --introduction-window-color: #2b2b2b9d;
+  --osx-window: #3b3b3b;
+  --osx-border-color: transparent;
+  --osx-dot-container-bottom-border-color: #000;
+  --dot--inactive: #606060;
+  --shadow: 0px 3px 22px 0px rgba(0, 0, 0, 0.7);
+  --code-art__base-color: #ffffffdc;
+
+  // Light theme
+
+  // --background-color: #fff;
+  // --background-lighter-color: #fff;
+  // --background-lightest-color: #fff;
+  // --accent-color: #023e8a;
+  // --accent-color-transparent: rgba(2, 61, 138, 0.168);
+  // --slider-background-color: #ddd;
+  // --text-color-high-emphasis: #444;
+  // --text-color-medium-emphasis: rgba(255, 255, 255, 0.6);
+  // --text-color-low-emphasis: rgba(255, 255, 255, 0.38);
+  // --osx-window: #f0f0f0;
+  // --osx-border-color: #ccc;
+  // --dot--inactive: #ddd;
+  // --osx-dot-container-bottom-border-color: #ddd;
+  // --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  // --code-art__base-color: var(--text-color-high-emphasis);
+}

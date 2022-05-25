@@ -19,8 +19,8 @@
 }
 
 body {
-  background-color: $dt-background-dark-color;
-  color: $dt-text-color-high-emphasis;
+  background-color: var(--background-color);
+  color: var(--text-color-high-emphasis);
   -webkit-tap-highlight-color: transparent;
 }
 @include header;
