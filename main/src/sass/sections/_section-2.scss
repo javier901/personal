@@ -7,26 +7,18 @@
     margin-bottom: 400px;
     // //////
 
-    .about-me__wrapper {
-      position: relative;
-      max-width: 950px;
-      display: grid;
-      grid-template-columns: 0fr 2fr;
-      justify-content: center;
-    }
-
     article {
       // position: absolute;
       grid-column: 2/ -1;
       justify-self: end;
       padding: 32px;
-      width: 700px;
+      width: clamp(400px, 70vw, 700px);
       // max-width: 1000px;
       border-radius: 15px;
       box-shadow: var(--shadow);
       background-color: var(--lighter-accent-color);
       gap: 42px;
-      transform: translateX(120px);
+      transform: translateX(clamp(80px, 10vw, 120px));
       z-index: 200;
     }
 
@@ -34,8 +26,8 @@
       position: absolute;
       border-radius: 15px;
       transform: translate(-120px, -50px);
-      height: 300px;
-      width: auto;
+      height: auto;
+      width: 300px;
       box-shadow: var(--shadow);
       border-radius: 15px;
       z-index: 300;

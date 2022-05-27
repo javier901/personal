@@ -73,6 +73,7 @@
       padding-right: 10vw;
     }
 
+    ///////////// SECTION 1 //////////////////
     .section1 article {
       position: relative;
       align-items: center;
@@ -96,6 +97,30 @@
         height: 100%;
         z-index: -1;
         backdrop-filter: blur(2px);
+      }
+    }
+
+    ///////// SECTION 2 //////////////
+
+    .section2 .about-me__wrapper {
+      display: flex;
+      flex-direction: column;
+
+      align-content: center;
+      img {
+        position: static;
+        transform: translateY(42px);
+        align-self: center;
+      }
+
+      .about-me {
+        display: flex;
+      }
+
+      article {
+        transform: none;
+        padding-top: 62px;
+        // grid-template-columns: 1fr;
       }
     }
   }
@@ -152,11 +177,38 @@
         margin: 0;
       }
     }
-    //////////////////////// SECTION 2 ///////////////////////
+    /////////////// SECTION 2 //////////////
 
-    // .waves {
-    //   top: 200px;
-    //   width: 200vh;
-    // }
+    .section2 {
+      padding-top: 500px;
+      img {
+        align-self: start;
+        justify-self: center;
+        width: 200px;
+        border-radius: 50%;
+        transform: rotate(2deg) translateY(-50%);
+      }
+
+      .about-me__wrapper article {
+        display: flex;
+        transform: none;
+        padding: 120px 16px 16px 16px;
+        width: 100%;
+
+        h1 {
+          text-align: center;
+        }
+      }
+
+      .about-me__wrapper {
+        display: flex;
+        justify-content: center;
+        width: 95%;
+      }
+
+      .about-me {
+        display: block;
+      }
+    }
   }
 }
