@@ -16,9 +16,36 @@
 
 :root {
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color-transparent);
 }
 
 body {
+  p {
+    font-weight: 300;
+    line-height: 1.2;
+    font-size: 1.2rem;
+  }
   background-color: var(--background-color);
   color: var(--text-color-high-emphasis);
   -webkit-tap-highlight-color: transparent;

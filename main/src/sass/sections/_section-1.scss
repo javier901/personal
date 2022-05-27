@@ -26,12 +26,6 @@
           color: var(--accent-color);
         }
 
-        p {
-          font-weight: 300;
-          line-height: 1.2;
-          font-size: 1.2rem;
-        }
-
         z-index: 4;
       }
 
@@ -124,47 +118,47 @@
       @include code-art__content;
     }
   }
-}
 
-// Text decor
+  // Text decor
 
-.typewriter__caret {
-  height: 1rem;
-  position: absolute;
-  transform: translateY(-1px);
-  animation: blinker 0.8s linear infinite;
-  fill: var(--caret-fill-color);
+  .typewriter__caret {
+    height: 1rem;
+    position: absolute;
+    transform: translateY(-1px);
+    animation: blinker 0.8s linear infinite;
+    fill: var(--caret-fill-color);
 
-  @keyframes blinker {
-    50% {
-      opacity: 0;
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
     }
   }
-}
 
-// code-art text colors
-.blue {
-  color: #04b2de;
-}
-.green {
-  color: #57a249;
-}
-.orange {
-  color: #ed8804;
-}
-.red {
-  color: #c5504a;
-}
-.yellow {
-  color: #cabf6a;
-}
-.gray {
-  color: #999999;
-}
-.purple {
-  color: #9951d4;
-}
+  // code-art text colors
+  .blue {
+    color: #04b2de;
+  }
+  .green {
+    color: #57a249;
+  }
+  .orange {
+    color: #ed8804;
+  }
+  .red {
+    color: #c5504a;
+  }
+  .yellow {
+    color: #cabf6a;
+  }
+  .gray {
+    color: #999999;
+  }
+  .purple {
+    color: #9951d4;
+  }
 
-.code-art__base-color {
-  color: var(--code-art__base-color);
+  .code-art__base-color {
+    color: var(--code-art__base-color);
+  }
 }
