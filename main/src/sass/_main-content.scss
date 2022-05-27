@@ -1,11 +1,13 @@
 @import "sections/section-1";
+@import "sections/section-2";
 
 @mixin content {
-  // main content
   main {
     width: 100vw;
-    padding: 14vh 10vw 0 10vw;
+    padding: 200px 10vw 0 10vw;
+    overflow-x: hidden;
   }
 
   @include section-1;
+  @include section-2;
 }

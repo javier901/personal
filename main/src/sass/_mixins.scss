@@ -85,7 +85,7 @@
       width: 400px;
       height: fit-content;
       padding: 16px;
-      border-radius: 10px;
+      border-radius: 15px;
       background-color: var(--introduction-window-color);
       box-shadow: var(--shadow);
       .introduction-filter {
@@ -102,6 +102,8 @@
 }
 
 @mixin mobile-responsive {
+  //////////////////////// SECTION 1 ///////////////////////
+
   @media (max-width: 600px) {
     main {
       padding: 5vh 30px;
@@ -121,7 +123,6 @@
         height: calc(100% + 100px);
         width: 100vw;
         left: -10vw;
-        // width: calc(100% + 50px);
         background: linear-gradient(to top, var(--background-color), #0000);
         z-index: 1;
       }
@@ -151,5 +152,11 @@
         margin: 0;
       }
     }
+    //////////////////////// SECTION 2 ///////////////////////
+
+    // .waves {
+    //   top: 200px;
+    //   width: 200vh;
+    // }
   }
 }
