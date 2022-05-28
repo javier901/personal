@@ -198,8 +198,12 @@
         transition: all 0.1s ease;
       }
 
+      :link,
       :visited {
         color: var(--accent-color);
+      }
+      li {
+        list-style-type: none;
       }
 
       // If hovering and pointer. Solves sticky hover problem in touch devices.
