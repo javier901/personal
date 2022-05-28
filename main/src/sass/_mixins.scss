@@ -16,6 +16,11 @@
   bottom: 10vh;
 }
 
+@mixin side-spacing {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
 @mixin hover-active {
   transition: all 0.1s ease;
   width: 36px;
@@ -69,6 +74,10 @@
 @mixin tablet-responsive {
   @media (max-width: 950px) and (min-width: 600px) {
     main {
+      padding-top: 150px;
+    }
+    .section1,
+    .section2 {
       padding-left: 10vw;
       padding-right: 10vw;
     }
@@ -123,6 +132,9 @@
         // grid-template-columns: 1fr;
       }
     }
+    .code__design {
+      display: none;
+    }
   }
 }
 
@@ -131,12 +143,16 @@
 
   @media (max-width: 600px) {
     main {
-      padding: 5vh 30px;
+      padding-top: 30px;
+    }
+
+    .section1 {
+      padding-top: 30px;
+      padding-bottom: 400px;
     }
 
     .section1 article {
       display: flex;
-      // grid-template-columns: 1fr;
       justify-content: space-around;
       position: relative;
       column-gap: 0;
@@ -180,7 +196,6 @@
     /////////////// SECTION 2 //////////////
 
     .section2 {
-      padding-top: 500px;
       img {
         align-self: start;
         justify-self: center;
@@ -203,12 +218,14 @@
       .about-me__wrapper {
         display: flex;
         justify-content: center;
-        width: 95%;
       }
 
       .about-me {
         display: block;
       }
+    }
+    .code__design {
+      display: none;
     }
   }
 }

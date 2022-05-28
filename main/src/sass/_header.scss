@@ -198,6 +198,10 @@
         transition: all 0.1s ease;
       }
 
+      :visited {
+        color: var(--accent-color);
+      }
+
       // If hovering and pointer. Solves sticky hover problem in touch devices.
       @media (hover: hover) and (pointer: fine) {
         svg:hover {

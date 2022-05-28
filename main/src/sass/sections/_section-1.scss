@@ -1,5 +1,8 @@
 @mixin section-1 {
   .section1 {
+    @include side-spacing;
+    padding-bottom: 300px;
+
     article {
       display: grid;
       grid-template-columns: 1fr 1fr;
