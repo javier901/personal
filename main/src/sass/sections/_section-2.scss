@@ -1,12 +1,34 @@
 @mixin section-2 {
   .section2 {
+    @include side-spacing;
+    position: relative;
     display: flex;
     justify-content: center;
-    padding-top: 300px;
+    align-items: center;
+    gap: 10vw;
     // REMOVE
     margin-bottom: 400px;
     // //////
 
+    .code__design {
+      h1 {
+        font-size: 10rem;
+        font-weight: 100;
+        font-family: "IBM Plex Serif", serif;
+        // color: var(--text-color-low-emphasis);
+        color: var(--accent-color-transparent);
+        opacity: 0.6;
+      }
+
+      animation: blinker 4s linear infinite;
+      @keyframes blinker__1 {
+        50% {
+          opacity: 0;
+        }
+      }
+    }
+
+    // COLOR I WANT f2f2f5
     article {
       // position: absolute;
       grid-column: 2/ -1;
@@ -57,23 +79,3 @@
     }
   }
 }
-
-// .waves {
-//   left: -10vw;
-//   top: 0;
-//   position: absolute;
-//   top: 100px;
-//   width: 120vw;
-//   z-index: -100;
-//   .wave-1 {
-//     position: absolute;
-//   }
-
-//   .stop-1 {
-//     stop-color: var(--accent-color-transparent);
-//   }
-
-//   .stop-2 {
-//     stop-color: rgba(0, 0, 255, 0);
-// }
-// }
