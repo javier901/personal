@@ -6,16 +6,15 @@
     justify-content: center;
     align-items: center;
     gap: 10vw;
-    padding-bottom: 300px;
+    padding-bottom: 250px;
 
     .code__design {
       h1 {
         font-size: 10rem;
         font-weight: 100;
         font-family: "IBM Plex Serif", serif;
-        // color: var(--text-color-low-emphasis);
         color: var(--accent-color-transparent);
-        opacity: 0.6;
+        opacity: 0.7;
       }
 
       animation: blinker 4s linear infinite;
@@ -26,14 +25,11 @@
       }
     }
 
-    // COLOR I WANT f2f2f5
     article {
-      // position: absolute;
       grid-column: 2/ -1;
       justify-self: end;
       padding: 32px;
-      width: clamp(400px, 70vw, 700px);
-      // max-width: 1000px;
+      width: clamp(400px, 60vw, 700px);
       border-radius: 15px;
       box-shadow: var(--shadow);
       background-color: var(--lighter-accent-color);
