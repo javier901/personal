@@ -191,7 +191,7 @@
     .section-1 {
       @include mobile-padding;
       padding-top: 30px;
-      padding-bottom: 400px;
+      padding-bottom: 450px;
     }
 
     .section-1 article {
@@ -240,6 +240,8 @@
 
     .section-2 {
       @include mobile-padding;
+      padding-top: 120px;
+
       img {
         align-self: start;
         justify-self: center;
