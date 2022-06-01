@@ -1,7 +1,7 @@
 @mixin section-1 {
   .section-1 {
     @include pc-padding;
-    padding-bottom: 150px;
+    padding-bottom: 350px;
 
     article {
       display: grid;
