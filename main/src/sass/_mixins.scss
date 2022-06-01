@@ -16,11 +16,6 @@
   bottom: 10vh;
 }
 
-@mixin side-spacing {
-  padding-left: 10vw;
-  padding-right: 10vw;
-}
-
 @mixin hover-active {
   transition: all 0.1s ease;
   width: 36px;
@@ -70,25 +65,38 @@
     @include btn-hover-active;
   }
 }
+///////// Responsive padding //////
+@mixin pc-padding {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+@mixin tablet-padding {
+  padding-left: 8vw;
+  padding-right: 8vw;
+}
+@mixin mobile-padding {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+///////////////////////////////////
 
 @mixin tablet-responsive {
   @media (max-width: 950px) and (min-width: 600px) {
     main {
       padding-top: 150px;
     }
-    .section1,
-    .section2 {
-      padding-left: 10vw;
-      padding-right: 10vw;
-    }
 
     ///////////// SECTION 1 //////////////////
-    .section1 article {
+    .section-1 {
+      @include tablet-padding;
+    }
+    .section-1 article {
       position: relative;
       align-items: center;
     }
 
-    .section1 article .introduction {
+    .section-1 article .introduction {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -111,7 +119,11 @@
 
     ///////// SECTION 2 //////////////
 
-    .section2 .about-me__wrapper {
+    .section-2 {
+      @include tablet-padding;
+    }
+
+    .section-2 .about-me__wrapper {
       display: flex;
       flex-direction: column;
 
@@ -135,8 +147,38 @@
     .code__design {
       display: none;
     }
+    /////////////// SECTION 3 //////////////
+    .section-3 {
+      @include tablet-padding;
+
+      .skill-card__wrapper {
+        grid-template-columns: 18vw 18vw 18vw 18vw;
+        padding: 14px;
+      }
+
+      .skill-card {
+        height: 18vw;
+        .technology-description h2 {
+          font-size: 0.8rem;
+        }
+      }
+
+      .skill-card__content {
+      }
+
+      .skill-card__svg-wrapper {
+        width: 72px;
+        height: 72px;
+      }
+      h1 {
+        width: calc(72vw + 36px);
+      }
+    }
   }
 }
+///////////////////////////////////////////
+///////////////////////////////////////////
+///////////////////////////////////////////
 
 @mixin mobile-responsive {
   //////////////////////// SECTION 1 ///////////////////////
@@ -146,12 +188,13 @@
       padding-top: 30px;
     }
 
-    .section1 {
+    .section-1 {
+      @include mobile-padding;
       padding-top: 30px;
       padding-bottom: 400px;
     }
 
-    .section1 article {
+    .section-1 article {
       display: flex;
       justify-content: space-around;
       position: relative;
@@ -195,7 +238,8 @@
     }
     /////////////// SECTION 2 //////////////
 
-    .section2 {
+    .section-2 {
+      @include mobile-padding;
       img {
         align-self: start;
         justify-self: center;
@@ -226,6 +270,29 @@
     }
     .code__design {
       display: none;
+    }
+
+    /////////////// SECTION 3 //////////////
+    .section-3 {
+      @include mobile-padding;
+
+      .skill-card__wrapper {
+        grid-template-columns: 24vw 24vw 24vw;
+        gap: 0;
+      }
+
+      .skill-card {
+        height: 24vw;
+        gap: 10px;
+      }
+
+      .skill-card__svg-wrapper {
+        height: 10vw;
+        width: 10vw;
+      }
+      h1 {
+        width: 72vw;
+      }
     }
   }
 }

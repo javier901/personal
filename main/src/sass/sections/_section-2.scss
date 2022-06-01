@@ -1,14 +1,12 @@
 @mixin section-2 {
-  .section2 {
-    @include side-spacing;
+  .section-2 {
+    @include pc-padding;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10vw;
-    // REMOVE
-    margin-bottom: 400px;
-    // //////
+    padding-bottom: 300px;
 
     .code__design {
       h1 {

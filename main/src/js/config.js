@@ -6,7 +6,7 @@ export const COLORS = {
     accentColor: "#64ffda",
     accentColorTransparent: "rgba(100, 255, 219, 0.2)",
     sliderBackgroundColor: "rgba(255, 255, 255, 0.4)",
-    textColorHighEmphasis: "rgba(255, 255, 255, 0.9)",
+    textColorHighEmphasis: "rgba(255, 255, 255)",
     textColorMediumEmphasis: "rgba(255, 255, 255, 0.6)",
     textColorLowEmphasis: "rgba(255, 255, 255, 0.4)",
     introductionWindowColor: "rgba(43, 43, 43, 0.6)",
