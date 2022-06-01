@@ -24,10 +24,9 @@
     }
 
     .controls {
-      display: flex;
+      @include flex-spaced-between;
       align-items: center;
       gap: 15vw;
-      justify-content: space-between;
 
       // Make nav and dt slider closer if screen < 750px
       @media (max-width: 750px) {

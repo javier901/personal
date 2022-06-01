@@ -9,7 +9,7 @@
   "author": "Omar Moquete",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.5.0",
-    "parcel": "^2.5.0"
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0"
   }
 }

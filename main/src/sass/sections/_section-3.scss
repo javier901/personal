@@ -1,0 +1,174 @@
+@mixin section-3 {
+  .section-3 {
+    @include pc-padding;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: inherit;
+      color: var(--accent-color);
+      width: 866px;
+    }
+
+    .skill-card__wrapper {
+      display: grid;
+      grid-template-columns: 150px 150px 150px 150px 150px;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      background-color: var(--background-lighter-color);
+      box-shadow: var(--shadow);
+      padding: 1vw;
+      border-radius: 15px;
+    }
+
+    .skill-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+      width: 100%;
+      border-radius: 50%;
+      align-self: center;
+      justify-self: center;
+      overflow: hidden;
+      gap: 10px;
+    }
+
+    .skill-card__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    svg {
+      width: 80%;
+      height: auto;
+    }
+
+    .skill-card::before {
+      content: "";
+      position: absolute;
+      left: calc(50% - 20px);
+      top: calc(50% - 20px);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .skill-card__svg-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #fff;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+    }
+
+    .skill-card__svg-wrapper__javascript {
+      background-color: #f7df1e;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.2) rotate(360deg);
+      transition: all 0.2s ease-in-out;
+
+      &::before {
+        transform: scale(30);
+        transition: transform 1s ease-in-out;
+      }
+    }
+
+    .technology-description h2 {
+      font-size: 1rem;
+      font-weight: inherit;
+    }
+
+    /////////// ::before color
+
+    .skill-card__css3 {
+      &::before {
+        background-color: rgba(60, 156, 215, 0.5);
+      }
+    }
+    .skill-card__git {
+      &::before {
+        background-color: rgba(222, 76, 54, 0.5);
+      }
+    }
+    .skill-card__github {
+      &::before {
+        background-color: rgba(199, 199, 199, 0.5);
+      }
+    }
+    .skill-card__html5 {
+      &::before {
+        background-color: rgba(241, 101, 41, 0.5);
+      }
+    }
+    .skill-card__javascript {
+      &::before {
+        background-color: rgba(247, 222, 30, 0.5);
+      }
+    }
+    .skill-card__lightroom {
+      &::before {
+        background-color: rgba(197, 202, 233, 0.5);
+      }
+    }
+    .skill-card__netlify {
+      &::before {
+        background-color: rgba(60, 171, 188, 0.5);
+      }
+    }
+    .skill-card__npm {
+      &::before {
+        background-color: rgba(203, 55, 55, 0.5);
+      }
+    }
+    .skill-card__parceljs {
+      &::before {
+        background-color: rgba(248, 113, 113, 0.5);
+      }
+    }
+    .skill-card__photoshop {
+      &::before {
+        background-color: rgba(3, 168, 244, 0.5);
+      }
+    }
+    .skill-card__reactjs {
+      &::before {
+        background-color: rgba(0, 217, 255, 0.5);
+      }
+    }
+    .skill-card__sass {
+      &::before {
+        background-color: rgb(205, 103, 153, 0.5);
+      }
+    }
+    .skill-card__vscode {
+      &::before {
+        background-color: rgba(31, 156, 240, 0.5);
+      }
+    }
+
+    .skill-card__webpack {
+      &::before {
+        background-color: rgba(28, 121, 192, 0.5);
+      }
+    }
+
+    margin-bottom: 200px;
+  }
+}

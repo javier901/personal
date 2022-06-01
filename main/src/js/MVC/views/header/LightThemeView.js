@@ -22,14 +22,13 @@ class LightThemeView extends Views {
     sunIcon.classList.toggle("dt__sun__disabled");
   }
   enableLightTheme(bool) {
-    const root = document.querySelector(":root");
     const darkThemeColorsIterable = Object.entries(COLORS.darkThemeColors);
     const lightThemeColorsIterable = Object.entries(COLORS.lightThemeColors);
 
     const updateUI = (iterable) =>
       iterable.forEach((rule, i) =>
         // Iterate string @ i from rules string array, then take COOLORS.dark/lightTheme[i][1]
-        root.style.setProperty(COLORS.cssRules.at(i), rule.at(1))
+        this.root.style.setProperty(COLORS.cssRules.at(i), rule.at(1))
       );
 
     // if isActive === false

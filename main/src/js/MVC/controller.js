@@ -3,6 +3,7 @@ import lightThemeView from "./views/header/LightThemeView.js";
 import Header from "./views/header/Header.js";
 import MenuView from "./views/header/MenuView.js";
 import Typewriter from "./views/Typewriter.js";
+import toolbox from "./views/Toolbox.js";
 
 const controlTheme = function () {
   lightTheme.isActive = !lightTheme.isActive;
@@ -19,6 +20,7 @@ const init = function () {
   MenuView.addHandler();
   Header.addHandler();
   Typewriter.addHandler();
+  // toolbox.addHandler();
 };
 
 init();
