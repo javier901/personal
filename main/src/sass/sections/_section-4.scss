@@ -1,0 +1,108 @@
+@mixin section-4 {
+  .section-4 {
+    display: flex;
+    justify-content: center;
+    @include pc-padding;
+    padding-bottom: 200px;
+    .slider__container {
+      display: grid;
+      grid-template-columns: 0fr 1fr 0fr;
+      grid-template-rows: 1fr 0fr;
+      justify-content: center;
+      align-items: center;
+      height: 600px;
+      // width: 1200px;
+      width: 90vw;
+      background-color: var;
+      user-select: none;
+    }
+
+    .dots__container {
+      grid-column: 2 / 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      .slider-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: var(--slider-background-color);
+        border: none;
+        cursor: pointer;
+        transition: all 0.6s ease;
+        &:hover {
+          transform: scale(1.4);
+          margin-left: 2px;
+          margin-right: 2px;
+          border: solid 1px var(--accent-color);
+        }
+      }
+
+      .active-dot {
+        background-color: var(--accent-color);
+      }
+    }
+    .slide-btn {
+      background: none;
+      border: none;
+      stroke-width: 1;
+      transition: all 0.1s ease;
+
+      &:hover {
+        transform: scale(1.5);
+        stroke-width: 1.2;
+      }
+    }
+
+    .slide-btn:hover svg {
+      transition: all 0.1s ease;
+      filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
+      -webkit-filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
+      -moz-filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
+    }
+
+    .slide-btn svg {
+      width: 64px;
+      height: 64px;
+      stroke-width: inherit;
+      stroke: var(--accent-color);
+      fill: none;
+      cursor: pointer;
+    }
+    .previous-slide {
+      grid-column: 1 / 2;
+    }
+    .next-slide {
+      grid-column: 3 / -1;
+      grid-row: 1 / 2;
+    }
+
+    .slides {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-item {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    .slide-01 {
+      background-color: red;
+      // transform: translateX(0);
+    }
+    .slide-02 {
+      background-color: orange;
+      // transform: translateX(100%);
+    }
+    .slide-03 {
+      background-color: green;
+      // transform: translateX(200%);
+    }
+  }
+}
