@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 32px;
     @include pc-padding;
     padding-bottom: 200px;
@@ -15,6 +16,8 @@
       height: 600px;
       background-color: var;
       user-select: none;
+      width: 100%;
+      max-width: 1200px;
     }
 
     .dots__container {
@@ -23,6 +26,7 @@
       justify-content: center;
       align-items: center;
       gap: 8px;
+      padding-top: 10px;
 
       .slider-dot {
         width: 14px;
@@ -32,10 +36,17 @@
         border: none;
         cursor: pointer;
         transition: transform 0.1s ease;
-        &:hover {
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .slider-dot:hover {
           transform: scale(1.4);
           border: solid 1px var(--accent-color);
         }
+      }
+
+      .slider-dot:active {
+        transform: scale(1.4);
       }
 
       .active-dot {
@@ -110,15 +121,18 @@
       transition: all 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     }
 
-    .slide-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .project-description {
+      position: absolute;
+      left: 5%;
+      bottom: 20%;
     }
-
-    .slide-item__content {
-      width: 80%;
-      height: 80%;
+    .project-img {
+      position: absolute;
+      right: 0;
+      height: auto;
+      top: 10%;
+      width: 500px;
+      border-radius: 15px;
     }
 
     article {
@@ -145,8 +159,6 @@
       background-color: var(--background-lighter-color);
       box-shadow: var(--shadow);
       z-index: 1;
-      transform: translateX(20px);
-
       h2 {
         color: var(--accent-color);
         font-size: 1.6rem;
@@ -159,15 +171,16 @@
       }
     }
 
-    .project__img {
-      width: 600px;
-      height: auto;
-      border-radius: 15px;
-      z-index: 0;
-      transform: translateX(-20px);
-    }
+    // .project__img {
+    //   width: 600px;
+    //   height: auto;
+    //   border-radius: 15px;
+    //   z-index: 0;
+    //   transform: translateX(-20px);
+    // }
   }
 
-  @include section-4-responsive;
-  @include mobile-responsive;
+  @include tablet-responsive // @include section-4-responsive;
+    // @include mobile-responsive;
+;
 }
