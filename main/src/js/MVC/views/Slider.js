@@ -12,6 +12,10 @@ class Slider extends Views {
     // Create dots
     this.createDots();
 
+    // Activate first dot
+
+    this.activateDot(this.currentSlide);
+
     // Set initial slides position
     this.goToSlide(0);
 

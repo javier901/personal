@@ -4,15 +4,44 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 100px;
     justify-content: center;
     align-items: center;
 
-    h1 {
-      font-size: 2rem;
-      font-weight: inherit;
-      color: var(--accent-color);
-      width: 866px;
+    article {
+      width: calc(72vw + 36px);
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      h2 {
+        color: var(--accent-color);
+        font-weight: 500;
+        font-size: 2rem;
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        transition: all 0.1s ease;
+      }
+
+      a:link,
+      a:visited {
+        color: var(--accent-color);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        a:hover {
+          transform: scale(1.1) translateX(2px);
+        }
+      }
+
+      a:active {
+        color: var(--accent-color);
+        transform: scale(1.1) translateX(2px);
+      }
     }
 
     .skill-card__wrapper {
