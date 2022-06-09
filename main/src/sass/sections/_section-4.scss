@@ -15,7 +15,6 @@
       align-items: center;
       height: 600px;
       background-color: var;
-      user-select: none;
       width: 100%;
       max-width: 1200px;
     }
@@ -133,6 +132,7 @@
       top: 10%;
       width: 500px;
       border-radius: 15px;
+
     }
 
     article {
@@ -171,16 +171,8 @@
       }
     }
 
-    // .project__img {
-    //   width: 600px;
-    //   height: auto;
-    //   border-radius: 15px;
-    //   z-index: 0;
-    //   transform: translateX(-20px);
-    // }
+    .project-btn {
+      text-decoration: none;
+    }
   }
-
-  @include tablet-responsive // @include section-4-responsive;
-    // @include mobile-responsive;
-;
 }

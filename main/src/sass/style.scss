@@ -42,6 +42,15 @@
   background: var(--accent-color-transparent);
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: var(--text-color-high-emphasis);
+  background: var(--accent-color-transparent);
+}
+
+::selection {
+  color: var(--text-color-high-emphasis);
+  background: var(--accent-color-transparent);
+}
 body {
   p {
     font-weight: 300;
@@ -54,8 +63,7 @@ body {
 }
 @include header;
 @include content;
-@include tablet-responsive;
-@include mobile-responsive;
+
 
 // togglers
 .invisible {
