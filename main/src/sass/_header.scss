@@ -80,19 +80,23 @@
         opacity: 1;
       }
 
-      .dt__moon,
-      .dt__sun {
+      .moon__icon,
+      .sun__icon {
         top: 18px;
       }
 
-      .dt__sun {
+      .moon__icon {
+        stroke: var(--text-color-high-emphasis);
+      }
+
+      .sun__icon {
         stroke: #e9c46a;
       }
-      & .dt__sun__disabled {
+      & .sun__icon__disabled {
         opacity: 0;
         transform: translateY(-40px);
       }
-      & .dt__moon__disabled {
+      & .moon__icon__disabled {
         opacity: 0;
         transform: translateY(40px);
       }
@@ -111,6 +115,10 @@
         transform: all 0.3s ease;
       }
     }
+
+    // .hamburger{
+    //   stro
+    // }
 
     .slider-component {
       @include flex-spaced-between;

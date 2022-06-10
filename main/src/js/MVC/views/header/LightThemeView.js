@@ -14,12 +14,12 @@ class LightThemeView extends Views {
   }
 
   toggleSwitch() {
-    const moonIcon = document.querySelector(".dt__moon");
-    const sunIcon = document.querySelector(".dt__sun");
+    const moonIcon = document.querySelector(".moon__icon");
+    const sunIcon = document.querySelector(".sun__icon");
     this.lightThemeSwitchElement.classList.toggle("slider__active");
 
-    moonIcon.classList.toggle("dt__moon__disabled");
-    sunIcon.classList.toggle("dt__sun__disabled");
+    moonIcon.classList.toggle("moon__icon__disabled");
+    sunIcon.classList.toggle("sun__icon__disabled");
   }
   enableLightTheme(bool) {
     const darkThemeColorsIterable = Object.entries(COLORS.darkThemeColors);

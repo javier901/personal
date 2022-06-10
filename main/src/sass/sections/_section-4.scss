@@ -60,11 +60,7 @@
     }
 
     @media (hover: hover) and (pointer: fine) {
-      .next-slide:hover {
-        transform: scale(1.4);
-      }
-
-      .previous-slide:hover {
+      .slide-btn:hover {
         transform: scale(1.4);
       }
 
@@ -74,19 +70,15 @@
       }
     }
 
-    .next-slide:active {
+    .slide-btn:active {
       transform: scale(1.4);
-    }
 
-    .previous-slide:active {
-      transform: scale(1.4);
-    }
-
-    .slide-btn:active svg {
-      transition: all 0.1s ease;
-      filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
-      -webkit-filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
-      -moz-filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
+      svg {
+        transition: all 0.1s ease;
+        filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
+        -webkit-filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
+        -moz-filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
+      }
     }
 
     .slide-btn svg {

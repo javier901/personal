@@ -356,6 +356,7 @@
         grid-template-columns: 100%;
         grid-template-rows: 100% min-content;
         height: 78vh;
+        max-height: 700px;
       }
       .project-img {
         width: 100%;
@@ -378,16 +379,22 @@
       }
 
       .slide-btn:hover {
+        svg {
+          filter: none;
+        }
+      }
+
+      .slide-btn:active {
         box-shadow: var(--shadow);
+
+        svg {
+          filter: none;
+        }
       }
 
       .slide-btn svg {
         width: inherit;
         height: inherit;
-      }
-
-      .slide-btn:hover svg {
-        filter: none;
       }
 
       .previous-slide {
