@@ -127,9 +127,9 @@
   .typewriter__caret {
     height: 1rem;
     position: absolute;
-    transform: translateY(-1px);
     animation: blinker 0.8s linear infinite;
     fill: var(--caret-fill-color);
+    width: 1.1rem;
 
     @keyframes blinker {
       50% {
