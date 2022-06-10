@@ -82,6 +82,12 @@
       justify-self: center;
       overflow: hidden;
       gap: 10px;
+
+      transition: all 0.3s ease-in-out;
+
+      &::before {
+        transition: transform 10s ease-in-out;
+      }
     }
 
     .skill-card__content {

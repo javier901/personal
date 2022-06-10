@@ -71,8 +71,6 @@
       .slide-btn:hover svg {
         transition: all 0.1s ease;
         filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
-        -webkit-filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
-        -moz-filter: drop-shadow(1px 3px 3px rgba(0, 0, 0, 0.31));
       }
     }
 
@@ -132,7 +130,6 @@
       top: 10%;
       width: 500px;
       border-radius: 15px;
-
     }
 
     article {

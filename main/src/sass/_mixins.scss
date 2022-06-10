@@ -317,10 +317,10 @@
       }
     }
 
-    //// Section 4 /////
+    /////////////////// Section 4 //////////////////////////
     .section-4 {
-      padding-left: 24px;
-      padding-right: 24px;
+      @include mobile-padding;
+
       gap: 0;
       .project-description {
         width: 100%;
@@ -344,20 +344,53 @@
       }
 
       .slider__container {
-        height: 60vh;
+        position: relative;
+        grid-template-columns: 100%;
+        grid-template-rows: 100% min-content;
+        height: 78vh;
       }
       .project-img {
         width: 100%;
       }
 
       .slide-btn {
-        width: 48px;
-        height: 48px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px;
+        width: 38px;
+        height: 38px;
+        z-index: 1;
+        background-color: var(--background-lighter-color);
+        border-radius: 50%;
+        border: 1px solid var(--accent-color);
+        opacity: 0.9;
+      }
+
+      .slide-btn:hover {
+        box-shadow: var(--shadow);
       }
 
       .slide-btn svg {
         width: inherit;
         height: inherit;
+      }
+
+      .slide-btn:hover svg {
+        filter: none;
+      }
+
+      .previous-slide {
+        left: 10px;
+      }
+      .next-slide {
+        right: 10px;
+      }
+
+      .dots__container {
+        grid-column: 1 / -1;
+        grid-row: 2 / -1;
       }
     }
   }
