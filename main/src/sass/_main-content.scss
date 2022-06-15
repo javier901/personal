@@ -12,6 +12,7 @@
 
   .section {
     position: relative;
+    overflow-x: hidden;
   }
 
   @include section-1;
