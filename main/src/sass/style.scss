@@ -62,11 +62,10 @@ body {
   background-color: var(--background-color);
   color: var(--text-color-high-emphasis);
   -webkit-tap-highlight-color: transparent;
-  overflow-x: hidden;
 }
 
 @include header;
-@include content;
+@include main-content;
 @include footer;
 
 // togglers

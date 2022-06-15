@@ -3,10 +3,15 @@
 @import "sections/section-3";
 @import "sections/section-4";
 
-@mixin content {
+@mixin main-content {
   main {
     width: 100vw;
     padding-top: 200px;
+    overflow-y: hidden;
+  }
+
+  .section {
+    position: relative;
   }
 
   @include section-1;
