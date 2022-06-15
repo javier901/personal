@@ -7,12 +7,10 @@
   main {
     width: 100vw;
     padding-top: 200px;
-    overflow-y: hidden;
   }
 
   .section {
     position: relative;
-    overflow-x: hidden;
   }
 
   @include section-1;
