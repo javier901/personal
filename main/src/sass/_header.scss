@@ -27,13 +27,6 @@
       @include flex-spaced-between;
       align-items: center;
       gap: 15vw;
-
-      // Make nav and dt slider closer if screen < 750px
-      @media (max-width: 750px) {
-        & {
-          gap: 20px;
-        }
-      }
     }
 
     nav {
@@ -57,13 +50,6 @@
       }
       label:active {
         color: var(--accent-color);
-      }
-
-      // Hide nav component if screen < 450 px
-      @media (max-width: 450px) {
-        & {
-          display: none;
-        }
       }
     }
 
@@ -104,6 +90,7 @@
 
     // Hamburger / X visibility
     .hamburger-x__container {
+      display: none;
       position: relative;
       overflow: hidden;
       height: 30px;
@@ -115,10 +102,6 @@
         transform: all 0.3s ease;
       }
     }
-
-    // .hamburger{
-    //   stro
-    // }
 
     .slider-component {
       @include flex-spaced-between;
@@ -161,20 +144,6 @@
       .slider__active::before {
         transition: all 0.3s ease;
         transform: translateX(18px);
-      }
-    }
-
-    .hamburger-x__container {
-      display: none;
-    }
-    // Insert hamburger container menu if screen < 450px
-    @media (max-width: 450px) {
-      & {
-        padding-right: 10px;
-        .hamburger-x__container {
-          display: block;
-          cursor: pointer;
-        }
       }
     }
   }

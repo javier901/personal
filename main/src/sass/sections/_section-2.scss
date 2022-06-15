@@ -71,5 +71,6 @@
         color: var(--about-me-h-color);
       }
     }
+    @include diagonal-background;
   }
 }

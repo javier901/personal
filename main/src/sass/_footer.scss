@@ -1,0 +1,37 @@
+@mixin footer {
+  footer {
+    @include pc-padding;
+
+    position: relative;
+    width: 100vw;
+    height: 400px;
+    overflow: hidden;
+
+    .heart {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+
+      svg {
+        height: 100%;
+        width: 100%;
+        transform: translateY(3px);
+      }
+    }
+
+    .c-r {
+      color: var(--text-color-low-emphasis);
+      position: absolute;
+      font-size: 1rem;
+    }
+
+    .c-r__left {
+      bottom: 12px;
+      left: 40px;
+    }
+    .c-r__right {
+      bottom: 12px;
+      right: 40px;
+    }
+  }
+}

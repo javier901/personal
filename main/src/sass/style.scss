@@ -3,6 +3,7 @@
 @import "variables";
 @import "header";
 @import "main-content";
+@import "footer";
 @font-face {
   font-family: "Consolas";
   src: url("../../fonts/consola.ttf");
@@ -42,7 +43,8 @@
   background: var(--accent-color-transparent);
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: var(--text-color-high-emphasis);
   background: var(--accent-color-transparent);
 }
@@ -63,7 +65,7 @@ body {
 }
 @include header;
 @include content;
-
+@include footer;
 
 // togglers
 .invisible {

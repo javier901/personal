@@ -6,7 +6,7 @@
     align-items: center;
     gap: 32px;
     @include pc-padding;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
     .slider__container {
       display: grid;
       grid-template-columns: 0fr 1fr 0fr;
@@ -196,5 +196,7 @@
     .project-btn {
       text-decoration: none;
     }
+
+    @include diagonal-background;
   }
 }

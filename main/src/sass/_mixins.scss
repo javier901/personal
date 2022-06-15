@@ -3,6 +3,18 @@
   justify-content: space-between;
 }
 
+@mixin diagonal-background {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 130%;
+    height: 100%;
+    background-color: var(--diagonal-color);
+    transform: rotate(4deg);
+    z-index: -10;
+  }
+}
+
 @mixin fixed-header {
   position: fixed;
   width: 100vw;
@@ -85,6 +97,15 @@
   @media (max-width: 950px) and (min-width: 600px) {
     main {
       padding-top: 150px;
+    }
+
+    ////////////// HEADER //////////////////
+
+    header {
+      .controls {
+        // Make nav and dt slider closer if screen < 750px
+        gap: 20px;
+      }
     }
 
     ///////////// SECTION 1 //////////////////
@@ -203,13 +224,26 @@
 }
 
 @mixin mobile-responsive {
-  //////////////////////// SECTION 1 ///////////////////////
-
   @media (max-width: 600px) {
     main {
       padding-top: 30px;
     }
 
+    ////////////// HEADER //////////////////
+    // Hide nav component
+    header {
+      padding-right: 10px;
+      .hamburger-x__container {
+        display: block;
+        cursor: pointer;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    //////////////////////// SECTION 1 ///////////////////////
     .section-1 {
       @include mobile-padding;
       padding-top: 30px;
