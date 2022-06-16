@@ -22,14 +22,16 @@ class ModalView extends Views {
         <!-- Content -->
       </div>
       <form class="contact-me__form">
+        <input class="contact-me__form__name" tyoe="text" placeholder="Name"></input>
+        <input class="contact-me__form__email" tyoe="text" placeholder="Email"></input>
         <textarea class="contact-me__form__input name="contact-me__form__input" placeholder="Enter your message..."></textarea>
         <button class="form-btn form-btn__send">Send</button>
       </form>
     </div>
   </div>
 `;
-
     document.querySelector("main").insertAdjacentHTML("afterend", markup);
+    document.querySelector(".contact-me__form__name").focus();
 
     // Create properties after element insertion.
     this.overlay = document.querySelector(".overlay");
@@ -38,6 +40,9 @@ class ModalView extends Views {
     this.btnMaximize = document.querySelector(".osx-modal__btn__maximize");
     this.textInput = document.querySelector(".contact-me__form__input");
     this.send = document.querySelector(".form-btn__send");
+    // Disable scrolling when modal is open:
+    document.querySelector("body").classList.add("no-scroll");
+
     // Red and green btns
     this.overlay.addEventListener("click", (e) => {
       if (e.target === this.overlay) this.closeContactMe();
@@ -61,6 +66,7 @@ class ModalView extends Views {
     setTimeout(() => {
       // Kill element after animation finishes.
       this.overlay.remove();
+      document.querySelector("body").classList.remove("no-scroll");
       this.modal.remove();
     }, 500);
   }

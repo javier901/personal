@@ -77,3 +77,8 @@ body {
 .for-main__header-active {
   margin-top: 50px;
 }
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}

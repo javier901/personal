@@ -85,6 +85,19 @@
   }
 }
 
+@mixin form-input {
+  & {
+    width: 100%;
+    padding: 10px;
+    font: inherit;
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+    border: solid 1px var(--accent-color);
+    border-radius: 4px;
+  }
+}
+
 @mixin code-art__content {
   width: 100%;
   height: 100%;
@@ -219,9 +232,7 @@
         padding-top: 62px;
       }
     }
-    .code__design {
-      display: none;
-    }
+
     /////////////// SECTION 3 //////////////
     .section-3 {
       @include tablet-padding;
@@ -392,9 +403,6 @@
       .about-me {
         display: block;
       }
-    }
-    .code__design {
-      display: none;
     }
 
     /////////////// SECTION 3 //////////////

@@ -20,7 +20,7 @@ export const COLORS = {
     lighterAccentColor: "rgba(100, 255, 219, 0.2)",
     aboutMeHColor: "var(--accent-color)",
     aboutMePColor: "var(--text-color-high-emphasis)",
-    footerColor: "#3b3b3b",
+    footerColor: "#1b1b1b",
   },
 
   lightThemeColors: {

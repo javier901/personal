@@ -7,28 +7,12 @@
     gap: 10vw;
     padding-bottom: 200px;
 
-    .code__design {
-      h1 {
-        font-size: 10rem;
-        font-weight: 100;
-        font-family: "IBM Plex Serif", serif;
-        color: var(--accent-color-transparent);
-        opacity: 0.7;
-      }
-
-      animation: blinker 4s linear infinite;
-      @keyframes blinker__1 {
-        50% {
-          opacity: 0;
-        }
-      }
-    }
-
     article {
       grid-column: 2/ -1;
       justify-self: end;
       padding: 32px;
       width: 100%;
+      max-width: 700px;
       border-radius: 15px;
       box-shadow: var(--shadow);
       background-color: var(--lighter-accent-color);
