@@ -1,7 +1,8 @@
 @mixin footer {
   footer {
     @include pc-padding;
-
+    padding-bottom: 18px;
+    display: flex;
     position: relative;
     width: 100vw;
     height: 400px;
@@ -20,11 +21,17 @@
     }
 
     .c-r {
+      @include flex-spaced-between;
       color: var(--text-color-low-emphasis);
-      position: absolute;
-      font-size: 1rem;
+      width: 100%;
+      align-items: center;
+      align-self: end;
+      gap: 40px;
     }
 
+    .c-r {
+      font-size: 1rem;
+    }
     .c-r__left {
       bottom: 12px;
       left: 40px;

@@ -35,6 +35,56 @@
   opacity: 1;
 }
 
+@mixin osx-window {
+  & {
+    background-color: var(--background-lighter-color);
+    border-radius: 5px;
+    line-break: auto;
+    user-select: none;
+    border: solid 1px var(--osx-border-color);
+    box-shadow: var(--shadow);
+    .osx-bar {
+      width: 100%;
+      height: 30px;
+      background-color: var(--background-lightest-color);
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      border-bottom: solid 1px var(--osx-dot-container-bottom-border-color);
+
+      .osx-bar__dots__container {
+        display: flex;
+        gap: 10px;
+        height: 100%;
+        align-items: center;
+        padding: 12px;
+        background-color: var(--osx-window);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      .osx-bar__dots {
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+      }
+
+      .red-dot {
+        background-color: #fd5e59;
+      }
+      .yellow-dot {
+        background-color: #ffbb3b;
+      }
+      .green-dot {
+        background-color: #34c748;
+      }
+
+      .inactive-dot {
+        background-color: var(--inactive-dot);
+      }
+    }
+  }
+}
+
 @mixin code-art__content {
   width: 100%;
   height: 100%;
@@ -49,14 +99,12 @@
 }
 
 @mixin btn-hover-active {
-  transition: all 0.2s ease;
   background-color: var(--accent-color-transparent);
   cursor: pointer;
-  padding-left: 35px;
-  padding-right: 35px;
-  transform: translateX(-10px);
+  transform: scale(1.1);
 }
 @mixin btn {
+  transition: transform 0.1s ease;
   height: fit-content;
   width: fit-content;
   padding: 10px 25px;
@@ -108,6 +156,13 @@
       }
     }
 
+    ///////////// Modal /////////////////
+
+    .overlay {
+      .osx-modal {
+        width: 70vw;
+      }
+    }
     ///////////// SECTION 1 //////////////////
     .section-1 {
       @include tablet-padding;
@@ -123,7 +178,7 @@
       left: 0;
       width: 400px;
       height: fit-content;
-      padding: 16px;
+      padding: 24px;
       border-radius: 15px;
       background-color: var(--introduction-window-color);
       box-shadow: var(--shadow);
@@ -220,6 +275,13 @@
         width: 100%;
       }
     }
+
+    ///////// Footer ////////
+    footer {
+      .c-r {
+        font-size: 0.8rem;
+      }
+    }
   }
 }
 
@@ -240,6 +302,13 @@
 
       nav {
         display: none;
+      }
+    }
+
+    ///////////// Modal /////////////////
+    .overlay {
+      .osx-modal {
+        width: 90vw;
       }
     }
 
@@ -272,7 +341,7 @@
       }
       aside .code-art__container__front {
         position: static;
-        width: 90vw;
+        width: 80vw;
         height: 450px;
         overflow: hidden;
       }
@@ -309,7 +378,7 @@
       .about-me__wrapper article {
         display: flex;
         transform: none;
-        padding: 120px 16px 16px 16px;
+        padding: 120px 24px 24px 24px;
         h1 {
           text-align: center;
         }
@@ -442,6 +511,12 @@
         grid-column: 1 / -1;
         grid-row: 2 / -1;
       }
+    }
+
+    //////// Footer //////////\
+
+    footer .c-r {
+      font-size: 0.8rem;
     }
   }
 }

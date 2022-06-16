@@ -4,6 +4,7 @@
 @import "header";
 @import "main-content";
 @import "footer";
+@import "modal";
 @font-face {
   font-family: "Consolas";
   src: url("../../fonts/consola.ttf");
@@ -13,8 +14,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
@@ -67,6 +66,7 @@ body {
 @include header;
 @include main-content;
 @include footer;
+@include modal;
 
 // togglers
 .invisible {

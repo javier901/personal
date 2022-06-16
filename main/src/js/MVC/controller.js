@@ -4,6 +4,7 @@ import Header from "./views/header/Header.js";
 import MenuView from "./views/header/MenuView.js";
 import Typewriter from "./views/Typewriter.js";
 import Slider from "./views/Slider.js";
+import ModalView from "./views/ModalView";
 
 const controlTheme = function () {
   lightTheme.isActive = !lightTheme.isActive;
@@ -21,6 +22,7 @@ const init = function () {
   Header.addHandler();
   Typewriter.addHandler();
   Slider.addHandler();
+  ModalView.addHandler();
 };
 
 init();
