@@ -132,3 +132,10 @@ export const SCRIPT = [
 export const LIGHT_THEME_NAME_IN_LOCAL_STORAGE = "lightTheme";
 
 export const WRITING_SPEED_IN_MILLISECONDS = 90;
+
+export const FORM_API =
+  "https://getform.io/f/003c358e-025f-4b54-a072-542dd32bccbd";
+
+export const AJAX_CALL_TIMEOUT_SECONDS = 5;
+
+export const FORM_SUBMISSION_MESSAGE = "Thank you! Your message has been sent.";

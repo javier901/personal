@@ -35,6 +35,33 @@
   opacity: 1;
 }
 
+@mixin shake-animation {
+  & {
+    animation: shake 0.3s ease;
+
+    @keyframes shake {
+      0% {
+        transform: translateX(10px);
+      }
+      25% {
+        transform: translateX(-10px);
+      }
+
+      50% {
+        transform: translateX(10px);
+      }
+
+      75% {
+        transform: translateX(-10px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
 @mixin osx-window {
   & {
     background-color: var(--background-lighter-color);
@@ -82,19 +109,6 @@
         background-color: var(--inactive-dot);
       }
     }
-  }
-}
-
-@mixin form-input {
-  & {
-    width: 100%;
-    padding: 10px;
-    font: inherit;
-    background-color: transparent;
-    color: inherit;
-    outline: none;
-    border: solid 1px var(--accent-color);
-    border-radius: 4px;
   }
 }
 

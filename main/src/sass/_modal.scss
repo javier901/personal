@@ -1,9 +1,13 @@
 @mixin modal {
+  .modal-dot {
+    cursor: pointer;
+  }
   .overlay {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.2s ease-in;
+    transition: opacity 0.2s ease-in, backdrop-filter 0.2s ease-in,
+      background-color 0.2s ease-in;
     position: fixed;
     top: 0;
     left: 0;
@@ -44,12 +48,36 @@
     display: flex;
     flex-direction: column;
     width: 500px;
-    height: 400px;
-
-    .form-btn {
-      align-self: end;
-    }
+    height: 75vh;
+    min-height: 400px;
   }
+
+  .form-btn__status__container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 1rem;
+  }
+
+  .form-btn__submit__text {
+    position: absolute;
+    transition: all 0.2s ease;
+  }
+  // .form-btn__submit__text__default {
+  //   position: absolute;
+  // }
+  // .form-btn__submit__text__sending {
+  //   transform: translateY(calc(100% + 10px));
+  // }
+  // .form-btn__submit__text__sending {
+  //   transform: translateY(calc(200% + 10px));
+  // }
+  // .form-btn__submit__text__sent {
+  //   transform: translateY(calc(300% + 10px));
+  // }
 
   .osx-modal__active {
     transform: none;
@@ -60,6 +88,7 @@
     .osx-modal__maximize {
       width: 100vw;
       height: 100vh;
+      max-height: unset;
       border-radius: 0;
 
       .osx-bar__dots__container {
@@ -67,11 +96,14 @@
       }
     }
   }
-  .form-btn {
-    @include btn;
-  }
 
   // For contact-me__form
+  .form-btn {
+    @include btn;
+    align-self: end;
+    height: calc(3rem + 20px);
+    overflow: hidden;
+  }
 
   .contact-me__form {
     display: flex;
@@ -82,20 +114,66 @@
     align-items: center;
     padding: 24px;
     gap: 24px;
+
+    h3 {
+      font-weight: 600;
+      color: var(--accent-color);
+      align-self: start;
+    }
+    p:not(.form-btn__submit__text) {
+      font-size: 1rem;
+      align-self: start;
+    }
   }
 
   .contact-me__form__input {
-    height: 100%;
-    resize: none;
-    @include form-input;
+    width: 100%;
+    padding: 10px;
+    font: inherit;
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+    border: solid 1px var(--accent-color);
+    border-radius: 4px;
+    height: 36px;
   }
 
-  .contact-me__form__name {
-    height: 50px;
-    @include form-input;
+  .contact-me__form__message {
+    height: 100%;
+    resize: none;
   }
-  .contact-me__form__email {
-    height: 50px;
-    @include form-input;
+
+  .submission-sucessful:not(.form-text, h3) {
+    // Added to each item in the form
+    border-color: rgba(180, 180, 180, 0.6);
+    pointer-events: none;
+    color: var(--text-color-low-emphasis);
+  }
+  .error-btn {
+    @include btn;
+    background-color: rgb(239, 35, 60, 0.8);
+    color: var(--text-color-high-emphasis);
+    border-color: var(--text-color-high-emphasis);
+    align-self: center;
+    width: 50%;
+    min-width: fit-content;
+    @include shake-animation;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: rgb(239, 35, 60, 0.4);
+      }
+    }
+
+    &:active {
+      background-color: rgb(239, 35, 60, 0.4);
+    }
+  }
+
+  .bad-input {
+    border-color: rgb(239, 35, 60, 0.8);
+    transition: border-color 0.3s ease;
+    animation: shake 0.3s ease;
+    @include shake-animation;
   }
 }

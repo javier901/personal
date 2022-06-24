@@ -4,12 +4,12 @@
   "description": "My work portfolio",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "build": "parcel build index.html --no-source-maps --dist-dir ./dist"
   },
   "author": "Omar Moquete",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0",
-    "parcel": "^2.6.0"
+    "@parcel/transformer-sass": "^2.6.1",
+    "parcel": "^2.6.1"
   }
 }
