@@ -150,6 +150,7 @@
   }
   &:active {
     @include btn-hover-active;
+    transform: unset;
   }
 }
 ///////// Responsive padding //////
@@ -183,13 +184,6 @@
       }
     }
 
-    ///////////// Modal /////////////////
-
-    .overlay {
-      .osx-modal {
-        width: 70vw;
-      }
-    }
     ///////////// SECTION 1 //////////////////
     .section-1 {
       @include tablet-padding;
@@ -535,7 +529,9 @@
       }
     }
 
-    //////// Footer //////////\
+    //////// Contact-me form //////////
+
+    //////// Footer //////////
 
     footer .c-r {
       font-size: 0.8rem;

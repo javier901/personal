@@ -28,8 +28,8 @@
       padding-top: 10px;
 
       .slider-dot {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
         background-color: var(--slider-background-color);
         border: none;
@@ -129,7 +129,7 @@
       align-self: center;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
       h2 {
         color: var(--accent-color);
         font-weight: 500;
@@ -140,7 +140,7 @@
       display: flex;
       flex-direction: column;
       justify-items: center;
-      gap: 16px;
+      gap: 14px;
       padding: 24px;
       width: 475px;
       height: fit-content;

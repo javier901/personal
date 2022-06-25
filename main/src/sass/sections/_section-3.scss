@@ -13,7 +13,7 @@
       align-self: center;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
 
       h2 {
         color: var(--accent-color);
@@ -175,11 +175,7 @@
         background-color: rgba(197, 202, 233, 0.5);
       }
     }
-    .skill-card__netlify {
-      &::before {
-        background-color: rgba(60, 171, 188, 0.5);
-      }
-    }
+
     .skill-card__npm {
       &::before {
         background-color: rgba(203, 55, 55, 0.5);

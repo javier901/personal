@@ -25,6 +25,7 @@
 
   .osx-modal {
     @include osx-window;
+    height: clamp(28rem, 80vh, 36rem);
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     transform: translateY(100%) scale(0.5);
     opacity: 0;
@@ -48,8 +49,6 @@
     display: flex;
     flex-direction: column;
     width: 500px;
-    height: 75vh;
-    min-height: 400px;
   }
 
   .form-btn__status__container {
@@ -59,25 +58,12 @@
     align-items: center;
     justify-content: center;
     width: 4rem;
-    height: 1rem;
   }
 
   .form-btn__submit__text {
     position: absolute;
     transition: all 0.2s ease;
   }
-  // .form-btn__submit__text__default {
-  //   position: absolute;
-  // }
-  // .form-btn__submit__text__sending {
-  //   transform: translateY(calc(100% + 10px));
-  // }
-  // .form-btn__submit__text__sending {
-  //   transform: translateY(calc(200% + 10px));
-  // }
-  // .form-btn__submit__text__sent {
-  //   transform: translateY(calc(300% + 10px));
-  // }
 
   .osx-modal__active {
     transform: none;
@@ -88,21 +74,54 @@
     .osx-modal__maximize {
       width: 100vw;
       height: 100vh;
-      max-height: unset;
       border-radius: 0;
 
       .osx-bar__dots__container {
         border-radius: 0;
       }
+
+      .contact-me__form__message {
+        min-height: unset;
+      }
     }
   }
 
   // For contact-me__form
+
+  .form-buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
   .form-btn {
     @include btn;
-    align-self: end;
-    height: calc(3rem + 20px);
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: var(--accent-color);
+    height: 2.2rem;
     overflow: hidden;
+    justify-self: end;
+    justify-content: center;
+    align-items: center;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        p {
+          color: var(--call-to-action-hover-text-color);
+        }
+      }
+    }
+
+    &:active {
+      p {
+        color: var(--call-to-action-hover-text-color);
+      }
+    }
+
+    p {
+      color: var(--call-to-action-text-color);
+      font-size: 1rem;
+    }
   }
 
   .contact-me__form {
@@ -112,17 +131,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 24px;
-    gap: 24px;
+    padding: 14px;
+    gap: 14px;
 
-    h3 {
-      font-weight: 600;
-      color: var(--accent-color);
-      align-self: start;
-    }
-    p:not(.form-btn__submit__text) {
+    p {
       font-size: 1rem;
-      align-self: start;
+    }
+
+    .contact-me__form__text {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+
+      h3 {
+        font-weight: 600;
+        color: var(--accent-color);
+        align-self: start;
+      }
     }
   }
 
@@ -140,6 +165,7 @@
 
   .contact-me__form__message {
     height: 100%;
+    min-height: 2rem;
     resize: none;
   }
 
@@ -151,27 +177,30 @@
   }
   .error-btn {
     @include btn;
-    background-color: rgb(239, 35, 60, 0.8);
-    color: var(--text-color-high-emphasis);
-    border-color: var(--text-color-high-emphasis);
-    align-self: center;
+    background-color: var(--error-color);
+    color: #fff;
+    border: unset;
+    justify-self: center;
     width: 50%;
     min-width: fit-content;
     @include shake-animation;
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background-color: rgb(239, 35, 60, 0.4);
+        border: solid 1px var(--text-color-high-emphasis);
+        box-shadow: var(--shadow);
+        background-color: var(--error-color);
       }
     }
 
     &:active {
-      background-color: rgb(239, 35, 60, 0.4);
+      background-color: var(--error-color);
+      box-shadow: var(--shadow);
     }
   }
 
   .bad-input {
-    border-color: rgb(239, 35, 60, 0.8);
+    border-color: var(--error-color);
     transition: border-color 0.3s ease;
     animation: shake 0.3s ease;
     @include shake-animation;

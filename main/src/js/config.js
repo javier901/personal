@@ -31,7 +31,9 @@ export const COLORS = {
     lighterAccentColor: "rgba(100, 255, 219, 0.2)",
     aboutMeHColor: "var(--accent-color)",
     aboutMePColor: "var(--text-color-high-emphasis)",
-    footerColor: "#1b1b1b",
+    diagonalColor: "#1b1b1b",
+    callToActionAccentColor: "#444",
+    callToActionHoverAccentColor: "#64ffda",
   },
 
   lightThemeColors: {
@@ -56,6 +58,8 @@ export const COLORS = {
     aboutMeHColor: "rgba(255, 255, 255, 0.9)",
     aboutMePColor: "rgba(255, 255, 255, 0.9)",
     diagonalColor: "#f7f7f8",
+    callToActionAccentColor: "#fff",
+    callToActionHoverAccentColor: "#444",
   },
 
   cssRules: [
@@ -80,6 +84,8 @@ export const COLORS = {
     "--about-me-h-color",
     "--about-me-p-color",
     "--diagonal-color",
+    "--call-to-action-text-color",
+    "--call-to-action-hover-text-color",
   ],
 };
 

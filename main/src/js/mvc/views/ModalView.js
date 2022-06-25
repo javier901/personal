@@ -31,18 +31,22 @@ class ModalView extends Views {
         </div>
         <!-- Content -->
         <form class="contact-me__form">
+        <div class="contact-me__form__text">
         <h3>Hi, Omar here!</h3>
         <p class="form-text">Please send me a message if you have any questions or comments. I will contact you through the email you provide me. You can also include your phone number in your message. Thank you!</p>
+        </div>
           <input class="contact-me__form__input contact-me__form__name" name="Name" type="text" placeholder="Name"></input>
           <input class="contact-me__form__input contact-me__form__company" name="Company" type="text" placeholder="Company name (optional)"></input>
           <input class="contact-me__form__input contact-me__form__email" name="Email" type="text" placeholder="Email"></input>
           <textarea class="contact-me__form__input contact-me__form__message" name="Message" placeholder="Enter your message..."></textarea>
+          <div class="form-buttons">
           <button class="form-btn form-btn__submit" type="submit"><div class="form-btn__status__container">
           <p class="form-btn__submit__text form-btn__submit__text__default">Submit</p>
           <p class="form-btn__submit__text form-btn__submit__text__sending">Sending...</p>
           <p class="form-btn__submit__text form-btn__submit__text__sent">Done!</p>
           <p class="form-btn__submit__text form-btn__submit__text__sent">Error</p>
           </div></button>
+          </div>
       </form>
 
     </div>
@@ -66,6 +70,12 @@ class ModalView extends Views {
     this.overlay.addEventListener("click", (e) => {
       if (e.target === this.overlay) this.closeContactMe();
       else return;
+    });
+
+    // Esc key handler (Close modal)
+    document.addEventListener("keyup", (e) => {
+      if (e.key !== "Escape") return;
+      else this.closeContactMe();
     });
 
     // Handle same event on close and minimize btns click
@@ -161,7 +171,9 @@ class ModalView extends Views {
     errorBtn.classList.add("error-btn");
     errorBtn.textContent = "Oop! Something went wrong. Retry?";
     this.submitBtn.classList.add("hidden");
-    this.form.insertAdjacentElement("beforeend", errorBtn);
+    document
+      .querySelector(".form-buttons")
+      .insertAdjacentElement("beforeend", errorBtn);
     errorBtn.addEventListener("click", (e) => {
       e.preventDefault();
       this.hideElement(errorBtn);
