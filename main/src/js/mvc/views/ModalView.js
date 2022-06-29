@@ -63,8 +63,6 @@ class ModalView extends Views {
     this.btnMaximize = document.querySelector(".osx-modal__btn__maximize");
     this.textInput = document.querySelector(".contact-me__form__input");
     this.submitBtn = document.querySelector(".form-btn__submit");
-    // Disable scrolling when modal is open:
-    document.querySelector("body").classList.add("no-scroll");
 
     // Red and green buttons
     this.overlay.addEventListener("click", (e) => {
@@ -112,7 +110,6 @@ class ModalView extends Views {
     setTimeout(() => {
       // Kill element after animation finishes.
       this.overlay.remove();
-      document.querySelector("body").classList.remove("no-scroll");
       this.modal.remove();
     }, 500);
   }
