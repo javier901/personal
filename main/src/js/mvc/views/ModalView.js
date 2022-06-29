@@ -32,7 +32,7 @@ class ModalView extends Views {
         <!-- Content -->
         <form class="contact-me__form">
         <div class="contact-me__form__text">
-        <h3>Hi, Omar here!</h3>
+        <h3 class="form-main-text">Hi, Omar here!</h3>
         <p class="form-text">Please send me a message if you have any questions or comments. I will contact you through the email you provide me. You can also include your phone number in your message. Thank you!</p>
         </div>
           <input class="contact-me__form__input contact-me__form__name" name="Name" type="text" placeholder="Name"></input>
@@ -145,7 +145,7 @@ class ModalView extends Views {
       this.formButtonTextElements[0].style.transform = `translateY(calc(-100% - 10px))`;
       this.formButtonTextElements[1].style.transform = `translateY(0)`;
 
-      // Remove all pointer events / Disable submitBtn
+      // Remove all pointer events / Disable submitBtn.
       this.submitBtn.style.pointerEvents = "none";
     }
 
@@ -157,7 +157,11 @@ class ModalView extends Views {
       this.submitBtn.style.backgroundColor = "var(--accent-color-transparent)";
 
       Array.from(this.form.children).forEach((child) => {
-        if (child === this.submitBtn) return;
+        if (
+          child === this.submitBtn ||
+          child === document.querySelector(".contact-me__form__text")
+        )
+          return;
         child.classList.add("submission-sucessful");
       });
 

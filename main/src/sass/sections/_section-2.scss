@@ -55,5 +55,11 @@
       }
     }
     @include diagonal-background;
+
+    @media (max-width: 1048px) and (min-width: 950px) {
+      article {
+        max-width: 620px !important;
+      }
+    }
   }
 }
