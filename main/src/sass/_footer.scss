@@ -2,43 +2,85 @@
   footer {
     @include pc-padding;
     padding-bottom: 18px;
-    display: flex;
-    position: relative;
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+    row-gap: 52px;
     width: 100vw;
-    height: 400px;
-    overflow: hidden;
+    height: fit-content;
 
-    .heart {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
+    label {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-color-medium-emphasis);
+      cursor: pointer;
+    }
+  }
 
-      svg {
-        height: 100%;
-        width: 100%;
-        transform: translateY(1px);
+  .footer-main-text {
+    font-size: 2rem;
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    color: var(--accent-color);
+    font-weight: 500;
+  }
+
+  .footer-content__container {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    max-width: 680px;
+    justify-content: space-between;
+    justify-self: center;
+  }
+  .footer-link__group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .c-r {
+    justify-self: center;
+    text-align: center;
+    color: var(--text-color-low-emphasis);
+    font-size: 1rem;
+  }
+  svg:not(.footer__icon) {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    transform: translateY(3px);
+  }
+
+  .footer-link__item {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    transition: all 0.1s ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        transform: scale(1.2);
+        label {
+          color: var(--accent-color);
+        }
       }
     }
 
-    .c-r {
-      @include flex-spaced-between;
-      color: var(--text-color-low-emphasis);
-      width: 100%;
-      align-items: center;
-      align-self: end;
-      gap: 40px;
+    &:active {
+      transform: scale(1.2);
+      label {
+        color: var(--accent-color);
+      }
     }
+  }
 
-    .c-r p {
-      font-size: 1rem;
-    }
-    .c-r__left {
-      bottom: 12px;
-      left: 40px;
-    }
-    .c-r__right {
-      bottom: 12px;
-      right: 40px;
-    }
+  .footer__icon {
+    stroke: var(--accent-color);
+    stroke-width: 2;
+    width: 22px;
+    height: 22px;
   }
 }
