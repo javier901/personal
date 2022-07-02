@@ -65,11 +65,6 @@
     transition: all 0.2s ease;
   }
 
-  // .form-btn__submit__text__sent {
-  //   // color: var(--accent-color);
-  //   // color: #fff;
-  // }
-
   .osx-modal__active {
     transform: none;
     opacity: 1;
@@ -91,8 +86,7 @@
     }
   }
 
-  // For contact-me__form
-
+  /////////////////// FOR CONTACT-ME FORM ////////////////////////
   .form-buttons {
     width: 100%;
     display: grid;
@@ -208,5 +202,91 @@
     transition: border-color 0.3s ease;
     animation: shake 0.3s ease;
     @include shake-animation;
+  }
+}
+
+/////////////// FOR REGULAR MODALS //////////////////
+
+.regular-window__wrapper {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  label {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+    user-select: all;
+  }
+
+  a {
+    font-size: 1em;
+    width: fit-content;
+    display: inline-block;
+    text-decoration: none;
+    &:link,
+    &:visited {
+      color: var(--text-color-high-emphasis);
+    }
+
+    p {
+      transition: all 0.1s ease;
+      text-decoration: underline var(--text-color-medium-emphasis);
+
+      &:hover {
+        text-decoration: underline var(--accent-color);
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+
+.regular-window__main-text {
+  color: var(--accent-color);
+  // align-self: start;
+  // font-size: 1.2rem;
+  font-weight: 600;
+}
+.regular-window__message {
+  // font-size: 1rem;
+}
+.regular-window__main-text {
+}
+.contact-item {
+  display: flex;
+  flex-direction: column;
+}
+.get-number__container {
+  display: grid;
+  grid-template-columns: 0fr 0fr;
+  grid-template-rows: 0fr 0fr;
+  column-gap: 10;
+  row-gap: 6px;
+  margin-top: 6px;
+
+  button {
+    @include btn;
+    padding: 0.6rem;
+    width: max-content;
+    font-size: 0.8rem;
+    grid-column: 0 /1;
+    grid-row: 2 /3;
+  }
+
+  input {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 10px;
+    width: clamp(200px, 30vw, 300px);
+    grid-column: 1 / -1;
+  }
+  label {
+    color: var(--text-color-medium-emphasis);
+    font-size: 0.8rem;
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
   }
 }

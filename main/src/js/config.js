@@ -148,35 +148,45 @@ export const SCRIPT = [
 
 // Regular window inner HTML
 export const OPEN_CONTACT_INFO_MARKUP = `
-<div class="regular-window__content">
-  <h3 class="regular-window__main-text">
-    Hi, Omar here!
-  </h3>
+<div class="regular-window__wrapper">
+  <h3 class="regular-window__main-text">Hi, Omar here!</h3>
+  <p class="regular-window__message">These are the ways you can contact me:</p>
 
-  <p>These are the ways you can contact me.</p>
-  
   <div class="contact-item">
-  <label>Primary email address (Preferred):</label>
+    <label>Primary email address (Preferred):</label>
+    <a href="mailto:moqueteperez@gmail.com?subject=From Omar Moquete's portfolio:&nbsp;"><p>moqueteperez@gmail.com</p></a>
   </div>
 
   <div class="contact-item">
-  <label>Secondary email address:</label>
+    <label>Secondary email address:</label>
+    <a href="mailto:moqueteperez@outlook.com?subject=From Omar Moquete's portfolio:&nbsp;"><p>moqueteperez@outlook.com</p></a>
   </div>
 
   <div class="contact-item">
-  <label>Phone number (for calls, WhatsApp and Telegram):</label>
+    <label>Phone number (for calls, WhatsApp and Telegram):</label>
+    <div class="get-number__container">
+      <input
+        type="text"
+        placeholder="Please enter your email"
+      ></input>
+      <button>Get number</button>
+      <label>Just to know who requests my phone number 😊</label>
+    </div>
   </div>
 
   <div class="contact-item">
-  <label>Instagram username:</label>
+    <label>Instagram username:</label>
+    <p>justdominican_gg</p>
   </div>
 
   <div class="contact-item">
-  <label>Twitter username:</label>
+    <label>Twitter username:</label>
+    <p>@_OmarMoquete</p>
   </div>
 
   <div class="contact-item">
-  <label>Discord username:</label>
+    <label>Discord username:</label>
+    <p>Omar(JustDominican)#6193</p>
   </div>
 </div>
 `;
