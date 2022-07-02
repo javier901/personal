@@ -1,5 +1,6 @@
 @mixin footer {
   footer {
+    user-select: none;
     @include pc-padding;
     padding-bottom: 18px;
     display: grid;
@@ -14,54 +15,62 @@
       color: var(--text-color-medium-emphasis);
       cursor: pointer;
     }
-  }
 
-  .footer-main-text {
-    font-size: 2rem;
-    text-align: center;
-    display: inline-block;
-    width: fit-content;
-    height: fit-content;
-    justify-self: center;
-    color: var(--accent-color);
-    font-weight: 500;
-  }
+    a {
+      text-decoration: none;
+    }
+    .footer-main-text {
+      font-size: 1.4rem;
+      text-align: center;
+      display: inline-block;
+      width: fit-content;
+      height: fit-content;
+      justify-self: center;
+      color: var(--accent-color);
+      font-weight: 500;
+    }
 
-  .footer-content__container {
-    display: flex;
-    height: fit-content;
-    width: 100%;
-    max-width: 680px;
-    justify-content: space-between;
-    justify-self: center;
-  }
-  .footer-link__group {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
+    .c-r {
+      justify-self: center;
+      text-align: center;
+      color: var(--text-color-low-emphasis);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    svg:not(.footer__icon) {
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      transform: translateY(3px);
+    }
 
-  .c-r {
-    justify-self: center;
-    text-align: center;
-    color: var(--text-color-low-emphasis);
-    font-size: 1rem;
-  }
-  svg:not(.footer__icon) {
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    transform: translateY(3px);
-  }
+    .footer__links {
+      display: inline-block;
+      text-align: center;
+    }
 
-  .footer-link__item {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    transition: all 0.1s ease;
+    .footer__link__wrapper {
+      display: inline-block;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
 
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
+    .footer-link__item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.1s ease;
+      width: fit-content;
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          transform: scale(1.1);
+          label {
+            color: var(--accent-color);
+          }
+        }
+      }
+
+      &:active {
         transform: scale(1.2);
         label {
           color: var(--accent-color);
@@ -69,18 +78,12 @@
       }
     }
 
-    &:active {
-      transform: scale(1.2);
-      label {
-        color: var(--accent-color);
-      }
+    .footer__icon {
+      stroke: var(--accent-color);
+      stroke-width: 1;
+      fill: none;
+      width: 1.6rem;
+      height: 1.6rem;
     }
-  }
-
-  .footer__icon {
-    stroke: var(--accent-color);
-    stroke-width: 2;
-    width: 22px;
-    height: 22px;
   }
 }

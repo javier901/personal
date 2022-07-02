@@ -26,14 +26,14 @@
     .controls {
       @include flex-spaced-between;
       align-items: center;
-      gap: 15vw;
+      gap: 10vw;
     }
 
     nav {
       @include flex-spaced-between;
       flex-shrink: 1;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
       font-weight: 500;
 
       label {

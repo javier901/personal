@@ -1,39 +1,93 @@
 import Views from "./Views";
 import { FORM_SUBMISSION_MESSAGE } from "../../config";
+import { destroyElement } from "../../helpers";
 
 class ModalView extends Views {
   sayHi = document.querySelector(".say-hi");
 
   addHandler(submitForm) {
     this.sayHi.addEventListener("click", () => {
-      this.openContactMe();
-      // this.form is available after this.openContactMe returns
-      this.form.addEventListener("keyup", (e) => {
-        if (!e.target.closest(".contact-me__form__input")) return;
-        e.target.classList.remove("bad-input");
-      });
+      this.openContactMe(submitForm);
     });
-
-    // Adds function to class
-    this.submitForm = submitForm;
   }
 
-  openContactMe() {
+  openRegularWindow(innerHTML = "") {
+    const markup = `
+    <div class="overlay regular-window">
+    <div class="osx-modal osx-modal__contact-me">
+      <div class="osx-bar">
+        <div class="osx-bar__dots__container">
+          <div class="osx-modal__btn osx-modal__btn__close osx-bar__dots red-dot modal-dot"></div>
+          <div class="osx-modal__btn osx-modal__btn__close osx-bar__dots yellow-dot modal-dot"></div>
+          <div class="osx-modal__btn  osx-modal__btn__maximize osx-bar__dots green-dot modal-dot"></div>
+        </div>
+        </div>
+        <!-- Content -->
+        <div class="regular-window__content">
+        ${innerHTML}
+        </div>
+    </div>
+  </div>
+`;
+
+    document.querySelector("main").insertAdjacentHTML("afterend", markup);
+    const regularWindow = document.querySelector(".regular-window");
+
+    // Create properties after element insertion.
+    this.regularOverlay = document.querySelector(".overlay");
+
+    this.regularModal = document.querySelector(".osx-modal");
+    this.regularBtnMaximize = document.querySelector(
+      ".osx-modal__btn__maximize"
+    );
+    this.regularBtnClose = document.querySelectorAll(".osx-modal__btn__close");
+
+    // Red and green buttons
+    this.regularOverlay.addEventListener("click", (e) => {
+      if (e.target === this.regularOverlay) this.hideModal(true, regularWindow);
+      else return;
+    });
+
+    // Esc key handler (Close modal)
+    document.addEventListener("keyup", (e) => {
+      if (e.key !== "Escape") return;
+      else this.hideModal(true, regularWindow);
+    });
+
+    // Handle same event on close and minimize btns click
+
+    this.regularBtnClose.forEach((btn) => {
+      btn.addEventListener(
+        "click",
+        this.hideModal.bind(this, true, regularWindow)
+      );
+    });
+
+    this.regularBtnMaximize.addEventListener("click", () => {
+      this.regularModal.classList.toggle("osx-modal__maximize");
+    });
+
+    // Adds function execution to event loop in order to make opening animation visible.
+    // True is passed so that show() can execute regular window algorithm
+    setTimeout(this.show.bind(this, true));
+  }
+
+  openContactMe(submitForm) {
     const markup = `
     <div class="overlay">
     <div class="osx-modal osx-modal__contact-me">
       <div class="osx-bar">
         <div class="osx-bar__dots__container">
           <div class="osx-modal__btn osx-modal__btn__close osx-bar__dots red-dot modal-dot"></div>
-          <div class="osx-modal__btn osx-modal__btn__maximize osx-bar__dots yellow-dot modal-dot"></div>
-          <div class="osx-modal__btn osx-modal__btn__close osx-bar__dots green-dot modal-dot"></div>
+          <div class="osx-modal__btn osx-modal__btn__close osx-bar__dots yellow-dot modal-dot"></div>
+          <div class="osx-modal__btn  osx-modal__btn__maximize osx-bar__dots green-dot modal-dot"></div>
         </div>
         </div>
         <!-- Content -->
         <form class="contact-me__form">
         <div class="contact-me__form__text">
-        <h3 class="form-main-text">Hi, Omar here!</h3>
-        <p class="form-text">Please send me a message if you have any questions or comments. I will contact you through the email you provide me. You can also include your phone number in your message. Thank you!</p>
+        <h3 class="form-main-text">Hey there!</h3>
+        <p class="form-text">Please send me a message if you have any questions or comments. I will contact you through the email you provide me. If you include your phone number in your message, I'll call you. You can also click the green button to maximize this window. Thank you!</p>
         </div>
           <input class="contact-me__form__input contact-me__form__name" name="Name" type="text" placeholder="Name"></input>
           <input class="contact-me__form__input contact-me__form__company" name="Company" type="text" placeholder="Company name (optional)"></input>
@@ -58,11 +112,11 @@ class ModalView extends Views {
     // Create properties after element insertion.
     this.overlay = document.querySelector(".overlay");
     this.modal = document.querySelector(".osx-modal");
-    this.form = document.querySelector(".contact-me__form");
     this.btnClose = document.querySelectorAll(".osx-modal__btn__close");
     this.btnMaximize = document.querySelector(".osx-modal__btn__maximize");
     this.textInput = document.querySelector(".contact-me__form__input");
     this.submitBtn = document.querySelector(".form-btn__submit");
+    this.form = document.querySelector(".contact-me__form");
 
     // Red and green buttons
     this.overlay.addEventListener("click", (e) => {
@@ -103,6 +157,15 @@ class ModalView extends Views {
 
     // Adds function execution to event loop in order to make opening animation visible.
     setTimeout(this.show.bind(this));
+
+    // this.form is available after this.openContactMe returns
+    this.form.addEventListener("keyup", (e) => {
+      if (!e.target.closest(".contact-me__form__input")) return;
+      e.target.classList.remove("bad-input");
+    });
+
+    // Adds function to class
+    this.submitForm = submitForm;
   }
 
   closeContactMe() {
@@ -121,14 +184,26 @@ class ModalView extends Views {
     document.querySelector(".form-text").textContent = text;
   }
 
-  show() {
-    this.overlay.classList.add("overlay__active");
-    this.modal.classList.add("osx-modal__active");
+  show(isRegular = false) {
+    if (isRegular) {
+      this.regularOverlay.classList.add("overlay__active");
+      this.regularModal.classList.add("osx-modal__active");
+    } else {
+      this.overlay.classList.add("overlay__active");
+      this.modal.classList.add("osx-modal__active");
+    }
   }
 
-  hideModal() {
-    this.overlay.classList.remove("overlay__active");
-    this.modal.classList.remove("osx-modal__active");
+  hideModal(isRegular = false, elementToDestroy) {
+    if (isRegular) {
+      this.regularOverlay.classList.remove("overlay__active");
+      this.regularModal.classList.remove("osx-modal__active");
+      // Executes after animation.
+      setTimeout(() => destroyElement(elementToDestroy), 500);
+    } else {
+      this.overlay.classList.remove("overlay__active");
+      this.modal.classList.remove("osx-modal__active");
+    }
   }
 
   hideElement(element) {

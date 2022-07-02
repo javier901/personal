@@ -6,3 +6,7 @@ export const requestTimeout = function (seconds) {
     )
   );
 };
+
+export const destroyElement = function (element) {
+  element.remove();
+};

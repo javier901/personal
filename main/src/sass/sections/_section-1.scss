@@ -80,12 +80,10 @@
   // Text decor
 
   .typewriter__caret {
-    height: 1rem;
-    position: absolute;
+    height: inherit;
     animation: blinker 0.8s linear infinite;
-    fill: var(--caret-fill-color);
-    width: 1.1rem;
-
+    display: inline-block;
+    font-size: 0.8rem;
     @keyframes blinker {
       50% {
         opacity: 0;

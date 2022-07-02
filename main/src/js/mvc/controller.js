@@ -5,7 +5,12 @@ import MenuView from "./views/header/MenuView.js";
 import Typewriter from "./views/Typewriter.js";
 import Slider from "./views/Slider.js";
 import ModalView from "./views/ModalView";
-import { AJAX_CALL_TIMEOUT_SECONDS, FORM_API } from "../config.js";
+import {
+  AJAX_CALL_TIMEOUT_SECONDS,
+  FORM_API,
+  OPEN_CONTACT_INFO_MARKUP,
+} from "../config.js";
+import footerView from "./views/footerView.js";
 
 const controlTheme = function () {
   lightTheme.isActive = !lightTheme.isActive;
@@ -50,6 +55,8 @@ const controlFormSubmission = async function (formData) {
     console.error(`🚨 ${err} 🚨`);
   }
 };
+
+const controlFooter = function () {};
 const init = function () {
   if (lightTheme.load()) {
     lightTheme.isActive = !lightTheme.isActive;
@@ -61,6 +68,14 @@ const init = function () {
   Typewriter.addHandler();
   Slider.addHandler();
   ModalView.addHandler(controlFormSubmission);
+
+  // controlFormSubmission is passed in because it will be handled on one of the footer links
+  // openContactMe is binded to itself so arguments can be passed into the function without calling it.
+  footerView.addHandler(
+    controlFooter,
+    ModalView.openContactMe.bind(ModalView, controlFormSubmission),
+    ModalView.openRegularWindow.bind(ModalView, OPEN_CONTACT_INFO_MARKUP)
+  );
 };
 
 init();

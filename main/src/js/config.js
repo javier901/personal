@@ -145,3 +145,38 @@ export const SCRIPT = [
   ["red", "()"],
   ["code-art__base-color", ";"],
 ];
+
+// Regular window inner HTML
+export const OPEN_CONTACT_INFO_MARKUP = `
+<div class="regular-window__content">
+  <h3 class="regular-window__main-text">
+    Hi, Omar here!
+  </h3>
+
+  <p>These are the ways you can contact me.</p>
+  
+  <div class="contact-item">
+  <label>Primary email address (Preferred):</label>
+  </div>
+
+  <div class="contact-item">
+  <label>Secondary email address:</label>
+  </div>
+
+  <div class="contact-item">
+  <label>Phone number (for calls, WhatsApp and Telegram):</label>
+  </div>
+
+  <div class="contact-item">
+  <label>Instagram username:</label>
+  </div>
+
+  <div class="contact-item">
+  <label>Twitter username:</label>
+  </div>
+
+  <div class="contact-item">
+  <label>Discord username:</label>
+  </div>
+</div>
+`;
