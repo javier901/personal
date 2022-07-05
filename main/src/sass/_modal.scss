@@ -185,7 +185,6 @@
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        border: solid 1px var(--text-color-high-emphasis);
         box-shadow: var(--shadow);
         background-color: var(--error-color);
       }
@@ -249,11 +248,11 @@
   // font-size: 1.2rem;
   font-weight: 600;
 }
-.regular-window__message {
-  // font-size: 1rem;
-}
-.regular-window__main-text {
-}
+// .regular-window__message {
+//   // font-size: 1rem;
+// }
+// .regular-window__main-text {
+// }
 .contact-item {
   display: flex;
   flex-direction: column;
