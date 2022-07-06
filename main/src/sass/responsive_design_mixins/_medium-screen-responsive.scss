@@ -1,0 +1,133 @@
+@mixin medium-screen-padding {
+  padding-left: 8vw;
+  padding-right: 8vw;
+}
+@mixin medium-screen-responsive {
+  @media (max-width: 950px) and (min-width: 600px) {
+    main {
+      padding-top: 150px;
+    }
+
+    ////////////// HEADER //////////////////
+    header {
+      .controls {
+        // Make nav and dt slider closer if screen < 750px
+        gap: 20px;
+      }
+    }
+
+    ///////////// SECTION 1 //////////////////
+    .section-1 {
+      @include medium-screen-padding;
+    }
+    .section-1 article {
+      position: relative;
+      align-items: center;
+    }
+
+    .section-1 article .introduction {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 400px;
+      height: fit-content;
+      padding: 24px;
+      border-radius: 15px;
+      background-color: var(--introduction-window-color);
+      box-shadow: var(--shadow);
+      .introduction-filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        backdrop-filter: blur(2px);
+      }
+    }
+
+    ///////// SECTION 2 //////////////
+
+    .section-2 {
+      @include medium-screen-padding;
+    }
+
+    .section-2 .about-me__wrapper {
+      display: flex;
+      flex-direction: column;
+
+      align-content: center;
+      img {
+        position: static;
+        transform: translateY(42px);
+        align-self: center;
+      }
+
+      .about-me {
+        display: flex;
+      }
+
+      article {
+        transform: none;
+        padding-top: 62px;
+      }
+    }
+
+    /////////////// SECTION 3 //////////////
+    .section-3 {
+      @include medium-screen-padding;
+      gap: 26px;
+      .skill-card__wrapper {
+        grid-template-columns: 18vw 18vw 18vw 18vw;
+        padding: 14px;
+      }
+
+      .skill-card {
+        height: 18vw;
+      }
+
+      .skill-card__svg-wrapper {
+        width: 72px;
+        height: 72px;
+      }
+      h1 {
+        width: calc(72vw + 36px);
+      }
+    }
+
+    ///////// SECTION 4 //////////////
+    .section-4 {
+      .project-description {
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        box-shadow: none;
+        background-color: transparent;
+      }
+
+      .project-description::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--background-lighter-color);
+        z-index: -1;
+        backdrop-filter: blur(10px);
+        opacity: 0.8;
+      }
+
+      .project-img {
+        width: 100%;
+      }
+    }
+
+    ///////// Footer ////////
+    footer {
+      .c-r {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

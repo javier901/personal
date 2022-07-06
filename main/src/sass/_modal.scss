@@ -205,7 +205,6 @@
 }
 
 /////////////// FOR REGULAR MODALS //////////////////
-
 .regular-window__wrapper {
   padding: 14px;
   display: flex;
@@ -244,19 +243,14 @@
 
 .regular-window__main-text {
   color: var(--accent-color);
-  // align-self: start;
-  // font-size: 1.2rem;
   font-weight: 600;
 }
-// .regular-window__message {
-//   // font-size: 1rem;
-// }
-// .regular-window__main-text {
-// }
+
 .contact-item {
   display: flex;
   flex-direction: column;
 }
+
 .get-number__container {
   display: grid;
   grid-template-columns: 0fr 0fr;
@@ -266,7 +260,6 @@
   margin-top: 6px;
 
   button {
-    @include btn;
     padding: 0.6rem;
     width: max-content;
     font-size: 0.8rem;

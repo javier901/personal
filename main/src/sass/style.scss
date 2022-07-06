@@ -5,11 +5,14 @@
 @import "main-content";
 @import "footer";
 @import "modal";
+@import "responsive_design_mixins/large-screen-responsive";
+@import "responsive_design_mixins/medium-screen-responsive";
+@import "responsive_design_mixins/small-screen-responsive";
 @font-face {
   font-family: "Consolas";
   src: url("../../fonts/consola.ttf");
 }
-///////////////////
+
 * {
   margin: 0;
   padding: 0;
@@ -70,8 +73,8 @@ body {
 @include modal;
 
 // Responsive design
-@include tablet-responsive;
-@include mobile-responsive;
+@include medium-screen-responsive;
+@include small-screen-responsive;
 
 // togglers
 .invisible {
