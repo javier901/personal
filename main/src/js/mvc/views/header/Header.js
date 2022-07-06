@@ -6,17 +6,29 @@ class Header extends Views {
   navElement = document.querySelector("nav");
   navChildren = document.querySelectorAll(".nav-lbl");
 
-  //
-  addHandler(handler) {
+  init() {
     this.hamburgerAndXContainer.addEventListener("click", (e) => {
       this.toggleFixedHeader(e);
     });
 
-    this.navChildren.forEach((child) =>
+    this.navChildren.forEach((child) => {
       child.addEventListener("mouseenter", (e) => {
         this.navOnMouseEnter(e);
-      })
-    );
+      });
+
+      child.addEventListener("click", (e) => {
+        const aboutMeBtn = document.querySelector(".nav-lbl__about-me");
+        const projectsBtn = document.querySelector(".nav-lbl__projects");
+
+        const aboutMeSection = document.querySelector(".section-2");
+        const projectsSection = document.querySelector(".section-4");
+
+        const scrollTo = (element) => element.scrollIntoView(true);
+
+        if (e.target === aboutMeBtn) scrollTo(aboutMeSection);
+        if (e.target === projectsBtn) scrollTo(projectsSection);
+      });
+    });
   }
 
   // Makes header fixed

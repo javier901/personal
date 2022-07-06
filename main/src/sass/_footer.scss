@@ -47,6 +47,14 @@
     .footer__links {
       display: inline-block;
       text-align: center;
+      width: 80vw;
+      justify-self: center;
+      max-width: 900px;
+
+      @media (max-width: 350px) {
+        text-align: left;
+        width: 11rem;
+      }
     }
 
     .footer__link__wrapper {

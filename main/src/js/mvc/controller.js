@@ -1,6 +1,6 @@
 import { lightTheme } from "./model.js"; // state.save, state.load
 import LightThemeView from "./views/header/LightThemeView.js";
-import Header from "./views/header/Header.js";
+import HeaderView from "./views/header/Header.js";
 import MenuView from "./views/header/MenuView.js";
 import Typewriter from "./views/Typewriter.js";
 import Slider from "./views/Slider.js";
@@ -64,7 +64,7 @@ const init = function () {
   }
   LightThemeView.addHandler(controlTheme);
   MenuView.addHandler();
-  Header.addHandler();
+  HeaderView.init();
   Typewriter.addHandler();
   Slider.addHandler();
   ModalView.addHandler(controlFormSubmission);

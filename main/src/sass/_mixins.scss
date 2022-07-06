@@ -7,8 +7,9 @@
   &::before {
     content: "";
     position: absolute;
+    top: 0;
+    bottom: 0;
     width: 130%;
-    height: 100%;
     background-color: var(--diagonal-color);
     transform: rotate(4deg);
     z-index: -10;
@@ -176,7 +177,6 @@
     }
 
     ////////////// HEADER //////////////////
-
     header {
       .controls {
         // Make nav and dt slider closer if screen < 750px
@@ -252,9 +252,6 @@
 
       .skill-card {
         height: 18vw;
-        .technology-description h2 {
-          font-size: 0.8rem;
-        }
       }
 
       .skill-card__svg-wrapper {
@@ -267,7 +264,6 @@
     }
 
     ///////// SECTION 4 //////////////
-
     .section-4 {
       .project-description {
         width: 100%;
@@ -369,7 +365,6 @@
         position: absolute;
         justify-content: flex-end;
         top: 200px;
-        padding-right: 50px;
       }
 
       .introduction h2 {
@@ -384,7 +379,7 @@
 
     .section-2 {
       @include mobile-padding;
-      padding-top: 120px;
+      padding-top: 180px;
 
       img {
         align-self: start;
@@ -533,8 +528,19 @@
 
     //////// Footer //////////
 
-    footer .c-r {
-      font-size: 0.8rem;
+    footer {
+      label {
+        font-size: 0.8rem;
+      }
+
+      .footer__icon {
+        height: 1.2rem;
+        width: 1.2rem;
+      }
+
+      .c-r {
+        font-size: 0.8rem;
+      }
     }
   }
 }

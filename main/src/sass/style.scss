@@ -19,6 +19,7 @@
 :root {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* width */
@@ -67,6 +68,10 @@ body {
 @include main-content;
 @include footer;
 @include modal;
+
+// Responsive design
+@include tablet-responsive;
+@include mobile-responsive;
 
 // togglers
 .invisible {

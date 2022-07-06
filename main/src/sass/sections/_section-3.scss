@@ -7,6 +7,8 @@
     gap: 100px;
     justify-content: center;
     align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     article {
       width: calc(72vw + 36px);
@@ -129,18 +131,29 @@
     }
 
     .skill-card:hover {
-      transform: scale(1.2) rotate(360deg);
-      transition: all 0.2s ease-in-out;
+      transform: scale(1.6) rotate(360deg);
+      transition: all 0.4s ease-out;
+      z-index: 5;
+
+      .skill-card__content {
+        transform: translateY(12px);
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.4s;
+      }
+
+      .technology-description h2 {
+        opacity: 0;
+      }
 
       &::before {
         transform: scale(30);
-        transition: transform 1s ease-in-out;
+        transition: transform 1.8s ease-in-out;
       }
     }
 
     .technology-description h2 {
       font-size: 1rem;
       font-weight: inherit;
+      transition: all 0.2s ease-out;
     }
 
     /////////// ::before color
@@ -212,7 +225,10 @@
         background-color: rgba(28, 121, 192, 0.5);
       }
     }
-
-    padding-bottom: 200px;
+    .skill-card__vite {
+      &::before {
+        background-color: rgba(147, 106, 254, 0.5);
+      }
+    }
   }
 }

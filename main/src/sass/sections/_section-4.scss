@@ -6,7 +6,9 @@
     align-items: center;
     gap: 32px;
     @include pc-padding;
-    padding-bottom: 150px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
     .slider__container {
       display: grid;
       grid-template-columns: 0fr 1fr 0fr;
