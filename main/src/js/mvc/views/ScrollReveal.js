@@ -9,7 +9,6 @@ class ScrollReveal extends Views {
           const section3 = document.querySelector(".section-3");
 
           entry.target.classList.add("reveal");
-
           if (entry.target !== section1 && entry.target !== section3)
             observer.unobserve(entry.target);
           else {
@@ -26,7 +25,10 @@ class ScrollReveal extends Views {
               }, 420);
             }
 
-            if (entry.target === section3) {
+            if (
+              entry.target === section3 &&
+              !(entry.target.getBoundingClientRect().y < 0)
+            ) {
               // 1) Add offset
               this.header.classList.add("fixed-header-offset");
 

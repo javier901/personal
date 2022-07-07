@@ -1,7 +1,7 @@
 import Views from "./Views";
 
 class FooterView extends Views {
-  addHandler(handler, sendMessageCallback, createWindow) {
+  init(sendMessageCallback, createWindow) {
     const links = document.querySelector(".footer__links");
 
     Array.from(links.children).forEach((child) => {

@@ -82,14 +82,9 @@
       border-radius: 50%;
       align-self: center;
       justify-self: center;
-      overflow: hidden;
       gap: 10px;
-
+      z-index: 5;
       transition: all 0.3s ease-in-out;
-
-      &::before {
-        transition: transform 10s ease-in-out;
-      }
     }
 
     .skill-card__content {
@@ -107,11 +102,12 @@
     .skill-card::before {
       content: "";
       position: absolute;
-      left: calc(50% - 20px);
-      top: calc(50% - 20px);
-      width: 40px;
-      height: 40px;
+      left: calc(50% - 10px);
+      top: calc(50% - 10px);
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
+      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s;
       z-index: -1;
     }
 
@@ -131,13 +127,11 @@
     }
 
     .skill-card:hover {
-      transform: scale(1.6) rotate(360deg);
-      transition: all 0.4s ease-out;
-      z-index: 5;
+      transform: rotate(360deg);
 
       .skill-card__content {
         transform: translateY(12px);
-        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.4s;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s;
       }
 
       .technology-description h2 {
@@ -145,8 +139,7 @@
       }
 
       &::before {
-        transform: scale(30);
-        transition: transform 1.8s ease-in-out;
+        transform: scale(10);
       }
     }
 

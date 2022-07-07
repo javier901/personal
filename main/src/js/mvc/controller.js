@@ -1,4 +1,4 @@
-import { lightTheme } from "./model.js"; // state.save, state.load
+import { lightTheme } from "./model.js";
 import LightThemeView from "./views/header/LightThemeView.js";
 import HeaderView from "./views/header/Header.js";
 import MenuView from "./views/header/MenuView.js";
@@ -60,7 +60,7 @@ const controlFormSubmission = async function (formData) {
 const controlIntersections = function (
   elementsToObserve,
   behaviorCallback,
-  threshold = 0.2
+  threshold = 0.1
 ) {
   const options = {
     root: null,
@@ -75,8 +75,8 @@ const controlIntersections = function (
   });
 };
 
-const controlFooter = function () {};
-const init = function () {
+// Initializer IIFE
+(function () {
   if (lightTheme.load()) {
     lightTheme.isActive = !lightTheme.isActive;
     LightThemeView.enableLightTheme(lightTheme.isActive).toggleSwitch();
@@ -90,32 +90,9 @@ const init = function () {
 
   // controlFormSubmission is passed in because it will be handled on one of the footer links
   // openContactMe is binded to itself so arguments can be passed into the function without calling it.
-  FooterView.addHandler(
-    controlFooter,
+  FooterView.init(
     ModalView.openContactMe.bind(ModalView, controlFormSubmission),
     ModalView.openRegularWindow.bind(ModalView, OPEN_CONTACT_INFO_MARKUP)
   );
   ScrollReveal.init(controlIntersections);
-};
-
-init();
-
-// const callbackFuntion = function (entries, observer) {
-//   entries.forEach(function (entry) {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add("reveal");
-//     }
-
-//     observer.unobserve(element);
-//   });
-// };
-
-// const options = {
-//   root: null,
-//   rootMargin: "100px",
-//   threshold: 0.75,
-// };
-
-// const observer = new IntersectionObserver(callbackFuntion, options);
-
-// observer.observe(element);
+})();

@@ -14,7 +14,7 @@ class ModalView extends Views {
   openRegularWindow(innerHTML = "") {
     const markup = `
     <div class="overlay regular-window">
-    <div class="osx-modal osx-modal__contact-me">
+    <div class="osx-modal osx-modal__regular">
       <div class="osx-bar">
         <div class="osx-bar__dots__container">
           <div class="osx-modal__btn osx-modal__btn__close osx-bar__dots red-dot modal-dot"></div>

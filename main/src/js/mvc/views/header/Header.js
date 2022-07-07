@@ -8,13 +8,11 @@ class Header extends Views {
 
   init() {
     this.hamburgerAndXContainer.addEventListener("click", (e) => {
-      this.toggleFixedHeader(e);
+      // -------------------------------------------- show menu
     });
 
     this.navChildren.forEach((child) => {
       child.addEventListener("mouseenter", (e) => {
-        console.log(isTouchScreendevice());
-
         if (isTouchScreendevice()) return;
         this.navOnMouseEnter(e);
       });
@@ -32,12 +30,6 @@ class Header extends Views {
         if (e.target === projectsBtn) scrollTo(projectsSection);
       });
     });
-  }
-
-  // Makes header fixed
-  toggleFixedHeader() {
-    this.main.classList.toggle("for-main__header-active");
-    this.header.classList.toggle("dt-fixed-header");
   }
 
   // Controls nav hovering

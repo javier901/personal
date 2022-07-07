@@ -85,6 +85,12 @@
         height: 18vw;
       }
 
+      .skill-card:hover {
+        &::before {
+          transform: scale(8);
+        }
+      }
+
       .skill-card__svg-wrapper {
         width: 72px;
         height: 72px;

@@ -220,6 +220,7 @@
     right: 10px;
     @include vertical-banners__common-styles;
     color: var(--text-color-low-emphasis);
+    user-select: text;
     z-index: 100;
   }
 }

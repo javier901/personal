@@ -1,7 +1,5 @@
 import { LIGHT_THEME_NAME_IN_LOCAL_STORAGE } from "../config";
 
-export const state = {};
-
 export const lightTheme = {
   // Initialized with null to prevent "false" from triggering the dark theme on page load.
   isActive: null,

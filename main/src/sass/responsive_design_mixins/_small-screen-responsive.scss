@@ -124,6 +124,12 @@
         gap: 10px;
       }
 
+      .skill-card:hover {
+        &::before {
+          transform: scale(5);
+        }
+      }
+
       .skill-card__svg-wrapper {
         height: 10vw;
         width: 10vw;
