@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "My work portfolio",
   "scripts": {
-    "dev": "vite --open",
+    "dev": "vite --open --host",
     "build": "vite build",
     "preview": "vite preview"
   },

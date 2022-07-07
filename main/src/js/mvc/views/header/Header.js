@@ -1,8 +1,8 @@
+import { isTouchScreendevice } from "../../../helpers";
 import Views from "../Views";
 
 class Header extends Views {
   hamburgerAndXContainer = document.querySelector(".hamburger-x__container");
-  header = document.querySelector("header");
   navElement = document.querySelector("nav");
   navChildren = document.querySelectorAll(".nav-lbl");
 
@@ -13,6 +13,9 @@ class Header extends Views {
 
     this.navChildren.forEach((child) => {
       child.addEventListener("mouseenter", (e) => {
+        console.log(isTouchScreendevice());
+
+        if (isTouchScreendevice()) return;
         this.navOnMouseEnter(e);
       });
 
@@ -32,13 +35,18 @@ class Header extends Views {
   }
 
   // Makes header fixed
-  toggleFixedHeader(e) {
+  toggleFixedHeader() {
     this.main.classList.toggle("for-main__header-active");
     this.header.classList.toggle("dt-fixed-header");
   }
 
   // Controls nav hovering
   navOnMouseEnter(e) {
+    const reset = (element) => {
+      element.style.opacity = "1";
+      element.style.filter = "none";
+    };
+
     // Add styles to all children elements of nav
     this.navChildren.forEach((child) => {
       child.style.opacity = "0.2";
@@ -52,8 +60,7 @@ class Header extends Views {
     this.navElement.addEventListener("mouseleave", () => {
       this.navChildren.forEach((child) => {
         // Remove all styles when mouse leaves nav bar
-        child.style.opacity = "1";
-        child.style.filter = "none";
+        reset(child);
       });
     });
   }

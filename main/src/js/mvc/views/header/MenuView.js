@@ -4,19 +4,22 @@ class MenuView extends Views {
   hamburgerAndXContainer = document.querySelector(".hamburger-x__container");
 
   //
-  addHandler(handler) {
+  init() {
     this.hamburgerAndXContainer.addEventListener("click", (e) => {
       this.toggleHamburger(e);
     });
   }
 
-  toggleHamburger(e) {
+  toggleHamburger() {
+    const container = document.querySelector(".hamburger-x__container");
     const hamIcon = document.querySelector(".hamburger__icon");
-
     const XIcon = document.querySelector(".x__icon");
 
-    hamIcon.classList.toggle("invisible");
-    XIcon.classList.toggle("invisible");
+    container.classList.toggle("hamburger-x__container__active");
+    setTimeout(() => {
+      hamIcon.classList.toggle("invisible");
+      XIcon.classList.toggle("invisible");
+    }, 300);
   }
 }
 

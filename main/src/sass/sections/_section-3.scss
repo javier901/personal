@@ -1,6 +1,6 @@
 @mixin section-3 {
   .section-3 {
-    @include pc-padding;
+    @include large-screen-padding;
     width: 100vw;
     display: flex;
     flex-direction: column;

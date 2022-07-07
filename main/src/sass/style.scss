@@ -76,9 +76,8 @@ body {
 @include medium-screen-responsive;
 @include small-screen-responsive;
 
-// togglers
 .invisible {
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
   opacity: 0;
 }
 
@@ -88,4 +87,20 @@ body {
 
 .for-main__header-active {
   margin-top: 50px;
+}
+
+// Scroll reveal
+.section {
+  position: relative;
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease 0.2s;
+  transform: translateX(-50%);
+  &:nth-of-type(2n) {
+    transform: translateX(50%);
+  }
+}
+.reveal,
+.reveal:nth-of-type(2n) {
+  opacity: 1;
+  transform: unset;
 }

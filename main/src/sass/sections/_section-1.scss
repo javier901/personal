@@ -1,6 +1,6 @@
 @mixin section-1 {
   .section-1 {
-    @include pc-padding;
+    @include large-screen-padding;
     padding-bottom: 250px;
 
     article {

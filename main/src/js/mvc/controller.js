@@ -10,7 +10,8 @@ import {
   FORM_API,
   OPEN_CONTACT_INFO_MARKUP,
 } from "../config.js";
-import footerView from "./views/footerView.js";
+import FooterView from "./views/FooterView.js";
+import ScrollReveal from "./views/ScrollReveal.js";
 
 const controlTheme = function () {
   lightTheme.isActive = !lightTheme.isActive;
@@ -56,6 +57,24 @@ const controlFormSubmission = async function (formData) {
   }
 };
 
+const controlIntersections = function (
+  elementsToObserve,
+  behaviorCallback,
+  threshold = 0.2
+) {
+  const options = {
+    root: null,
+    threshold: threshold,
+  };
+  const observer = new IntersectionObserver(behaviorCallback, options);
+
+  observer.observe(elementsToObserve[0]);
+
+  elementsToObserve.forEach((element) => {
+    observer.observe(element);
+  });
+};
+
 const controlFooter = function () {};
 const init = function () {
   if (lightTheme.load()) {
@@ -63,7 +82,7 @@ const init = function () {
     LightThemeView.enableLightTheme(lightTheme.isActive).toggleSwitch();
   }
   LightThemeView.addHandler(controlTheme);
-  MenuView.addHandler();
+  MenuView.init();
   HeaderView.init();
   Typewriter.addHandler();
   Slider.addHandler();
@@ -71,11 +90,32 @@ const init = function () {
 
   // controlFormSubmission is passed in because it will be handled on one of the footer links
   // openContactMe is binded to itself so arguments can be passed into the function without calling it.
-  footerView.addHandler(
+  FooterView.addHandler(
     controlFooter,
     ModalView.openContactMe.bind(ModalView, controlFormSubmission),
     ModalView.openRegularWindow.bind(ModalView, OPEN_CONTACT_INFO_MARKUP)
   );
+  ScrollReveal.init(controlIntersections);
 };
 
 init();
+
+// const callbackFuntion = function (entries, observer) {
+//   entries.forEach(function (entry) {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add("reveal");
+//     }
+
+//     observer.unobserve(element);
+//   });
+// };
+
+// const options = {
+//   root: null,
+//   rootMargin: "100px",
+//   threshold: 0.75,
+// };
+
+// const observer = new IntersectionObserver(callbackFuntion, options);
+
+// observer.observe(element);

@@ -1,6 +1,8 @@
 class Views {
+  header = document.querySelector("header");
   main = document.querySelector("main");
   root = document.querySelector(":root");
+  sections = document.querySelectorAll(".section");
 
   firstLetterToUpperCase(word) {
     return word.substring(0, 1).toUpperCase() + word.substring(1);

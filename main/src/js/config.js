@@ -20,6 +20,7 @@ export const COLORS = {
     textColorHighEmphasis: "rgba(255, 255, 255)",
     textColorMediumEmphasis: "rgba(255, 255, 255, 0.6)",
     textColorLowEmphasis: "rgba(255, 255, 255, 0.4)",
+    fixedHeaderColor: "rgba(27, 27, 27, 0.3)",
     introductionWindowColor: "rgba(43, 43, 43, 0.6)",
     osxWindow: "#3b3b3b",
     osxBorderColor: "transparent",
@@ -31,9 +32,9 @@ export const COLORS = {
     lighterAccentColor: "rgba(100, 255, 219, 0.2)",
     aboutMeHColor: "var(--accent-color)",
     aboutMePColor: "var(--text-color-high-emphasis)",
-    diagonalColor: "#1b1b1b",
     callToActionAccentColor: "#444",
     callToActionHoverAccentColor: "#64ffda",
+    diagonalColor: "#1b1b1b",
   },
 
   lightThemeColors: {
@@ -43,9 +44,10 @@ export const COLORS = {
     accentColor: "#023e8a",
     accentColorTransparent: "rgba(2, 61, 138, 0.2)",
     sliderBackgroundColor: "#ddd",
-    textColorHighEmphasis: "rgba(4, 4, 4)",
+    textColorHighEmphasis: "#555",
     textColorMediumEmphasis: "rgba(4, 4, 4, 0.8)",
     textColorLowEmphasis: "rgba(4, 4, 4, 0.6)",
+    fixedHeaderColor: "rgba(247, 247, 248, 0.3)",
     introductionWindowColor: "rgba(255, 255, 255, 0.65)",
     osxWindow: "#f0f0f0",
     osxBorderColor: "#ccc",
@@ -57,9 +59,9 @@ export const COLORS = {
     lighterAccentColor: "var(--accent-color)",
     aboutMeHColor: "rgba(255, 255, 255, 0.9)",
     aboutMePColor: "rgba(255, 255, 255, 0.9)",
-    diagonalColor: "#f7f7f8",
     callToActionAccentColor: "#fff",
     callToActionHoverAccentColor: "#444",
+    diagonalColor: "#f7f7f8",
   },
 
   cssRules: [
@@ -72,6 +74,7 @@ export const COLORS = {
     "--text-color-high-emphasis",
     "--text-color-medium-emphasis",
     "--text-color-low-emphasis",
+    "--fixed-header-color",
     "--introduction-window-color",
     "--osx-window",
     "--osx-border-color",
@@ -83,9 +86,9 @@ export const COLORS = {
     "--lighter-accent-color",
     "--about-me-h-color",
     "--about-me-p-color",
-    "--diagonal-color",
     "--call-to-action-text-color",
     "--call-to-action-hover-text-color",
+    "--diagonal-color",
   ],
 };
 

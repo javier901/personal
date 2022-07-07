@@ -8,6 +8,7 @@
   --text-color-high-emphasis: rgba(255, 255, 255);
   --text-color-medium-emphasis: rgba(255, 255, 255, 0.6);
   --text-color-low-emphasis: rgba(255, 255, 255, 0.3);
+  --fixed-header-color: rgba(43, 43, 43, 0.3);
   --introduction-window-color: rgba(43, 43, 43, 0.7);
   --osx-window: #3b3b3b;
   --osx-border-color: transparent;
@@ -21,9 +22,9 @@
   --about-me-p-color: rgba(255, 255, 255, 0.8);
   --call-to-action-text-color: #444;
   --call-to-action-hover-text-color: #64ffda;
+  --diagonal-color: #1b1b1b;
 
   // The following variables do not mutate
-  --diagonal-color: #1b1b1b;
   --error-color: rgb(239, 35, 60, 0.8);
   // Variables are changed into these values using JavaScript (light theme activation)
 
@@ -33,9 +34,10 @@
   // --accent-color: #023e8a;
   // --accent-color-transparent: rgba(2, 61, 138, 0.168);
   // --slider-background-color: #ddd;
-  // --text-color-high-emphasis: #444;
+  // --text-color-high-emphasis: #555;
   // --text-color-medium-emphasis: rgba(255, 255, 255, 0.6);
   // --text-color-low-emphasis: rgba(255, 255, 255, 0.38);
+  // --fixed-header-color: unset;
   // --osx-window: #f0f0f0;
   // --osx-border-color: #ccc;
   // --dot--inactive: #ddd;
@@ -49,4 +51,5 @@
   // --call-to-action-text-color: #fff;
   // --call-to-action-text-color : #fff;
   // --call-to-action-hover-text-color : #444;
+  // --diagonal-color: #f7f7f8;
 }

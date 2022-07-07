@@ -10,3 +10,7 @@ export const requestTimeout = function (seconds) {
 export const destroyElement = function (element) {
   element.remove();
 };
+
+export const isTouchScreendevice = function () {
+  return "ontouchstart" in window;
+};

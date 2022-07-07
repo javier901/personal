@@ -93,16 +93,23 @@
     // Hamburger / X visibility
     .hamburger-x__container {
       display: none;
+      justify-content: center;
+      align-items: center;
       position: relative;
       overflow: hidden;
       height: 30px;
       width: 30px;
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
       svg {
         position: absolute;
-        width: 26px;
-        height: 26px;
-        transform: all 0.3s ease;
+        width: 28px;
+        height: 28px;
       }
+    }
+
+    .hamburger-x__container__active {
+      transform: rotate(180deg);
     }
 
     .slider-component {
@@ -149,11 +156,23 @@
       }
     }
   }
+  .fixed-header-offset {
+    transform: translateY(-100%);
+  }
 
-  .dt-fixed-header {
+  .fixed-header-no-offset {
+    transform: unset;
+  }
+
+  .fixed-header {
     // Dark theme fixed header style
-    @include fixed-header;
-    background-color: rgba(43, 43, 43, 0.3);
+    position: fixed;
+    width: 100vw;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(5px);
+    background-color: var(--fixed-header-color);
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   }
 
   .vertical-banner__left {

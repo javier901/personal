@@ -1,6 +1,6 @@
 @mixin section-2 {
   .section-2 {
-    @include pc-padding;
+    @include large-screen-padding;
     display: flex;
     justify-content: center;
     align-items: center;

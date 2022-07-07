@@ -1,14 +1,15 @@
 @mixin footer {
   footer {
-    user-select: none;
-    @include pc-padding;
-    padding-bottom: 18px;
-    display: grid;
-    grid-template-rows: min-content min-content min-content;
-    row-gap: 52px;
-    width: 100vw;
-    height: fit-content;
-
+    @include large-screen-padding;
+    overflow: hidden;
+    .section-last {
+      user-select: none;
+      padding-bottom: 18px;
+      display: grid;
+      grid-template-rows: min-content min-content min-content;
+      row-gap: 52px;
+      height: fit-content;
+    }
     label {
       font-size: 1rem;
       font-weight: 400;
