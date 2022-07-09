@@ -9,18 +9,21 @@
     overflow: hidden;
 
     .logo__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: fit-content;
+      gap: 0.4rem;
+      transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      .o {
+        height: 2rem;
+        width: 2rem;
+      }
       h2 {
         font-family: "Inter", sans-serif;
-        font-size: 2rem;
-        span {
-          color: var(--accent-color);
-        }
+        font-size: 1rem;
+        font-weight: 500;
       }
-    }
-
-    .logo__container {
-      @include flex-spaced-between;
-      align-items: center;
     }
 
     .controls {
@@ -40,6 +43,10 @@
       label {
         cursor: pointer;
         transition: all 0.2s ease;
+      }
+
+      .nav-lbl {
+        transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
       }
 
       // Hover on nav children
@@ -99,7 +106,7 @@
       overflow: hidden;
       height: 30px;
       width: 30px;
-      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
       svg {
         position: absolute;
@@ -112,12 +119,18 @@
       transform: rotate(180deg);
     }
 
+    .x__icon,
+    .hamburger__icon {
+      transition: opacity 0.3s ease 0.15s;
+    }
+
     .slider-component {
       @include flex-spaced-between;
       align-items: center;
       justify-content: center;
       gap: 4px;
       overflow: hidden;
+      transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
       svg {
         width: 24px;
@@ -178,6 +191,7 @@
   .vertical-banner__left {
     @include vertical-banners__common-styles;
     left: 10px;
+    transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     z-index: 100;
     .vertical-banner__left__icons {
       display: flex;
@@ -221,6 +235,20 @@
     @include vertical-banners__common-styles;
     color: var(--text-color-low-emphasis);
     user-select: text;
+    transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     z-index: 100;
+  }
+
+  .initial-animation__header__descendant {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  .initial-animation__banner__left {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  .initial-animation__banner__right {
+    transform: translateX(30%);
+    opacity: 0;
   }
 }

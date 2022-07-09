@@ -1,4 +1,5 @@
 // Assets
+@import "welcome-screen";
 @import "mixins";
 @import "variables";
 @import "header";
@@ -77,8 +78,15 @@ body {
 @include medium-screen-responsive;
 @include small-screen-responsive;
 
+.o {
+  font-family: Inter, sans-serif;
+  stroke: var(--accent-color);
+  fill: var(--accent-color);
+  width: 5rem;
+  height: 5rem;
+}
+
 .invisible {
-  transition: opacity 0.3s ease;
   opacity: 0;
 }
 

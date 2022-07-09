@@ -312,6 +312,7 @@ class ModalView extends Views {
   formatForm(formData) {
     // Input formatting
     formData.set("Name", this.formatName(formData.get("Name")));
+
     formData.set(
       "Company",
       this.firstLetterToUpperCase(formData.get("Company").trim())

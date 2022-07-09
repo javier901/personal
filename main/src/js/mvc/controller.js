@@ -12,6 +12,8 @@ import {
 } from "../config.js";
 import FooterView from "./views/FooterView.js";
 import ScrollReveal from "./views/ScrollReveal.js";
+import InitialAnimation from "./views/InitialAnimation.js";
+import WelcomeLogoView from "./views/WelcomeLogoView.js";
 
 const controlTheme = function () {
   lightTheme.isActive = !lightTheme.isActive;
@@ -75,13 +77,14 @@ const controlIntersections = function (
   });
 };
 
-// Initializer IIFE
-(function () {
+const initTheme = function () {
   if (lightTheme.load()) {
     lightTheme.isActive = !lightTheme.isActive;
     LightThemeView.enableLightTheme(lightTheme.isActive).toggleSwitch();
   }
   LightThemeView.addHandler(controlTheme);
+};
+const initApp = function () {
   MenuView.init();
   HeaderView.init();
   Typewriter.addHandler();
@@ -95,4 +98,13 @@ const controlIntersections = function (
     ModalView.openRegularWindow.bind(ModalView, OPEN_CONTACT_INFO_MARKUP)
   );
   ScrollReveal.init(controlIntersections);
-})();
+};
+
+initTheme();
+WelcomeLogoView.startAnimation();
+setTimeout(() => {
+  InitialAnimation.init();
+}, 3800);
+setTimeout(() => {
+  initApp();
+}, 4000);

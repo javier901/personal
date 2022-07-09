@@ -48,7 +48,7 @@ export const COLORS = {
     textColorHighEmphasis: "#555",
     textColorMediumEmphasis: "rgba(4, 4, 4, 0.8)",
     textColorLowEmphasis: "rgba(4, 4, 4, 0.6)",
-    fixedHeaderColor: "rgba(247, 247, 248, 0.3)",
+    fixedHeaderColor: "rgba(247, 247, 248, 0.1)",
     introductionWindowColor: "rgba(255, 255, 255, 0.65)",
     osxWindow: "#f0f0f0",
     osxBorderColor: "#ccc",

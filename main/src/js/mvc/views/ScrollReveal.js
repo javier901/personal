@@ -13,8 +13,11 @@ class ScrollReveal extends Views {
             observer.unobserve(entry.target);
           else {
             if (entry.target === section1) {
-              // 1) Add offset
-              this.header.classList.add("fixed-header-offset");
+              // 1) Add offset if not the first execution
+              let executeLine = false;
+              executeLine
+                ? this.header.classList.add("fixed-header-offset")
+                : (executeLine = true);
 
               // 2) Reset body margin and remove fixed from header after transition
               setTimeout(() => {

@@ -8,7 +8,7 @@ class Header extends Views {
 
   init() {
     this.hamburgerAndXContainer.addEventListener("click", (e) => {
-      // -------------------------------------------- show menu
+      // ---------------------------------- show menu
     });
 
     this.navChildren.forEach((child) => {

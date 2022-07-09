@@ -3,9 +3,12 @@ class Views {
   main = document.querySelector("main");
   root = document.querySelector(":root");
   sections = document.querySelectorAll(".section");
+  leftBanner = document.querySelector(".vertical-banner__left");
+  rightBanner = document.querySelector(".vertical-banner__right");
+  navBar = document.querySelector("nav");
 
   firstLetterToUpperCase(word) {
-    return word.substring(0, 1).toUpperCase() + word.substring(1);
+    return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
   }
 
   formatName(name) {
