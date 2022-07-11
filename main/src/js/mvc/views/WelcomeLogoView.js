@@ -8,38 +8,29 @@ class WelcomeLogoView extends Views {
   o = document.querySelector(".welcome__o");
   rightBracket = document.querySelector(".welcome__logo__right-bracket");
 
-  // 1) add .welcome__reveal to o
-
-  // 2) add .welcome__reveal to left, right bracket
-  // 3) add rotate class to logoContainer
-  // 4) remove welcome reveal from both o and left, right bracket
-  // 5) delete container element
-  //  In controller:
-  // 6) execute initialAnimation
-  // 7) initApp()
   startAnimation() {
     this.toggleReveal(this.logoContainerWrapper);
     this.toggleReveal(this.logoContainer);
     setTimeout(() => {
       this.toggleReveal(this.leftBracket);
-    }, 1200);
+    }, 1000);
     setTimeout(() => {
       this.toggleReveal(this.rightBracket);
-    }, 1600);
+    }, 1300);
 
     setTimeout(() => {
       this.endAnimation();
-    }, 2100);
+    }, 1900);
   }
 
   endAnimation() {
     this.rotate(this.logoContainerWrapper);
     setTimeout(() => {
       this.toggleReveal(this.logoContainer);
-    }, 1000);
+    }, 800);
     setTimeout(() => {
       this.removeWelcome();
-    }, 2100);
+    }, 1400);
   }
   removeWelcome() {
     this.container.remove();

@@ -107,7 +107,6 @@ class ModalView extends Views {
   </div>
 `;
     document.querySelector("main").insertAdjacentHTML("afterend", markup);
-    document.querySelector(".contact-me__form__name").focus();
 
     // Create properties after element insertion.
     this.overlay = document.querySelector(".overlay");

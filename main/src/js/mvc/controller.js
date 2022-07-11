@@ -104,7 +104,7 @@ initTheme();
 WelcomeLogoView.startAnimation();
 setTimeout(() => {
   InitialAnimation.init();
-}, 3800);
+}, 2800);
 setTimeout(() => {
   initApp();
-}, 4000);
+}, 4400);
