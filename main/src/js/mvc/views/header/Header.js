@@ -13,7 +13,6 @@ class Header extends Views {
 
     this.navChildren.forEach((child) => {
       child.addEventListener("mouseenter", (e) => {
-        if (isTouchScreendevice()) return;
         this.navOnMouseEnter(e);
       });
 
@@ -34,19 +33,20 @@ class Header extends Views {
 
   // Controls nav hovering
   navOnMouseEnter(e) {
+    if (isTouchScreendevice()) return;
     const reset = (element) => {
-      element.style.opacity = "1";
+      element.style.color = "var(--text-color-high-emphasis)";
       element.style.filter = "none";
     };
 
     // Add styles to all children elements of nav
     this.navChildren.forEach((child) => {
-      child.style.opacity = "0.2";
       child.style.filter = "blur(2px)";
+      child.style.color = "var(--nav-child-hover-color)";
     });
 
     // Remove styles on target element
-    e.target.style.opacity = "1";
+    e.target.style.color = "var(--accent-color)";
     e.target.style.filter = "none";
 
     this.navElement.addEventListener("mouseleave", () => {

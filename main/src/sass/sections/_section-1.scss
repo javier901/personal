@@ -85,6 +85,7 @@
     animation: blinker 0.8s linear infinite;
     display: inline-block;
     font-size: 0.8rem;
+    transform: translateX(-3px);
     @keyframes blinker {
       50% {
         opacity: 0;

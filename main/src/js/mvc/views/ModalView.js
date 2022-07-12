@@ -73,6 +73,8 @@ class ModalView extends Views {
 
     this.regularBtnMaximize.addEventListener("click", () => {
       this.regularModal.classList.toggle("osx-modal__maximize");
+      // Enable scroll on maximized window. This way "se"
+      this.rootYScroll = true ? true : false;
     });
 
     // Disable Y scroll
@@ -147,6 +149,8 @@ class ModalView extends Views {
 
     this.btnMaximize.addEventListener("click", () => {
       this.modal.classList.toggle("osx-modal__maximize");
+      // Enable scroll on maximized window. This way "se"
+      this.rootYScroll = true ? true : false;
     });
 
     this.formButtonTextElements = document.querySelectorAll(

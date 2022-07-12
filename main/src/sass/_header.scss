@@ -36,27 +36,17 @@
       @include flex-spaced-between;
       flex-shrink: 1;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
       font-weight: 500;
       user-select: none;
 
       label {
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: all 0.2s ease,
+          transform 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+          opacity 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
       }
 
-      .nav-lbl {
-        transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-      }
-
-      // Hover on nav children
-      @media (hover: hover) and (pointer: fine) {
-        label:hover {
-          color: var(--accent-color);
-          transition: all 0.08s ease;
-          // box-shadow: var(--shadow);
-        }
-      }
       label:active {
         color: var(--accent-color);
       }
@@ -106,7 +96,7 @@
       overflow: hidden;
       height: 30px;
       width: 30px;
-      transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
       svg {
         position: absolute;
@@ -116,12 +106,12 @@
     }
 
     .hamburger-x__container__active {
-      transform: rotate(180deg);
+      transform: rotate(90deg);
     }
 
     .x__icon,
     .hamburger__icon {
-      transition: opacity 0.3s ease 0.15s;
+      transition: opacity 0.3s ease;
     }
 
     .slider-component {

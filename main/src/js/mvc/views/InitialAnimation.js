@@ -3,6 +3,29 @@ import Views from "./Views";
 class InitialAnimation extends Views {
   init() {
     this.headerAndBannersAnimation();
+
+    // Controls nav visibility if window rezises> 600px
+    window.addEventListener("resize", () => {
+      if (
+        window.innerWidth <= 600 &&
+        !this.navLbls[0].classList.contains(
+          "initial-animation__header__descendant"
+        )
+      )
+        this.navLbls.forEach((lbl) => {
+          lbl.classList.add("initial-animation__header__descendant");
+        });
+
+      if (
+        window.innerWidth > 600 &&
+        this.navLbls[0].classList.contains(
+          "initial-animation__header__descendant"
+        )
+      )
+        this.navLbls.forEach((lbl) => {
+          lbl.classList.remove("initial-animation__header__descendant");
+        });
+    });
   }
   // Header animation after init screen
   headerAndBannersAnimation() {

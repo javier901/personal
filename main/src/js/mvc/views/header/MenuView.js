@@ -19,7 +19,7 @@ class MenuView extends Views {
     setTimeout(() => {
       hamIcon.classList.toggle("invisible");
       XIcon.classList.toggle("invisible");
-    }, 300);
+    }, 210);
   }
 }
 

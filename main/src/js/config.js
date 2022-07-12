@@ -40,6 +40,7 @@ export const COLORS = {
     callToActionHoverAccentColor: "#64ffda",
     diagonalColor: "#1b1b1b",
     oddSiblingColor: "#232323",
+    navChildHoverColor: "#333",
   },
 
   lightThemeColors: {
@@ -68,6 +69,7 @@ export const COLORS = {
     callToActionHoverAccentColor: "#444",
     diagonalColor: "#f7f7f8",
     oddSiblingColor: "#f7f7f8",
+    navChildHoverColor: "#d8d8d8",
   },
 
   cssRules: [
@@ -96,6 +98,7 @@ export const COLORS = {
     "--call-to-action-hover-text-color",
     "--diagonal-color",
     "--odd-sibling-color",
+    "--nav-child-hover-color",
   ],
 };
 
