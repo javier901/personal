@@ -32,6 +32,13 @@ class Views {
       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     return email.match(regEx) ? true : false;
   }
+
+  /**
+   * @param {boolean} bool
+   */
+  set rootYScroll(bool) {
+    document.querySelector("html").style.overflowY = bool ? "unset" : "hidden";
+  }
 }
 
 export default Views;

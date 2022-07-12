@@ -33,6 +33,11 @@
       z-index: 300;
     }
 
+    .me {
+      // Used for lazy loading. Will be changed to "unset" by JS. In ScrollView.js
+      display: none;
+    }
+
     .about-me {
       display: grid;
       grid-template-columns: 0.1fr 1fr;

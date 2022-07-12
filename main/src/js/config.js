@@ -209,3 +209,22 @@ export const OPEN_CONTACT_INFO_MARKUP = `
 </div>
 </div>
 `;
+
+export const PROJECT_IMGAGES_MARKUP = [
+  `<img
+  class="project-img"
+  src="./img/section_4/eztasks.png"
+  alt="Project screenshots"
+/>`,
+
+  `<img
+  class="project-img"
+  src="./img/section_4/ample.png"
+  alt="Project screenshots"
+/>`,
+  `<img
+class="project-img"
+src="./img/section_4/forkify.png"
+alt="Project screenshots"
+/>`,
+];

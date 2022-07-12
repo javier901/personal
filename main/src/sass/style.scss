@@ -105,8 +105,35 @@ body {
   transition: transform 0.8s ease-out, opacity 0.8s ease 0.2s;
   transform: translateY(10%);
 }
-.reveal,
-.reveal:nth-of-type(2n) {
+.reveal {
   opacity: 1;
   transform: unset;
+}
+
+.loading__icon {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  fill: var(--accent-color);
+  padding: 10px;
+  animation: loading 1.2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+  @keyframes loading {
+    0% {
+      transform: translateX(-30%);
+    }
+    50% {
+      transform: translateX(30%);
+    }
+    100% {
+      transform: translateX(-30%);
+    }
+  }
+}
+
+.section-4 {
+  .loading__icon {
+    top: calc(30% - 31px);
+    left: calc(50% - 31px);
+  }
 }

@@ -44,28 +44,39 @@ class ModalView extends Views {
 
     // Red and green buttons
     this.regularOverlay.addEventListener("click", (e) => {
-      if (e.target === this.regularOverlay) this.hideModal(true, regularWindow);
-      else return;
+      if (e.target !== this.regularOverlay) return;
+
+      this.hideModal(true);
+      this.rootYScroll = true;
+      // Executes after animation.
+      setTimeout(() => destroyElement(regularWindow), 500);
     });
 
     // Esc key handler (Close modal)
     document.addEventListener("keyup", (e) => {
       if (e.key !== "Escape") return;
-      else this.hideModal(true, regularWindow);
+      this.hideModal(true);
+      this.rootYScroll = true;
+      // Executes after animation.
+      setTimeout(() => destroyElement(regularWindow), 500);
     });
 
     // Handle same event on close and minimize btns click
-
     this.regularBtnClose.forEach((btn) => {
-      btn.addEventListener(
-        "click",
-        this.hideModal.bind(this, true, regularWindow)
-      );
+      btn.addEventListener("click", () => {
+        this.hideModal(true);
+        this.rootYScroll = true;
+        // Executes after animation.
+        setTimeout(() => destroyElement(regularWindow), 500);
+      });
     });
 
     this.regularBtnMaximize.addEventListener("click", () => {
       this.regularModal.classList.toggle("osx-modal__maximize");
     });
+
+    // Disable Y scroll
+    this.rootYScroll = false;
 
     // Adds function execution to event loop in order to make opening animation visible.
     // True is passed so that show() can execute regular window algorithm
@@ -154,6 +165,9 @@ class ModalView extends Views {
       this.submit(this.formData);
     });
 
+    // Disable Y scroll
+    this.rootYScroll = false;
+
     // Adds function execution to event loop in order to make opening animation visible.
     setTimeout(this.show.bind(this));
 
@@ -173,6 +187,8 @@ class ModalView extends Views {
       // Kill element after animation finishes.
       this.overlay.remove();
       this.modal.remove();
+      // Enable Y scroll
+      this.rootYScroll = true;
     }, 500);
   }
 
@@ -193,12 +209,10 @@ class ModalView extends Views {
     }
   }
 
-  hideModal(isRegular = false, elementToDestroy) {
+  hideModal(isRegular = false) {
     if (isRegular) {
       this.regularOverlay.classList.remove("overlay__active");
       this.regularModal.classList.remove("osx-modal__active");
-      // Executes after animation.
-      setTimeout(() => destroyElement(elementToDestroy), 500);
     } else {
       this.overlay.classList.remove("overlay__active");
       this.modal.classList.remove("osx-modal__active");

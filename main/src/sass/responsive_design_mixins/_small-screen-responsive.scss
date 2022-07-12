@@ -1,6 +1,6 @@
 @mixin small-screen-padding {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 46px;
+  padding-right: 46px;
 }
 @mixin small-screen-responsive {
   @media (max-width: 600px) {
@@ -46,7 +46,7 @@
         position: absolute;
         top: 0;
         content: "";
-        height: calc(100% + 150px);
+        height: calc(100% + 200px);
         width: 100vw;
         left: -10vw;
         background: linear-gradient(to top, var(--background-color), #0000);

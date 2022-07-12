@@ -29,6 +29,7 @@ class WelcomeLogoView extends Views {
       this.toggleReveal(this.logoContainer);
     }, 800);
     setTimeout(() => {
+      window.scrollTo(0, 0);
       this.removeWelcome();
     }, 1400);
   }

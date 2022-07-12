@@ -87,7 +87,7 @@
     }
   }
 
-  /////////////////// FOR CONTACT-ME FORM ////////////////////////
+  /////// FOR CONTACT-ME FORM /////////
   .form-buttons {
     width: 100%;
     display: grid;
@@ -131,6 +131,7 @@
     flex-direction: column;
     padding: 14px;
     gap: 14px;
+    overflow: auto;
 
     p {
       font-size: 1rem;
