@@ -1,3 +1,7 @@
+import eztasksUrl from "../../img/section-4/eztasks.png";
+import ampleUrl from "../../img/section-4/ample.png";
+import forkifyUrl from "../../img/section-4/forkify.png";
+
 export const LIGHT_THEME_NAME_IN_LOCAL_STORAGE = "lightTheme";
 
 export const WRITING_SPEED_IN_MILLISECONDS = 90;
@@ -213,18 +217,18 @@ export const OPEN_CONTACT_INFO_MARKUP = `
 export const PROJECT_IMGAGES_MARKUP = [
   `<img
   class="project-img"
-  src="./img/section_4/eztasks.png"
+  src="${eztasksUrl}"
   alt="Project screenshots"
 />`,
 
   `<img
   class="project-img"
-  src="./img/section_4/ample.png"
+  src="${ampleUrl}"
   alt="Project screenshots"
 />`,
   `<img
 class="project-img"
-src="./img/section_4/forkify.png"
+src="${forkifyUrl}"
 alt="Project screenshots"
 />`,
 ];

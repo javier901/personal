@@ -1,5 +1,6 @@
 import { PROJECT_IMGAGES_MARKUP } from "../../config";
 import Views from "./Views";
+import myPhotoUrl from "../../../../img/section-2/my_photo.jpg";
 
 class ScrollReveal extends Views {
   init(controller) {
@@ -53,7 +54,7 @@ class ScrollReveal extends Views {
           if (entry.target === section2) {
             const loadingIcon = document.querySelector(".loading__icon");
             const markup = `
-            <img class="me img-place-holder" src="./img/section-2/my_photo.jpg" alt="Omar Moquete's photo" />
+            <img class="me img-place-holder" src="${myPhotoUrl}" alt="Omar Moquete's photo" />
             `;
             loadingIcon.insertAdjacentHTML("beforebegin", markup);
 
