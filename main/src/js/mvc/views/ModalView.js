@@ -23,7 +23,7 @@ class ModalView extends Views {
         </div>
         </div>
         <!-- Content -->
-        <div class="regular-window__content">
+        <div class="regular-window__content" translate="yes">
         ${innerHTML}
         </div>
     </div>

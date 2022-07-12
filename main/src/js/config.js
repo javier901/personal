@@ -158,7 +158,7 @@ export const SCRIPT = [
 
 // Regular window inner HTML
 export const OPEN_CONTACT_INFO_MARKUP = `
-<div class="regular-window__wrapper">
+<div class="regular-window__wrapper" translate="yes">
 <h3 class="regular-window__main-text">Hi, Omar here!</h3>
 <p class="regular-window__message">
   These are the ways you can contact me:

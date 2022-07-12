@@ -25,6 +25,7 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   user-select: none;
+  height: -webkit-fill-available;
 }
 
 /* width */
@@ -59,6 +60,9 @@
   background: var(--accent-color-transparent);
 }
 body {
+  // For mobile browsers
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   p {
     font-weight: 300;
     line-height: 1.2;
@@ -98,6 +102,12 @@ body {
   margin-top: 50px;
 }
 
+.redir__icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1px;
+  margin-left: 4px;
+}
 // Scroll reveal
 .section {
   position: relative;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -47,7 +47,7 @@
       </div>
 
       <div class="controls">
-        <nav>
+        <nav translate="yes">
           <label
             class="nav-lbl nav-lbl__about-me initial-animation__header__descendant"
             >About me</label
@@ -62,7 +62,7 @@
           >
           <label
             class="nav-lbl nav-lbl__resume initial-animation__header__descendant"
-            >Resume</label
+            >View resume</label
           >
         </nav>
 
@@ -164,7 +164,7 @@
     <main class="content">
       <div class="section section-1">
         <article>
-          <div class="introduction">
+          <div class="introduction" translate="yes">
             <div class="introduction-filter"></div>
             <h3>Hi, my name is</h3>
             <h2>Omar Moquete.</h2>
@@ -244,7 +244,7 @@
           </svg>
           <article>
             <div class="about-me">
-              <div class="about-me__text">
+              <div class="about-me__text" translate="yes">
                 <h2>About me</h2>
                 <p>
                   My love for technology started at a young age when I got my
@@ -270,7 +270,7 @@
       </div>
 
       <div class="section section-3">
-        <article>
+        <article translate="yes">
           <h2>My Skills</h2>
 
           <p>
@@ -280,13 +280,14 @@
           </p>
 
           <p>
-            I'm currently working on mastering
-            <a href="https://reactjs.org/" target="_blank"
-              >React.js<span>.</span>
-              <svg>
-                <use href="./img/icons.svg#external-link"></use>
-              </svg>
-            </a>
+            Currently working on mastering
+            <span
+              ><a href="https://reactjs.org/" target="_blank" translate="no"
+                >React.js<span>.</span>
+                <svg class="redir__icon">
+                  <use href="./img/icons.svg#external-link"></use>
+                </svg> </a
+            ></span>
           </p>
         </article>
         <div class="skill-card__wrapper">
@@ -531,7 +532,7 @@
         </div>
       </div>
 
-      <div class="section section-4">
+      <div class="section section-4" translate="yes">
         <article>
           <h2>My Projects</h2>
           <p>
@@ -548,7 +549,7 @@
           <div class="slides">
             <div class="slide-item">
               <div class="project-description">
-                <h2>eztasks</h2>
+                <h2 translate="no">eztasks</h2>
                 <p>
                   Easy to use task management web application featuring locally
                   stored data, task deletion undo, personalization options and
@@ -559,22 +560,19 @@
                   target="_blank"
                   href="https://eztasks.omarmoquete.dev/"
                 >
-                  Open project
+                  Open this project
+                  <svg class="redir__icon">
+                    <use href="./img/icons.svg#external-link"></use>
+                  </svg>
                 </a>
               </div>
-              <!-- jkljkl -->
               <svg class="loading__icon loading__icon__project">
                 <use href="./img/icons.svg#loading"></use>
               </svg>
-              <!-- <img
-                class="project-img"
-                src="./img/section_4/eztasks.png"
-                alt="Project screenshots"
-              /> -->
             </div>
             <div class="slide-item">
               <div class="project-description">
-                <h2>Ample</h2>
+                <h2 translate="no">Ample</h2>
                 <p>
                   Find important information about any country. See elevation,
                   satellite imagery and much more. This website makes use of
@@ -585,23 +583,19 @@
                   target="_blank"
                   href="https://ample.omarmoquete.dev/"
                 >
-                  Open project
+                  Open this project
+                  <svg class="redir__icon">
+                    <use href="./img/icons.svg#external-link"></use>
+                  </svg>
                 </a>
               </div>
-              <!-- jkljkl -->
               <svg class="loading__icon loading__icon__project">
                 <use href="./img/icons.svg#loading"></use>
               </svg>
-
-              <!-- <img
-                class="project-img"
-                src="./img/section_4/ample.png"
-                alt="Project screenshots"
-              /> -->
             </div>
             <div class="slide-item">
               <div class="project-description">
-                <h2>Forkify</h2>
+                <h2 translate="no">Forkify</h2>
                 <p>
                   Get inspired by over a million recipes! Avoid food waste by
                   selecting your portions and getting the number of ingredients
@@ -622,19 +616,15 @@
                   target="_blank"
                   href="https://forkify-moquete.netlify.app/"
                 >
-                  Open project
+                  Open this project
+                  <svg class="redir__icon">
+                    <use href="./img/icons.svg#external-link"></use>
+                  </svg>
                 </a>
               </div>
-              <!-- jkljkl -->
               <svg class="loading__icon loading__icon__project">
                 <use href="./img/icons.svg#loading"></use>
               </svg>
-
-              <!-- <img
-                class="project-img"
-                src="./img/section_4/forkify.png"
-                alt="Project screenshots"
-              /> -->
             </div>
           </div>
           <div class="dots__container"></div>
@@ -645,7 +635,7 @@
       </div>
     </main>
 
-    <footer>
+    <footer translate="yes">
       <div class="section section-last">
         <h2 class="footer-main-text">Thanks for visiting!</h2>
 
@@ -703,7 +693,7 @@
               <svg class="footer__icon footer__icon__arrow-up">
                 <use href="./img/icons.svg#code"></use>
               </svg>
-              <label class="footer-link">Open portfolio repo</label>
+              <label class="footer-link">Website repo</label>
             </a>
           </div>
           <div class="footer__link__wrapper">
@@ -715,7 +705,7 @@
             </div>
           </div>
         </div>
-        <div>
+        <div translate="no">
           <p class="c-r">
             Handcrafted with&nbsp;<svg>
               <use href="./img/icons.svg#heart"></use></svg
