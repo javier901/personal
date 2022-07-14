@@ -1,3 +1,4 @@
+// These imports are resolved by vite to the relative path after minification
 import eztasksUrl from "../../img/section-4/eztasks.png";
 import ampleUrl from "../../img/section-4/ample.png";
 import forkifyUrl from "../../img/section-4/forkify.png";
@@ -53,7 +54,7 @@ export const COLORS = {
     textColorHighEmphasis: "#555",
     textColorMediumEmphasis: "rgba(4, 4, 4, 0.8)",
     textColorLowEmphasis: "rgba(4, 4, 4, 0.6)",
-    fixedHeaderColor: "rgba(247, 247, 248, 0.1)",
+    fixedHeaderColor: "rgba(247, 247, 248, 0.5)",
     introductionWindowColor: "rgba(255, 255, 255, 0.65)",
     osxWindow: "#f0f0f0",
     osxBorderColor: "#ccc",

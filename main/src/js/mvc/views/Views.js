@@ -2,7 +2,7 @@ class Views {
   header = document.querySelector("header");
   main = document.querySelector("main");
   root = document.querySelector(":root");
-  sections = document.querySelectorAll(".section");
+  sections = Array.from(document.querySelectorAll(".section"));
   leftBanner = document.querySelector(".vertical-banner__left");
   rightBanner = document.querySelector(".vertical-banner__right");
   navBar = document.querySelector("nav");

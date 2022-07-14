@@ -9,6 +9,7 @@ class WelcomeLogoView extends Views {
   rightBracket = document.querySelector(".welcome__logo__right-bracket");
 
   startAnimation() {
+    this.rootYScroll = false;
     this.toggleReveal(this.logoContainerWrapper);
     this.toggleReveal(this.logoContainer);
     setTimeout(() => {
@@ -29,6 +30,7 @@ class WelcomeLogoView extends Views {
       this.toggleReveal(this.logoContainer);
     }, 800);
     setTimeout(() => {
+      this.rootYScroll = true;
       window.scrollTo(0, 0);
       this.removeWelcome();
     }, 1400);

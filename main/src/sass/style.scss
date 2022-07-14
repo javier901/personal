@@ -25,7 +25,6 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   user-select: none;
-  height: -webkit-fill-available;
 }
 
 /* width */
@@ -35,7 +34,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--background-color);
+  background: var(--diagonal-color);
 }
 
 /* Handle */
@@ -60,9 +59,6 @@
   background: var(--accent-color-transparent);
 }
 body {
-  // For mobile browsers
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
   p {
     font-weight: 300;
     line-height: 1.2;
