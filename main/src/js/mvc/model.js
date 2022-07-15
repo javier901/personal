@@ -18,3 +18,7 @@ export const lightTheme = {
     localStorage.removeItem(LIGHT_THEME_NAME_IN_LOCAL_STORAGE);
   },
 };
+
+export const section = {
+  isIntersecting: false,
+};

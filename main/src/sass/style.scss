@@ -74,10 +74,6 @@ body {
 @include footer;
 @include modal;
 
-// Responsive design
-@include medium-screen-responsive;
-@include small-screen-responsive;
-
 .o {
   font-family: Inter, sans-serif;
   stroke: var(--accent-color);
@@ -117,28 +113,33 @@ body {
 
 .loading__icon {
   position: absolute;
-  width: 62px;
-  height: 62px;
+  width: 82px;
+  height: 82px;
   fill: var(--accent-color);
   padding: 10px;
   animation: loading 1.2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 201;
 
   @keyframes loading {
     0% {
-      transform: translateX(-30%);
+      transform: translateX(-20%);
     }
     50% {
-      transform: translateX(30%);
+      transform: translateX(20%);
     }
     100% {
-      transform: translateX(-30%);
+      transform: translateX(-20%);
     }
   }
 }
 
 .section-4 {
   .loading__icon {
-    top: calc(30% - 31px);
-    left: calc(50% - 31px);
+    top: calc(20%);
+    left: calc(50% - 41px);
   }
 }
+
+// Responsive design
+@include medium-screen-responsive;
+@include small-screen-responsive;

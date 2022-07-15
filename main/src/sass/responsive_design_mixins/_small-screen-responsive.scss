@@ -12,8 +12,8 @@
     // Hide nav component
     header {
       padding-right: 10px;
-      .hamburger-x__container {
-        display: flex;
+      .hamburger-x__wrapper {
+        display: block;
         cursor: pointer;
       }
 
@@ -83,6 +83,11 @@
       @include small-screen-padding;
       padding-top: 180px;
 
+      .loading__icon__img {
+        fill: var(--about-me-h-color);
+        transform: unset;
+      }
+
       img {
         align-self: start;
         justify-self: center;
@@ -142,7 +147,9 @@
     /////////////////// Section 4 //////////////////////////
     .section-4 {
       @include small-screen-padding;
-
+      .loading__icon {
+        top: 37%;
+      }
       gap: 0;
       .project-description {
         width: 100%;

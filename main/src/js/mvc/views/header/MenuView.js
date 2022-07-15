@@ -1,11 +1,8 @@
 import Views from "../Views";
 
 class MenuView extends Views {
-  hamburgerAndXContainer = document.querySelector(".hamburger-x__container");
-
-  //
   init() {
-    this.hamburgerAndXContainer.addEventListener("click", (e) => {
+    this.hamburgerAndX.addEventListener("click", (e) => {
       this.toggleHamburger(e);
     });
   }

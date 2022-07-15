@@ -5,11 +5,7 @@ import MenuView from "./views/header/MenuView.js";
 import Typewriter from "./views/Typewriter.js";
 import Slider from "./views/Slider.js";
 import ModalView from "./views/ModalView";
-import {
-  AJAX_CALL_TIMEOUT_SECONDS,
-  FORM_API,
-  OPEN_CONTACT_INFO_MARKUP,
-} from "../config.js";
+import { AJAX_CALL_TIMEOUT_SECONDS, FORM_API, SCRIPT } from "../config.js";
 import FooterView from "./views/FooterView.js";
 import ScrollReveal from "./views/ScrollReveal.js";
 import InitialAnimation from "./views/InitialAnimation.js";
@@ -72,24 +68,24 @@ const controlIntersections = function (elementsToObserve, behaviorCallback) {
   });
 };
 
-const controlFixedHeader = function (sec1, sec2) {
-  const behaviorCallback = function (entries) {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      if (entry.target === sec1) HeaderView.unfix();
-      if (entry.target === sec2) HeaderView.fix();
-    });
-  };
+// const controlFixedHeader = function (sec1, sec2) {
+//   const behaviorCallback = function (entries) {
+//     entries.forEach((entry) => {
+//       if (!entry.isIntersecting) return;
+//       if (entry.target === sec1) HeaderView.unfix();
+//       if (entry.target === sec2) HeaderView.fix();
+//     });
+//   };
 
-  const options = {
-    root: null,
-    threshold: 0.4,
-  };
-  const observer = new IntersectionObserver(behaviorCallback, options);
+//   const options = {
+//     root: null,
+//     threshold: 0.4,
+//   };
+//   const observer = new IntersectionObserver(behaviorCallback, options);
 
-  observer.observe(sec1);
-  observer.observe(sec2);
-};
+//   observer.observe(sec1);
+//   observer.observe(sec2);
+// };
 
 const controlLazyLoading = function (sec2, sec4) {
   const behaviorCallback = function (entries, observer) {
@@ -110,6 +106,7 @@ const controlLazyLoading = function (sec2, sec4) {
 
   const options = {
     root: null,
+    threshold: 0.1,
   };
 
   const observer = new IntersectionObserver(behaviorCallback, options);
@@ -126,21 +123,43 @@ const initTheme = function () {
   LightThemeView.addHandler(controlTheme);
 };
 
+// This object's members are the footer links different behaviors
+
+class WindowsControl {
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  scrollToElement(element) {
+    element.scrollIntoView(true);
+  }
+
+  openDirectMessageWindow() {
+    ModalView.openContactMe();
+  }
+  openContactInfoWindow() {
+    ModalView.openContactInfo();
+  }
+  openCoursesWindow() {
+    ModalView.openCourses();
+  }
+  openResumeWindow() {
+    ModalView.openResume();
+  }
+}
+
+const controlFooterLinks = new WindowsControl();
+const controlNavigation = new WindowsControl();
+
 const initApp = function () {
   MenuView.init();
-  HeaderView.init(controlFixedHeader);
-  Typewriter.addHandler();
+  HeaderView.init(controlNavigation);
   Slider.addHandler();
   ModalView.addHandler(controlFormSubmission);
-
-  // controlFormSubmission is passed in because it will be handled on one of the footer links
-  // openContactMe is binded to itself so arguments can be passed into the function without calling it.
-  FooterView.init(
-    ModalView.openContactMe.bind(ModalView, controlFormSubmission),
-    ModalView.openRegularWindow.bind(ModalView, OPEN_CONTACT_INFO_MARKUP)
-  );
+  FooterView.init(controlFooterLinks);
   ScrollReveal.init(controlIntersections);
   LazyLoading.init(controlLazyLoading);
+  Typewriter.writeScript(SCRIPT);
 };
 
 initTheme();

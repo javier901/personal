@@ -14,7 +14,8 @@
       align-items: center;
       height: fit-content;
       gap: 0.4rem;
-      transition: transform 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+        opacity 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
       .o {
         height: 2rem;
         width: 2rem;
@@ -44,8 +45,8 @@
       label {
         cursor: pointer;
         transition: all 0.2s ease,
-          transform 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-          opacity 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+          opacity 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
       }
 
       label:active {
@@ -88,9 +89,13 @@
       }
     }
 
-    // Hamburger / X visibility
-    .hamburger-x__container {
+    // Hamburger / X
+    .hamburger-x__wrapper {
       display: none;
+      transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+        opacity 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+    .hamburger-x__container {
       justify-content: center;
       align-items: center;
       position: relative;
@@ -121,7 +126,7 @@
       justify-content: center;
       gap: 4px;
       overflow: hidden;
-      transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
       svg {
         width: 24px;
@@ -182,7 +187,7 @@
   .vertical-banner__left {
     @include vertical-banners__common-styles;
     left: 10px;
-    transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     z-index: 100;
     .vertical-banner__left__icons {
       display: flex;
@@ -226,7 +231,7 @@
     @include vertical-banners__common-styles;
     color: var(--text-color-low-emphasis);
     user-select: text;
-    transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     z-index: 100;
   }
 

@@ -1,5 +1,5 @@
 import Views from "./Views";
-import { FORM_SUBMISSION_MESSAGE } from "../../config";
+import { FORM_SUBMISSION_MESSAGE, WINDOW_MARKUP } from "../../config";
 import { destroyElement } from "../../helpers";
 
 class ModalView extends Views {
@@ -9,80 +9,6 @@ class ModalView extends Views {
     this.sayHi.addEventListener("click", () => {
       this.openContactMe(submitForm);
     });
-  }
-
-  openRegularWindow(innerHTML = "") {
-    const markup = `
-    <div class="overlay regular-window">
-    <div class="osx-modal osx-modal__regular">
-      <div class="osx-bar">
-        <div class="osx-bar__dots__container">
-          <div class="osx-modal__btn osx-modal__btn__close osx-bar__dots red-dot modal-dot"></div>
-          <div class="osx-modal__btn osx-modal__btn__close osx-bar__dots yellow-dot modal-dot"></div>
-          <div class="osx-modal__btn  osx-modal__btn__maximize osx-bar__dots green-dot modal-dot"></div>
-        </div>
-        </div>
-        <!-- Content -->
-        <div class="regular-window__content" translate="yes">
-        ${innerHTML}
-        </div>
-    </div>
-  </div>
-`;
-
-    document.querySelector("main").insertAdjacentHTML("afterend", markup);
-    const regularWindow = document.querySelector(".regular-window");
-
-    // Create properties after element insertion.
-    this.regularOverlay = document.querySelector(".overlay");
-
-    this.regularModal = document.querySelector(".osx-modal");
-    this.regularBtnMaximize = document.querySelector(
-      ".osx-modal__btn__maximize"
-    );
-    this.regularBtnClose = document.querySelectorAll(".osx-modal__btn__close");
-
-    // Red and green buttons
-    this.regularOverlay.addEventListener("click", (e) => {
-      if (e.target !== this.regularOverlay) return;
-
-      this.hideModal(true);
-      this.rootYScroll = true;
-      // Executes after animation.
-      setTimeout(() => destroyElement(regularWindow), 500);
-    });
-
-    // Esc key handler (Close modal)
-    document.addEventListener("keyup", (e) => {
-      if (e.key !== "Escape") return;
-      this.hideModal(true);
-      this.rootYScroll = true;
-      // Executes after animation.
-      setTimeout(() => destroyElement(regularWindow), 500);
-    });
-
-    // Handle same event on close and minimize btns click
-    this.regularBtnClose.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        this.hideModal(true);
-        this.rootYScroll = true;
-        // Executes after animation.
-        setTimeout(() => destroyElement(regularWindow), 500);
-      });
-    });
-
-    this.regularBtnMaximize.addEventListener("click", () => {
-      this.regularModal.classList.toggle("osx-modal__maximize");
-      // Enable scroll on maximized window. This way "se"
-      this.rootYScroll = true ? true : false;
-    });
-
-    // Disable Y scroll
-    this.rootYScroll = false;
-
-    // Adds function execution to event loop in order to make opening animation visible.
-    // True is passed so that show() can execute regular window algorithm
-    setTimeout(this.show.bind(this, true));
   }
 
   openContactMe(submitForm) {
@@ -183,6 +109,92 @@ class ModalView extends Views {
 
     // Adds function to class
     this.submitForm = submitForm;
+  }
+
+  createRegularWindow(innerHTML = "") {
+    const markup = `
+    <div class="overlay regular-window">
+    <div class="osx-modal osx-modal__regular">
+      <div class="osx-bar">
+        <div class="osx-bar__dots__container">
+          <div class="osx-modal__btn osx-modal__btn__close osx-bar__dots red-dot modal-dot"></div>
+          <div class="osx-modal__btn osx-modal__btn__close osx-bar__dots yellow-dot modal-dot"></div>
+          <div class="osx-modal__btn  osx-modal__btn__maximize osx-bar__dots green-dot modal-dot"></div>
+        </div>
+        </div>
+        <!-- Content -->
+        <div class="regular-window__content" translate="yes">
+        ${innerHTML}
+        </div>
+    </div>
+  </div>
+`;
+
+    document.querySelector("main").insertAdjacentHTML("afterend", markup);
+    const regularWindow = document.querySelector(".regular-window");
+
+    // Create properties after element insertion.
+    this.regularOverlay = document.querySelector(".overlay");
+
+    this.regularModal = document.querySelector(".osx-modal");
+    this.regularBtnMaximize = document.querySelector(
+      ".osx-modal__btn__maximize"
+    );
+    this.regularBtnClose = document.querySelectorAll(".osx-modal__btn__close");
+
+    // Red and green buttons
+    this.regularOverlay.addEventListener("click", (e) => {
+      if (e.target !== this.regularOverlay) return;
+
+      this.hideModal(true);
+      this.rootYScroll = true;
+      // Executes after animation.
+      setTimeout(() => destroyElement(regularWindow), 500);
+    });
+
+    // Esc key handler (Close modal)
+    document.addEventListener("keyup", (e) => {
+      if (e.key !== "Escape") return;
+      this.hideModal(true);
+      this.rootYScroll = true;
+      // Executes after animation.
+      setTimeout(() => destroyElement(regularWindow), 500);
+    });
+
+    // Handle same event on close and minimize btns click
+    this.regularBtnClose.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        this.hideModal(true);
+        this.rootYScroll = true;
+        // Executes after animation.
+        setTimeout(() => destroyElement(regularWindow), 500);
+      });
+    });
+
+    this.regularBtnMaximize.addEventListener("click", () => {
+      this.regularModal.classList.toggle("osx-modal__maximize");
+      // Enable scroll on maximized window. This way "se"
+      this.rootYScroll = true ? true : false;
+    });
+
+    // Disable Y scroll
+    this.rootYScroll = false;
+
+    // Adds function execution to event loop in order to make opening animation visible.
+    // True is passed so that show() can execute regular window algorithm
+    setTimeout(this.show.bind(this, true));
+  }
+
+  openContactInfo() {
+    this.createRegularWindow(WINDOW_MARKUP.contactInfo);
+  }
+
+  openCourses() {
+    this.createRegularWindow(WINDOW_MARKUP.favoriteCourses);
+  }
+
+  openResume() {
+    this.createRegularWindow(WINDOW_MARKUP.resume);
   }
 
   closeContactMe() {

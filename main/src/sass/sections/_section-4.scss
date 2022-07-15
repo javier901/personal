@@ -16,7 +16,6 @@
       justify-content: center;
       align-items: center;
       height: 600px;
-      background-color: var;
       width: 100%;
       max-width: 1200px;
     }
@@ -165,7 +164,7 @@
       .credit {
         font-size: inherit;
         font-size: 0.9rem;
-        color: var(--text-color-medium-emphasis);
+        color: var(--text-color-low-emphasis);
 
         a {
           display: inline-flex;

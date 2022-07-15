@@ -1,4 +1,4 @@
-import { PROJECT_IMGAGES_MARKUP } from "../../config";
+import { PROJECT_IMAGES_MARKUP } from "../../config";
 import Views from "./Views";
 
 class ScrollReveal extends Views {

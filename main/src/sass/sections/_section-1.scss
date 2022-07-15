@@ -84,8 +84,7 @@
     height: inherit;
     animation: blinker 0.8s linear infinite;
     display: inline-block;
-    font-size: 0.8rem;
-    transform: translateX(-3px);
+    font-size: 1em;
     @keyframes blinker {
       50% {
         opacity: 0;

@@ -1,4 +1,4 @@
-import { PROJECT_IMGAGES_MARKUP } from "../../config";
+import { PROJECT_IMAGES_MARKUP } from "../../config";
 // This import is resolved by vite to the relative path after minification
 import myPhotoUrl from "../../../../img/section-2/my_photo.jpg";
 import Views from "./Views";
@@ -25,7 +25,7 @@ class LazyLoading extends Views {
   loadProjectImages() {
     const loadingIcons = document.querySelectorAll(".loading__icon__project");
     loadingIcons.forEach((icon, i) => {
-      icon.insertAdjacentHTML("beforebegin", PROJECT_IMGAGES_MARKUP[i]);
+      icon.insertAdjacentHTML("beforebegin", PROJECT_IMAGES_MARKUP[i]);
     });
 
     document.querySelectorAll(".project-img").forEach((img, i) => {

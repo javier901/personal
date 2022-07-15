@@ -7,6 +7,8 @@ class Views {
   rightBanner = document.querySelector(".vertical-banner__right");
   navBar = document.querySelector("nav");
   navLbls = document.querySelectorAll(".nav-lbl");
+  hamburgerAndX = document.querySelector(".hamburger-x__wrapper");
+
 
   firstLetterToUpperCase(word) {
     return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();

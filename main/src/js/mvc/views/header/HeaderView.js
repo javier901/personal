@@ -1,12 +1,13 @@
 import { isTouchScreendevice } from "../../../helpers";
 import Views from "../Views";
-
+import _ from "lodash";
 class Header extends Views {
-  hamburgerAndXContainer = document.querySelector(".hamburger-x__container");
   navElement = document.querySelector("nav");
-  navChildren = document.querySelectorAll(".nav-lbl");
-  init(fixedHeaderHandler) {
-    this.hamburgerAndXContainer.addEventListener("click", (e) => {
+  navChildren = Array.from(this.navElement.children);
+  #lastScrolled = 0;
+
+  init(handle) {
+    this.hamburgerAndX.addEventListener("click", (e) => {
       // ---------------------------------- show menu
     });
 
@@ -14,22 +15,36 @@ class Header extends Views {
       child.addEventListener("mouseenter", (e) => {
         this.navOnMouseEnter(e);
       });
-
-      child.addEventListener("click", (e) => {
-        const aboutMeBtn = document.querySelector(".nav-lbl__about-me");
-        const projectsBtn = document.querySelector(".nav-lbl__projects");
-
-        const aboutMeSection = document.querySelector(".section-2");
-        const projectsSection = document.querySelector(".section-4");
-
-        const scrollTo = (element) => element.scrollIntoView(true);
-
-        if (e.target === aboutMeBtn) scrollTo(aboutMeSection);
-        if (e.target === projectsBtn) scrollTo(projectsSection);
-      });
     });
 
-    fixedHeaderHandler(this.sections[0], this.sections[1]);
+    this.navElement.addEventListener("click", (e) => {
+      if (e.target.closest(".nav-lbl__about-me"))
+        handle.scrollToElement(this.sections.at(1));
+      if (e.target.closest(".nav-lbl__projects"))
+        handle.scrollToElement(this.sections.at(3));
+      if (e.target.closest(".nav-lbl__contact")) handle.openContactInfoWindow();
+      if (e.target.closest(".nav-lbl__resume")) handle.openResumeWindow();
+    });
+
+    const showOrHide = _.throttle(
+      function () {
+        const currentScroll = window.scrollY;
+        if (
+          currentScroll > this.#lastScrolled &&
+          this.sections[1].getBoundingClientRect().top < 0
+        )
+          this.fix();
+        if (
+          currentScroll < this.#lastScrolled &&
+          this.sections[0].getBoundingClientRect().bottom > 0
+        )
+          this.unfix();
+        this.#lastScrolled = window.scrollY;
+      },
+      500,
+      { leading: false, trailing: true }
+    ).bind(this);
+    document.addEventListener("scroll", showOrHide);
   }
 
   // Controls nav hovering

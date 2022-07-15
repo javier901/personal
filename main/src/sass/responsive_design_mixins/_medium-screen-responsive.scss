@@ -49,6 +49,9 @@
 
     .section-2 {
       @include medium-screen-padding;
+      .loading__icon__img {
+        fill: var(--about-me-h-color);
+      }
     }
 
     .section-2 .about-me__wrapper {

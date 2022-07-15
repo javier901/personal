@@ -25,7 +25,7 @@
 
   .osx-modal {
     @include osx-window;
-    height: clamp(28rem, 80vh, 36rem);
+    height: clamp(28em, 80vh, 36em);
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     transform: translateY(100%) scale(0.5);
     opacity: 0;
@@ -58,7 +58,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 4rem;
+    width: 4em;
   }
 
   .form-btn__submit__text {
@@ -98,12 +98,12 @@
     padding-left: 16px;
     padding-right: 16px;
     background-color: var(--accent-color);
-    height: 2.2rem;
+    height: 2.2em;
     overflow: hidden;
     justify-self: end;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1em;
 
     p:not(.form-btn__submit__text__sent) {
       color: var(--call-to-action-text-color);
@@ -134,7 +134,7 @@
     overflow: auto;
 
     p {
-      font-size: 1rem;
+      font-size: 1em;
     }
 
     .contact-me__form__text {
@@ -144,7 +144,7 @@
 
       h3 {
         font-weight: 600;
-        font-size: 1.2rem;
+        font-size: 1.2em;
         color: var(--accent-color);
         align-self: start;
       }
@@ -165,7 +165,7 @@
 
   .contact-me__form__message {
     height: 100%;
-    min-height: 2rem;
+    min-height: 2em;
     resize: none;
   }
 
@@ -218,10 +218,11 @@
   gap: 14px;
 
   label {
-    font-size: 1rem;
+    font-size: 1em;
   }
   p {
-    font-size: 1rem;
+    display: inline-block;
+    font-size: 1em;
   }
 
   a {
@@ -243,6 +244,10 @@
         color: var(--accent-color);
       }
     }
+
+    .courses__emoji {
+      display: inherit;
+    }
   }
 }
 
@@ -260,7 +265,7 @@
 .contact-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
   padding: 14px;
 }
 
