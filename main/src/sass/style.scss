@@ -2,7 +2,8 @@
 @import "welcome-screen";
 @import "mixins";
 @import "variables";
-@import "header";
+@import "header/header";
+@import "small-screen-menu";
 @import "main-content";
 @import "footer";
 @import "modal";
@@ -106,6 +107,7 @@ body {
   transition: transform 0.8s ease-out, opacity 0.8s ease 0.2s;
   transform: translateY(10%);
 }
+
 .reveal {
   opacity: 1;
   transform: unset;

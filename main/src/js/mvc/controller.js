@@ -11,6 +11,7 @@ import ScrollReveal from "./views/ScrollReveal.js";
 import InitialAnimation from "./views/InitialAnimation.js";
 import WelcomeLogoView from "./views/WelcomeLogoView.js";
 import LazyLoading from "./views/LazyLoading.js";
+import SmallScreenMenu from "./views/header/SmallScreenMenu.js";
 
 const controlTheme = function () {
   lightTheme.isActive = !lightTheme.isActive;
@@ -68,25 +69,6 @@ const controlIntersections = function (elementsToObserve, behaviorCallback) {
   });
 };
 
-// const controlFixedHeader = function (sec1, sec2) {
-//   const behaviorCallback = function (entries) {
-//     entries.forEach((entry) => {
-//       if (!entry.isIntersecting) return;
-//       if (entry.target === sec1) HeaderView.unfix();
-//       if (entry.target === sec2) HeaderView.fix();
-//     });
-//   };
-
-//   const options = {
-//     root: null,
-//     threshold: 0.4,
-//   };
-//   const observer = new IntersectionObserver(behaviorCallback, options);
-
-//   observer.observe(sec1);
-//   observer.observe(sec2);
-// };
-
 const controlLazyLoading = function (sec2, sec4) {
   const behaviorCallback = function (entries, observer) {
     // Lazy loading observer callback function
@@ -123,8 +105,11 @@ const initTheme = function () {
   LightThemeView.addHandler(controlTheme);
 };
 
-// This object's members are the footer links different behaviors
+const controlSmallScreenMenuButton = function () {
+  MenuView.toggleHamburger();
+};
 
+// This object's members are the footer links different behaviors
 class WindowsControl {
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -152,7 +137,7 @@ const controlFooterLinks = new WindowsControl();
 const controlNavigation = new WindowsControl();
 
 const initApp = function () {
-  MenuView.init();
+  SmallScreenMenu.init(controlSmallScreenMenuButton);
   HeaderView.init(controlNavigation);
   Slider.addHandler();
   ModalView.addHandler(controlFormSubmission);

@@ -7,6 +7,7 @@
     height: 50px;
     transition: transform 0.2s ease;
     overflow: hidden;
+    position: relative;
 
     .logo__container {
       display: flex;
@@ -94,6 +95,7 @@
       display: none;
       transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55),
         opacity 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      z-index: 901;
     }
     .hamburger-x__container {
       justify-content: center;

@@ -1,16 +1,12 @@
 import { isTouchScreendevice } from "../../../helpers";
 import Views from "../Views";
-import _ from "lodash";
+import { throttle } from "lodash";
 class Header extends Views {
   navElement = document.querySelector("nav");
   navChildren = Array.from(this.navElement.children);
   #lastScrolled = 0;
 
   init(handle) {
-    this.hamburgerAndX.addEventListener("click", (e) => {
-      // ---------------------------------- show menu
-    });
-
     this.navChildren.forEach((child) => {
       child.addEventListener("mouseenter", (e) => {
         this.navOnMouseEnter(e);
@@ -26,7 +22,8 @@ class Header extends Views {
       if (e.target.closest(".nav-lbl__resume")) handle.openResumeWindow();
     });
 
-    const showOrHide = _.throttle(
+    // Creates a throttled function that only invokes func at most once per every wait milliseconds. The throttled function comes with a cancel method to cancel delayed func invocations and a flush method to immediately invoke them. Provide options to indicate whether func should be invoked on the leading and/or trailing edge of the wait timeout. The func is invoked with the last arguments provided to the throttled function. Subsequent calls to the throttled function return the result of the last func invocation.
+    const showOrHide = throttle(
       function () {
         const currentScroll = window.scrollY;
         if (

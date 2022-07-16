@@ -8,6 +8,8 @@
       grid-template-columns: 1fr 1fr;
       height: clamp(250px, 50vh, 420px);
       align-items: center;
+      max-width: 1500px;
+      margin: 0 auto;
 
       .introduction {
         position: relative;

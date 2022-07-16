@@ -1,0 +1,48 @@
+.small-screen-menu__overlay {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  transition: opacity 0.2s ease-in, backdrop-filter 0.2s ease-in,
+    background-color 0.2s ease-in;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 900;
+}
+.small-screen-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50px;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: var(--background-lighter-color);
+  box-shadow: var(--shadow);
+  gap: 34px;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  transform: translateX(100%);
+
+  label {
+    font-size: 1.4em;
+    font-weight: 200;
+    transition: all 0.1s ease;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+
+    &:active {
+      color: var(--accent-color);
+    }
+  }
+
+  // border-top-left-radius: 8px;
+  // border-bottom-left-radius: 8px;
+}

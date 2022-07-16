@@ -287,6 +287,7 @@ export const WINDOW_MARKUP = {
   </div>
   </div>
   </div>`,
+
   resume: ``,
 };
 
