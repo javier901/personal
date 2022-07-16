@@ -10,7 +10,7 @@
       row-gap: 52px;
       height: fit-content;
     }
-    label {
+    .footer-link {
       font-size: 1rem;
       font-weight: 400;
       color: var(--text-color-medium-emphasis);
@@ -73,14 +73,14 @@
       @media (hover: hover) and (pointer: fine) {
         &:hover {
           transform: scale(1.1);
-          label {
+          .footer-link {
             color: var(--accent-color);
           }
         }
       }
 
       &:active {
-        label {
+        .footer-link {
           color: var(--accent-color);
         }
       }

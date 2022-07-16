@@ -152,15 +152,10 @@ const initApp = function () {
 };
 
 initTheme();
-// WelcomeLogoView.startAnimation();
-// setTimeout(() => {
-//   InitialAnimation.init();
-// }, 2800);
-// setTimeout(() => {
-//   initApp();
-// }, 4400);
-document.querySelector(".welcome").remove();
-
-InitialAnimation.init();
-
-initApp();
+WelcomeLogoView.startAnimation();
+setTimeout(() => {
+  InitialAnimation.init();
+}, 2800);
+setTimeout(() => {
+  initApp();
+}, 4400);

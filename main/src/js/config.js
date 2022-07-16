@@ -163,132 +163,151 @@ export const SCRIPT = [
 // This object's members are the markup rendered in the different "OSX Windows".
 export const WINDOW_MARKUP = {
   contactInfo: `
-  <div class="regular-window__wrapper" translate="yes">
-  <h3 class="regular-window__main-text">Hi, Omar here!</h3>
-  <p class="regular-window__message">
-    These are the ways you can contact me:
-  </p>
-  
-  
-  <div class="window-items">
-  <div class="window-item">
-    <label>Primary email address (Preferred):</label>
-    <a
-      href="mailto:moqueteperez@gmail.com?subject=From Omar Moquete's portfolio:&nbsp;"
-    >
-      <p>moqueteperez@gmail.com</p>
-    </a>
-  </div>
-  
-  <div class="window-item">
-    <label>Secondary email address:</label>
-    <a
-      href="mailto:moqueteperez@outlook.com?subject=From Omar Moquete's portfolio:&nbsp;"
-      target="_blank"
-    >
-      <p>moqueteperez@outlook.com</p>
-    </a>
-  </div>
-  <div class="window-item">
-    <label>Phone number (for calls, WhatsApp and Telegram):</label>
-    <a class="footer-link__item" href="tel:+1 9292391161" target="_blank">
-      <p>+1 929-239-1161</p>
-    </a>
-  </div>
-  
-  <div class="window-item">
-    <label>Instagram username:</label>
-    <a href="https://www.instagram.com/justdominican_gg/" target="_blank"
-      ><p>@justdominican_gg</p></a
-    >
-  </div>
-  
-  <div class="window-item">
-    <label>Twitter username:</label>
-    <a href="https://twitter.com/_OmarMoquete" target="_blank"
-      ><p>@_OmarMoquete</p></a
-    >
-  </div>
-  
-  <div class="window-item">
-    <label>Discord username:</label>
-    <p>Omar(JustDominican)#6193</p>
-  </div>
-  </div>
+<div class="regular-window__wrapper" translate="yes">
+    <h3 class="regular-window__main-text">Hi, Omar here!</h3>
+    <p class="regular-window__message">
+      These are the ways you can contact me:
+    </p>
+
+    <div class="window-items">
+      <div class="window-item">
+        <label>Primary email address (Preferred):</label>
+        <a
+          href="mailto:moqueteperez@gmail.com?subject=From Omar Moquete's portfolio:&nbsp;"
+        >
+          <p>moqueteperez@gmail.com</p>
+        </a>
+      </div>
+
+      <div class="window-item">
+        <label>Secondary email address:</label>
+        <a
+          href="mailto:moqueteperez@outlook.com?subject=From Omar Moquete's portfolio:&nbsp;"
+          target="_blank"
+        >
+          <p>moqueteperez@outlook.com</p>
+        </a>
+      </div>
+      <div class="window-item">
+        <label>Phone number (for calls, WhatsApp and Telegram):</label>
+        <a class="footer-link__item" href="tel:+1 9292391161" target="_blank">
+          <p>+1 929-239-1161</p>
+        </a>
+      </div>
+
+      <div class="window-item">
+        <label>Instagram username:</label>
+        <a href="https://www.instagram.com/justdominican_gg/" target="_blank"
+          ><p>@justdominican_gg</p></a
+        >
+      </div>
+
+      <div class="window-item">
+        <label>Twitter username:</label>
+        <a href="https://twitter.com/_OmarMoquete" target="_blank"
+          ><p>@_OmarMoquete</p></a
+        >
+      </div>
+
+      <div class="window-item">
+        <label>Discord username:</label>
+        <p>Omar(JustDominican)#6193</p>
+      </div>
+    </div>
   </div>
   `,
 
   favoriteCourses: `
-  <div class="regular-window__wrapper" translate="yes">
-  <h3 class="regular-window__main-text">Hello world!</h3>
-  <p class="regular-window__message">
-  These are some of my favorite learning sources and I recommend them 100%. They are packed with valuable content and new skills you can learn. Check them out! 👨🏽‍🎓
-  </p>
-  
-  
-  <div class="window-items" translate="no">
-  <div class="window-item">
-    <a
-      href="https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/"
-    target="_blank">
-      <p><span class="courses__emoji">👉🏽&nbsp;</span>Build Responsive Real-World Websites with HTML and CSS</p>
-    </a>
-  </div>
-  <div class="window-item">
-    <a
-      href="https://www.udemy.com/course/the-complete-javascript-course/"
-    target="_blank">
-      <p><span class="courses__emoji">👉🏽&nbsp;</span>The complete JavaScript Course 2022</p>
-    </a>
-  </div>
-  <div class="window-item">
-    <a
-      href="https://www.udemy.com/course/react-the-complete-guide-incl-redux/"
-    target="_blank">
-      <p><span class="courses__emoji">👉🏽&nbsp;</span>React - The Complete Guide (incl Hooks, React Router, Redux)</p>
-    </a>
-  </div>
-  <div class="window-item">
-    <a
-      href="https://www.youtube.com/c/WebDevSimplified/"
-    target="_blank">
-      <p><span class="courses__emoji">👉🏽&nbsp;</span>Web Dev Simplified</p>
-    </a>
-  </div>
-  <div class="window-item">
-    <a
-      href="https://www.youtube.com/c/programmingwithmosh/"
-    target="_blank">
-      <p><span class="courses__emoji">👉🏽&nbsp;</span>Programming With Mosh</p>
-    </a>
-  </div>
-  <div class="window-item">
-    <a
-      href="https://www.youtube.com/c/TraversyMedia/"
-    target="_blank">
-      <p><span class="courses__emoji">👉🏽&nbsp;</span>Traversy Media</p>
-    </a>
-  </div>
-  <div class="window-item">
-    <a
-      href="https://www.youtube.com/c/dcode-software/"
-    target="_blank">
-      <p><span class="courses__emoji">👉🏽&nbsp;</span>dcode</p>
-    </a>
-  </div>
-  <div class="window-item">
-  <p translate="yes">And since being a developer is not just about programming, you must first develop your mind: 🧠💆🏽‍♂️</p>
+<div class="regular-window__wrapper" translate="yes">
+    <h3 class="regular-window__main-text">Hello world!</h3>
+    <p class="regular-window__message">
+      These are some of my favorite learning sources and I recommend them
+      100%. They are packed with valuable content and new skills you can
+      learn. Check them out! 👨🏽‍🎓
+    </p>
 
-    <a
-      href="https://www.udemy.com/course/critical-thinker-academy/"
-    target="_blank">
-     <p><span class="courses__emoji">✨&nbsp;</span>Critical Thinker Academy: Learn to Think Like a Philosopher</p>
-    </a>
-  </div>
-  </div>
-  </div>`,
+    <div class="window-items" translate="no">
+      <div class="window-item">
+        <a
+          href="https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/"
+          target="_blank"
+        >
+          <p>
+            <span class="courses__emoji">👉🏽&nbsp;</span>Build Responsive
+            Real-World Websites with HTML and CSS
+          </p>
+        </a>
+      </div>
+      <div class="window-item">
+        <a
+          href="https://www.udemy.com/course/the-complete-javascript-course/"
+          target="_blank"
+        >
+          <p>
+            <span class="courses__emoji">👉🏽&nbsp;</span>The complete
+            JavaScript Course 2022
+          </p>
+        </a>
+      </div>
+      <div class="window-item">
+        <a
+          href="https://www.udemy.com/course/react-the-complete-guide-incl-redux/"
+          target="_blank"
+        >
+          <p>
+            <span class="courses__emoji">👉🏽&nbsp;</span>React - The Complete
+            Guide (incl Hooks, React Router, Redux)
+          </p>
+        </a>
+      </div>
+      <div class="window-item">
+        <a href="https://www.youtube.com/c/WebDevSimplified/" target="_blank">
+          <p>
+            <span class="courses__emoji">👉🏽&nbsp;</span>Web Dev Simplified
+          </p>
+        </a>
+      </div>
+      <div class="window-item">
+        <a
+          href="https://www.youtube.com/c/programmingwithmosh/"
+          target="_blank"
+        >
+          <p>
+            <span class="courses__emoji">👉🏽&nbsp;</span>Programming With Mosh
+          </p>
+        </a>
+      </div>
+      <div class="window-item">
+        <a href="https://www.youtube.com/c/TraversyMedia/" target="_blank">
+          <p><span class="courses__emoji">👉🏽&nbsp;</span>Traversy Media</p>
+        </a>
+      </div>
+      <div class="window-item">
+        <a href="https://www.youtube.com/c/dcode-software/" target="_blank">
+          <p><span class="courses__emoji">👉🏽&nbsp;</span>dcode</p>
+        </a>
+      </div>
+      <div class="window-item">
+        <p translate="yes">
+          And since being a developer is not just about programming, you must
+          first develop your mind: 🧠💆🏽‍♂️
+        </p>
 
-  resume: ``,
+        <a
+          href="https://www.udemy.com/course/critical-thinker-academy/"
+          target="_blank"
+        >
+          <p>
+            <span class="courses__emoji">✨&nbsp;</span>Critical Thinker
+            Academy: Learn to Think Like a Philosopher
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+  `,
+
+  resume: `<div class="resume-pdf__container"><iframe src="./docs/cv.pdf" frameborder="0"></iframe><div>`,
 };
 
 export const PROJECT_IMAGES_MARKUP = [

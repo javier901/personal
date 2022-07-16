@@ -6,7 +6,7 @@
 @import "small-screen-menu";
 @import "main-content";
 @import "footer";
-@import "modal";
+@import "modals";
 @import "responsive_design_mixins/large-screen-responsive";
 @import "responsive_design_mixins/medium-screen-responsive";
 @import "responsive_design_mixins/small-screen-responsive";
@@ -132,6 +132,15 @@ body {
     100% {
       transform: translateX(-20%);
     }
+  }
+}
+
+.overlay__active {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  &::after {
+    opacity: 1;
+    transform: unset;
   }
 }
 

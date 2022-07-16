@@ -10,18 +10,33 @@
   height: 100vh;
   width: 100vw;
   z-index: 900;
+
+  &::after {
+    content: "© 2022 Omar Moquete. All rights reserved.";
+    position: fixed;
+    font-size: 0.7em;
+    font-weight: 400;
+    color: var(--text-color-low-emphasis);
+    bottom: 40px;
+    padding-right: 24px;
+    right: 0;
+    width: calc(40vw - 48px);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    transform: translateX(100%);
+  }
 }
 .small-screen-menu {
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   padding: 24px;
   padding-bottom: 250px;
   top: 50px;
   right: 0;
-  width: 50vw;
+  width: 40vw;
   height: 100vh;
   // background-color: var(--background-lighter-color);
   box-shadow: var(--shadow);
@@ -34,24 +49,9 @@
     var(--background-color),
     var(--background-lighter-color)
   );
-  // background: linear-gradient(
-  //   to top,
-  //   var(--background-light-color),
-  //   var(--background-lighter-color)
-  // );
-
-  &::after {
-    content: "© 2022 Omar Moquete. All rights reserved.";
-    position: absolute;
-    font-size: 0.8em;
-    font-weight: 400;
-    color: var(--text-color-low-emphasis);
-    padding: 24px;
-    bottom: 8%;
-  }
 
   label {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 200;
     transition: all 0.1s ease;
     @media (hover: hover) and (pointer: fine) {
@@ -64,7 +64,4 @@
       color: var(--accent-color);
     }
   }
-
-  // border-top-left-radius: 8px;
-  // border-bottom-left-radius: 8px;
 }
