@@ -254,19 +254,19 @@
   font-weight: 600;
 }
 
-.contact-items {
+.window-items {
   border: solid 2px var(--odd-sibling-color);
   border-radius: 4px;
   user-select: text;
 }
 
-.contact-item {
+.window-item {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 14px;
 }
 
-.contact-item:nth-of-type(2n) {
+.window-item:nth-of-type(2n) {
   background-color: var(--odd-sibling-color);
 }

@@ -12,7 +12,7 @@ import InitialAnimation from "./views/InitialAnimation.js";
 import WelcomeLogoView from "./views/WelcomeLogoView.js";
 import LazyLoading from "./views/LazyLoading.js";
 import SmallScreenMenu from "./views/header/SmallScreenMenu.js";
-
+import { scrollToElement } from "../helpers.js";
 const controlTheme = function () {
   lightTheme.isActive = !lightTheme.isActive;
   lightTheme.isActive ? lightTheme.save() : lightTheme.delete();
@@ -105,39 +105,43 @@ const initTheme = function () {
   LightThemeView.addHandler(controlTheme);
 };
 
-const controlSmallScreenMenuButton = function () {
-  MenuView.toggleHamburger();
-};
-
 // This object's members are the footer links different behaviors
-class WindowsControl {
+class ModalControl {
+  constructor() {
+    this.__proto__.scrollToElement = scrollToElement;
+  }
+
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   scrollToElement(element) {
-    element.scrollIntoView(true);
+    scrollToElement(element);
   }
 
-  openDirectMessageWindow() {
+  openDirectMessage() {
     ModalView.openContactMe();
   }
-  openContactInfoWindow() {
+  openContactInfo() {
     ModalView.openContactInfo();
   }
-  openCoursesWindow() {
+  openCourses() {
     ModalView.openCourses();
   }
-  openResumeWindow() {
+  openResume() {
     ModalView.openResume();
   }
-}
 
-const controlFooterLinks = new WindowsControl();
-const controlNavigation = new WindowsControl();
+  spinMenuButton() {
+    MenuView.toggleHamburger();
+  }
+}
+const controlFooterLinks = new ModalControl();
+const controlNavigation = new ModalControl();
+const controlSmallScreenMenu = new ModalControl();
 
 const initApp = function () {
-  SmallScreenMenu.init(controlSmallScreenMenuButton);
+  SmallScreenMenu.init(controlSmallScreenMenu);
   HeaderView.init(controlNavigation);
   Slider.addHandler();
   ModalView.addHandler(controlFormSubmission);
@@ -148,10 +152,15 @@ const initApp = function () {
 };
 
 initTheme();
-WelcomeLogoView.startAnimation();
-setTimeout(() => {
-  InitialAnimation.init();
-}, 2800);
-setTimeout(() => {
-  initApp();
-}, 4400);
+// WelcomeLogoView.startAnimation();
+// setTimeout(() => {
+//   InitialAnimation.init();
+// }, 2800);
+// setTimeout(() => {
+//   initApp();
+// }, 4400);
+document.querySelector(".welcome").remove();
+
+InitialAnimation.init();
+
+initApp();

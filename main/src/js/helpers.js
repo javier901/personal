@@ -14,3 +14,7 @@ export const destroyElement = function (element) {
 export const isTouchScreendevice = function () {
   return "ontouchstart" in window;
 };
+
+export const scrollToElement = function (element) {
+  element.scrollIntoView(true);
+};

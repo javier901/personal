@@ -6,7 +6,7 @@ class Header extends Views {
   navChildren = Array.from(this.navElement.children);
   #lastScrolled = 0;
 
-  init(handle) {
+  init(handler) {
     this.navChildren.forEach((child) => {
       child.addEventListener("mouseenter", (e) => {
         this.navOnMouseEnter(e);
@@ -15,11 +15,12 @@ class Header extends Views {
 
     this.navElement.addEventListener("click", (e) => {
       if (e.target.closest(".nav-lbl__about-me"))
-        handle.scrollToElement(this.sections.at(1));
+        handler.scrollToElement(this.sections.at(1));
       if (e.target.closest(".nav-lbl__projects"))
-        handle.scrollToElement(this.sections.at(3));
-      if (e.target.closest(".nav-lbl__contact")) handle.openContactInfoWindow();
-      if (e.target.closest(".nav-lbl__resume")) handle.openResumeWindow();
+        handler.scrollToElement(this.sections.at(3));
+      if (e.target.closest(".nav-lbl__contact"))
+        handler.openContactInfoWindow();
+      if (e.target.closest(".nav-lbl__resume")) handler.openResumeWindow();
     });
 
     // Creates a throttled function that only invokes func at most once per every wait milliseconds. The throttled function comes with a cancel method to cancel delayed func invocations and a flush method to immediately invoke them. Provide options to indicate whether func should be invoked on the leading and/or trailing edge of the wait timeout. The func is invoked with the last arguments provided to the throttled function. Subsequent calls to the throttled function return the result of the last func invocation.

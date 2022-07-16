@@ -8,7 +8,9 @@ class Views {
   navBar = document.querySelector("nav");
   navLbls = document.querySelectorAll(".nav-lbl");
   hamburgerAndX = document.querySelector(".hamburger-x__wrapper");
-
+  hamburgerContainer = document.querySelector(".hamburger-x__container");
+  hamburgerIcon = document.querySelector(".hamburger__icon");
+  xIcon = document.querySelector(".x__icon");
 
   firstLetterToUpperCase(word) {
     return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
