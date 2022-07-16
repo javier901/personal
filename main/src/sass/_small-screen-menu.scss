@@ -20,7 +20,7 @@
     bottom: 40px;
     padding-right: 24px;
     right: 0;
-    width: calc(40vw - 48px);
+    width: calc(50vw - 48px);
     opacity: 0;
     transition: all 0.3s ease-out;
     transform: translateX(100%);
@@ -36,7 +36,7 @@
   padding-bottom: 250px;
   top: 50px;
   right: 0;
-  width: 40vw;
+  width: 50vw;
   height: 100vh;
   // background-color: var(--background-lighter-color);
   box-shadow: var(--shadow);

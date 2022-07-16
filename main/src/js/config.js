@@ -2,6 +2,7 @@
 import eztasksUrl from "../../img/section-4/eztasks.png";
 import ampleUrl from "../../img/section-4/ample.png";
 import forkifyUrl from "../../img/section-4/forkify.png";
+import cvUrl from "../../docs/cv.pdf";
 
 export const LIGHT_THEME_NAME_IN_LOCAL_STORAGE = "lightTheme";
 
@@ -307,7 +308,7 @@ export const WINDOW_MARKUP = {
   </div>
   `,
 
-  resume: `<div class="resume-pdf__container"><iframe src="./docs/cv.pdf" frameborder="0"></iframe><div>`,
+  resume: `<div class="resume-pdf__container"><iframe src="${cvUrl}" frameborder="0"></iframe><div>`,
 };
 
 export const PROJECT_IMAGES_MARKUP = [
