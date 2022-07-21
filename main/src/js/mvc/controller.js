@@ -1,5 +1,5 @@
 import { lightTheme } from "./model.js";
-import LightThemeView from "./views/header/LightThemeView.js";
+import LightThemeView from "./views/UI Themes/LightThemeView.js";
 import HeaderView from "./views/header/HeaderView.js";
 import MenuView from "./views/header/MenuView.js";
 import Typewriter from "./views/Typewriter.js";
@@ -13,9 +13,15 @@ import WelcomeLogoView from "./views/WelcomeLogoView.js";
 import LazyLoading from "./views/LazyLoading.js";
 import SmallScreenMenu from "./views/header/SmallScreenMenu.js";
 import { scrollToElement } from "../helpers.js";
+import PdfViewerView from "./views/PdfViewerView.js";
+
 const controlTheme = function () {
   lightTheme.isActive = !lightTheme.isActive;
-  lightTheme.isActive ? lightTheme.save() : lightTheme.delete();
+  if (lightTheme.isActive) lightTheme.save();
+  else {
+    lightTheme.delete();
+  }
+  PdfViewerView.setLightTheme(lightTheme.isActive);
   LightThemeView.enableLightTheme(lightTheme.isActive);
 };
 
@@ -97,7 +103,7 @@ const controlLazyLoading = function (sec2, sec4) {
   observer.observe(sec4);
 };
 
-const initTheme = function () {
+const initTheme = async function () {
   if (lightTheme.load()) {
     lightTheme.isActive = !lightTheme.isActive;
     LightThemeView.enableLightTheme(lightTheme.isActive).toggleSwitch();
@@ -129,16 +135,22 @@ class ModalControl {
     ModalView.openCourses();
   }
   openResume() {
-    ModalView.openResume();
+    PdfViewerView.show();
   }
 
   spinMenuButton() {
     MenuView.toggleHamburger();
   }
 }
-const controlFooterLinks = new ModalControl();
-const controlNavigation = new ModalControl();
-const controlSmallScreenMenu = new ModalControl();
+const controlFooterLinks = new ModalControl(),
+  controlNavigation = new ModalControl(),
+  controlSmallScreenMenu = new ModalControl();
+
+const initPdfViewer = async function () {
+  await PdfViewerView.init();
+  // pdfViewer initialization happens here because pdfViewerView instance is needed to set the correct theme on the pdfViewer
+  PdfViewerView.setLightTheme(lightTheme.isActive);
+};
 
 const initApp = function () {
   SmallScreenMenu.init(controlSmallScreenMenu);
@@ -151,11 +163,20 @@ const initApp = function () {
   Typewriter.writeScript(SCRIPT);
 };
 
-initTheme();
-WelcomeLogoView.startAnimation();
-setTimeout(() => {
-  InitialAnimation.init();
-}, 2800);
-setTimeout(() => {
-  initApp();
-}, 4400);
+const initializeUI = function () {
+  initTheme();
+  initPdfViewer();
+  WelcomeLogoView.startAnimation();
+  setTimeout(() => {
+    InitialAnimation.init();
+  }, 2800);
+};
+
+const initializeCore = function (params) {
+  setTimeout(() => {
+    initApp();
+  }, 4400);
+};
+
+initializeUI();
+initializeCore();

@@ -11,6 +11,8 @@ class Views {
   hamburgerContainer = document.querySelector(".hamburger-x__container");
   hamburgerIcon = document.querySelector(".hamburger__icon");
   xIcon = document.querySelector(".x__icon");
+  // Gets assigned when pdfjs is instantiated
+  pdfViewerInstance;
 
   firstLetterToUpperCase(word) {
     return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();

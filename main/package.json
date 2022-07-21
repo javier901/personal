@@ -15,6 +15,7 @@
     "vite": "^2.9.9"
   },
   "dependencies": {
+    "@pdftron/pdfjs-express": "^8.6.0",
     "lodash": "^4.17.21"
   }
 }
