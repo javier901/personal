@@ -57,6 +57,8 @@ class SmallScreenMenu extends Views {
 
       if (e.target.closest(".small-screen-menu__label__contact"))
         this.#handler.openContactInfo();
+      if (e.target.closest(".small-screen-menu__label__resources"))
+        this.#handler.openResources();
 
       if (e.target.closest(".small-screen-menu__label__resume"))
         this.#handler.openResume();

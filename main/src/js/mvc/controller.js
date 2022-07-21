@@ -131,8 +131,8 @@ class ModalControl {
   openContactInfo() {
     ModalView.openContactInfo();
   }
-  openCourses() {
-    ModalView.openCourses();
+  openResources() {
+    ModalView.openResources();
   }
   openResume() {
     PdfViewerView.show();

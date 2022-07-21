@@ -198,6 +198,8 @@
   border-bottom-right-radius: inherit;
   iframe {
     border: none;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
   }
 }
 
@@ -281,7 +283,7 @@ body .overlay__resume .osx-modal__resume__maximize {
       }
     }
 
-    .courses__emoji {
+    .resources__emoji {
       display: inherit;
     }
   }

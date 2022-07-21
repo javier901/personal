@@ -11,7 +11,8 @@ class FooterView extends Views {
         handle.openDirectMessage();
       if (e.target.closest(".footer-link__item__contact-info"))
         handle.openContactInfo();
-      if (e.target.closest(".footer-link__item__courses")) handle.openCourses();
+      if (e.target.closest(".footer-link__item__resources"))
+        handle.openResources();
       if (e.target.closest(".footer-link__item__resume")) handle.openResume();
     });
   }

@@ -4,9 +4,11 @@ import { destroyElement } from "../../helpers";
 
 class ModalView extends Views {
   sayHi = document.querySelector(".say-hi");
+  submitForm;
 
   addHandler(submitForm) {
     this.sayHi.addEventListener("click", () => {
+      this.submitForm = submitForm;
       this.openContactMe(submitForm);
     });
   }
@@ -23,7 +25,7 @@ class ModalView extends Views {
         </div>
         </div>
         <!-- Content -->
-        <form class="contact-me__form">
+        <form class="contact-me__form" translate="yes">
         <div class="contact-me__form__text">
         <h3 class="form-main-text">Hey there!</h3>
         <p class="form-text">Please send me a message if you have any questions or comments. I will contact you through the email you provide me. If you include your phone number in your message, I'll call you. You can also click the green button to maximize this window. Thank you!</p>
@@ -189,8 +191,8 @@ class ModalView extends Views {
     this.createRegularWindow(WINDOW_MARKUP.contactInfo);
   }
 
-  openCourses() {
-    this.createRegularWindow(WINDOW_MARKUP.favoriteCourses);
+  openResources() {
+    this.createRegularWindow(WINDOW_MARKUP.favoriteResources);
   }
 
   openResume() {
@@ -360,6 +362,8 @@ class ModalView extends Views {
     if (inputIsValid) {
       // Change submit button to "sending"
       this.formButtonStatus("sending");
+      console.log(this);
+
       this.submitForm(formData);
     }
   }

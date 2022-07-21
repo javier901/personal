@@ -10,7 +10,7 @@ export const WRITING_SPEED_IN_MILLISECONDS = 100;
 export const FORM_API =
   "https://getform.io/f/003c358e-025f-4b54-a072-542dd32bccbd";
 
-export const AJAX_CALL_TIMEOUT_SECONDS = 5;
+export const AJAX_CALL_TIMEOUT_SECONDS = 8;
 
 export const FORM_SUBMISSION_MESSAGE = "Thank you! Your message has been sent.";
 
@@ -217,11 +217,11 @@ export const WINDOW_MARKUP = {
   </div>
   `,
 
-  favoriteCourses: `
+  favoriteResources: `
 <div class="regular-window__wrapper" translate="yes">
     <h3 class="regular-window__main-text">Hello world!</h3>
     <p class="regular-window__message">
-      These are some of my favorite learning sources and I recommend them
+      These are some of my favorite learning resources and I recommend them
       100%. They are packed with valuable content and new skills you can
       learn. Check them out! 👨🏽‍🎓
     </p>
@@ -233,7 +233,7 @@ export const WINDOW_MARKUP = {
           target="_blank"
         >
           <p>
-            <span class="courses__emoji">👉🏽&nbsp;</span>Build Responsive
+            <span class="resources__emoji">👉🏽&nbsp;</span>Build Responsive
             Real-World Websites with HTML and CSS
           </p>
         </a>
@@ -244,7 +244,7 @@ export const WINDOW_MARKUP = {
           target="_blank"
         >
           <p>
-            <span class="courses__emoji">👉🏽&nbsp;</span>The complete
+            <span class="resources__emoji">👉🏽&nbsp;</span>The complete
             JavaScript Course 2022
           </p>
         </a>
@@ -255,7 +255,7 @@ export const WINDOW_MARKUP = {
           target="_blank"
         >
           <p>
-            <span class="courses__emoji">👉🏽&nbsp;</span>React - The Complete
+            <span class="resources__emoji">👉🏽&nbsp;</span>React - The Complete
             Guide (incl Hooks, React Router, Redux)
           </p>
         </a>
@@ -263,7 +263,7 @@ export const WINDOW_MARKUP = {
       <div class="window-item">
         <a href="https://www.youtube.com/c/WebDevSimplified/" target="_blank">
           <p>
-            <span class="courses__emoji">👉🏽&nbsp;</span>Web Dev Simplified
+            <span class="resources__emoji">👉🏽&nbsp;</span>Web Dev Simplified
           </p>
         </a>
       </div>
@@ -273,18 +273,18 @@ export const WINDOW_MARKUP = {
           target="_blank"
         >
           <p>
-            <span class="courses__emoji">👉🏽&nbsp;</span>Programming With Mosh
+            <span class="resources__emoji">👉🏽&nbsp;</span>Programming With Mosh
           </p>
         </a>
       </div>
       <div class="window-item">
         <a href="https://www.youtube.com/c/TraversyMedia/" target="_blank">
-          <p><span class="courses__emoji">👉🏽&nbsp;</span>Traversy Media</p>
+          <p><span class="resources__emoji">👉🏽&nbsp;</span>Traversy Media</p>
         </a>
       </div>
       <div class="window-item">
         <a href="https://www.youtube.com/c/dcode-software/" target="_blank">
-          <p><span class="courses__emoji">👉🏽&nbsp;</span>dcode</p>
+          <p><span class="resources__emoji">👉🏽&nbsp;</span>dcode</p>
         </a>
       </div>
       <div class="window-item">
@@ -298,7 +298,7 @@ export const WINDOW_MARKUP = {
           target="_blank"
         >
           <p>
-            <span class="courses__emoji">✨&nbsp;</span>Critical Thinker
+            <span class="resources__emoji">✨&nbsp;</span>Critical Thinker
             Academy: Learn to Think Like a Philosopher
           </p>
         </a>
@@ -306,8 +306,6 @@ export const WINDOW_MARKUP = {
     </div>
   </div>
   `,
-
-  resume: `<div class="resume-pdf__render"></div>`,
 };
 
 export const PROJECT_IMAGES_MARKUP = [

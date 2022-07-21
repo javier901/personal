@@ -245,11 +245,26 @@
         font-size: 0.8rem;
       }
 
-      .footer__icon {
-        height: 1.2rem;
-        width: 1.2rem;
+      .footer__links {
+        display: flex;
+        gap: 24px;
+        width: fit-content;
       }
 
+      .footer__link__subgroup {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        gap: 14px;
+      }
+
+      .footer-link {
+        text-align: left;
+      }
+      .footer__icon {
+        height: 1.4rem;
+        width: 1.4rem;
+      }
       .c-r {
         font-size: 0.8rem;
       }
