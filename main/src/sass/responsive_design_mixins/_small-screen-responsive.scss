@@ -238,10 +238,19 @@
         grid-row: 2 / -1;
       }
     }
-    /////////// Cookie message ///////
 
+    /////////// Cookie message ///////
+    .cookie-message__content {
+      gap: 14px;
+    }
     .cookie-message {
-      font-size: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .cookie-message__button {
+      min-width: 80px;
+      font-size: 0.8rem;
+      padding: 10px 20px;
     }
 
     //////// Footer //////////
