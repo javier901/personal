@@ -86,6 +86,9 @@
       }
     }
 
+    .footer-link {
+      user-select: none;
+    }
     .footer__icon {
       stroke: var(--accent-color);
       stroke-width: 1;
