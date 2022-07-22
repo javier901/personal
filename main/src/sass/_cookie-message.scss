@@ -1,0 +1,44 @@
+.cookie-message__container {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: var(--background-lighter-color);
+  box-shadow: var(--shadow);
+  padding: 24px 44px;
+  z-index: 3000;
+  overflow: hidden;
+  /////
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.cookie-message__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.cookie-message {
+  font-weight: 300;
+  font-size: 1.1rem;
+  gap: 24px;
+}
+.cookie-message__button {
+  @include btn;
+  background-color: var(--accent-color);
+  color: var(--call-to-action-text-color);
+  width: 100px;
+  min-width: 100px;
+  &:active {
+    color: var(--accent-color);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cookie-message__button:hover {
+    color: var(--accent-color);
+  }
+}

@@ -10,6 +10,8 @@
 @import "responsive_design_mixins/large-screen-responsive";
 @import "responsive_design_mixins/medium-screen-responsive";
 @import "responsive_design_mixins/small-screen-responsive";
+@import "cookie-message";
+
 @font-face {
   font-family: "Consolas";
   src: url("../../fonts/consola.ttf");

@@ -14,6 +14,7 @@ import LazyLoading from "./views/LazyLoading.js";
 import SmallScreenMenu from "./views/header/SmallScreenMenu.js";
 import { scrollToElement } from "../helpers.js";
 import PdfViewerView from "./views/PdfViewerView.js";
+import CookieMessage from "./views/CookieMessage.js";
 
 const controlTheme = function () {
   lightTheme.isActive = !lightTheme.isActive;
@@ -152,6 +153,18 @@ const initPdfViewer = async function () {
   PdfViewerView.setLightTheme(lightTheme.isActive);
 };
 
+const controlCookieMessage = {
+  updateCanShowCookieMessage(bool) {
+    bool
+      ? localStorage.removeItem("COOKIE_READ")
+      : localStorage.setItem("COOKIE_READ", true);
+  },
+
+  canShowCookieMessage() {
+    if (localStorage.getItem("COOKIE_READ")) return false;
+    return true;
+  },
+};
 const initApp = function () {
   SmallScreenMenu.init(controlSmallScreenMenu);
   HeaderView.init(controlNavigation);
@@ -161,6 +174,7 @@ const initApp = function () {
   ScrollReveal.init(controlIntersections);
   LazyLoading.init(controlLazyLoading);
   Typewriter.writeScript(SCRIPT);
+  CookieMessage.init(controlCookieMessage);
 };
 
 const initializeUI = function () {

@@ -17,9 +17,9 @@ class LightThemeView extends Views {
     const moonIcon = document.querySelector(".moon__icon");
     const sunIcon = document.querySelector(".sun__icon");
     this.lightThemeSwitchElement.classList.toggle("slider__active");
-
     moonIcon.classList.toggle("moon__icon__disabled");
     sunIcon.classList.toggle("sun__icon__disabled");
+    return this;
   }
 
   enableLightTheme(bool) {
@@ -36,7 +36,16 @@ class LightThemeView extends Views {
     if (!bool && bool !== null) updateUI(darkThemeColorsIterable);
     // if isActive === true
     else updateUI(lightThemeColorsIterable);
+    this.enableLightThemeFavicon(bool);
+    return this;
+  }
 
+  enableLightThemeFavicon(bool) {
+    const iconElement = document.querySelector(`link[rel="icon"]`);
+
+    bool
+      ? (iconElement.href = "public/favicons/fav-icon-light.png")
+      : (iconElement.href = "public/favicons/fav-icon-dark.png");
     return this;
   }
 }
