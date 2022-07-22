@@ -29,8 +29,8 @@ class Views {
   }
 
   validateWord(word) {
-    // Excludes numbers
-    const regEx = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+    // Excludes numbers and illegal characters
+    const regEx = /^([ \u00c0-\u01ffa-zA-Z'\-])+$/;
     return word.match(regEx) ? true : false;
   }
 

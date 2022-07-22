@@ -129,7 +129,7 @@ class ModalControl {
   }
 
   openDirectMessage() {
-    ModalView.openContactMe();
+    ModalView.openContactMe(controlFormSubmission);
   }
   openContactInfo() {
     ModalView.openContactInfo();

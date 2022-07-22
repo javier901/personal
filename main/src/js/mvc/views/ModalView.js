@@ -4,13 +4,12 @@ import { destroyElement } from "../../helpers";
 
 class ModalView extends Views {
   sayHi = document.querySelector(".say-hi");
-  submitForm;
 
   addHandler(submitForm) {
-    this.sayHi.addEventListener("click", () => {
-      this.submitForm = submitForm;
-      this.openContactMe(submitForm);
-    });
+    this.sayHi.addEventListener(
+      "click",
+      this.openContactMe.bind(this, submitForm)
+    );
   }
 
   openContactMe(submitForm) {
@@ -363,7 +362,6 @@ class ModalView extends Views {
       // Change submit button to "sending"
       this.formButtonStatus("sending");
       console.log(this);
-
       this.submitForm(formData);
     }
   }
