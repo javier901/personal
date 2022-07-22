@@ -3,9 +3,9 @@ class CookieMessage {
   cookieBtn = document.querySelector(".cookie-message__button");
   init(handle) {
     const autoDismissTimeout = setTimeout(() => {
-      // this.coookieContainer.classList.remove("reveal");
+      this.coookieContainer.classList.remove("reveal");
       setTimeout(() => {
-        // this.coookieContainer.remove();
+        this.coookieContainer.remove();
       }, 400);
     }, 18000);
 
