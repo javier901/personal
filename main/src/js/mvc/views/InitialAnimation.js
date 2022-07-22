@@ -1,6 +1,11 @@
 import Views from "./Views";
 
 class InitialAnimation extends Views {
+  #resolvePromise;
+  #promise = new Promise((resolve, _) => {
+    this.#resolvePromise = resolve;
+  });
+
   init() {
     this.headerAndBannersAnimation();
 
@@ -26,6 +31,7 @@ class InitialAnimation extends Views {
           lbl.classList.remove("initial-animation__header__descendant");
         });
     });
+    return this.#promise;
   }
   // Header animation after init screen
   headerAndBannersAnimation() {
@@ -54,7 +60,11 @@ class InitialAnimation extends Views {
 
     setTimeout(() => {
       this.rightBanner.classList.remove("initial-animation__banner__right");
-    }, time + 300);
+    }, time + 400);
+
+    setTimeout(() => {
+      this.#resolvePromise(true);
+    }, time);
   }
 }
 

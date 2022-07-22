@@ -192,10 +192,36 @@
 /////////////// FOR RESUME WINDOW ///////////////
 // Pdf Viewer | pdf.js
 .resume-pdf__render {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: calc(100% - 30px);
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
+
+  .resume__loading-icon {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-lighter-color);
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+  }
+
+  h3 {
+    margin-bottom: -10px;
+    font-weight: 400;
+  }
+
+  svg {
+    position: unset;
+  }
   iframe {
     border: none;
     border-bottom-left-radius: inherit;

@@ -16,14 +16,15 @@ import { scrollToElement } from "../helpers.js";
 import PdfViewerView from "./views/PdfViewerView.js";
 import CookieMessage from "./views/CookieMessage.js";
 
-const controlTheme = function () {
+const controlTheme = async function () {
   lightTheme.isActive = !lightTheme.isActive;
   if (lightTheme.isActive) lightTheme.save();
   else {
     lightTheme.delete();
   }
-  PdfViewerView.setLightTheme(lightTheme.isActive);
   LightThemeView.enableLightTheme(lightTheme.isActive);
+  await PdfViewerView.promise;
+  PdfViewerView.setLightTheme(lightTheme.isActive);
 };
 
 const controlFormSubmission = async function (formData) {
@@ -104,10 +105,11 @@ const controlLazyLoading = function (sec2, sec4) {
   observer.observe(sec4);
 };
 
-const initTheme = async function () {
+const initTheme = function () {
   if (lightTheme.load()) {
     lightTheme.isActive = !lightTheme.isActive;
     LightThemeView.enableLightTheme(lightTheme.isActive).toggleSwitch();
+    PdfViewerView.setLightTheme(lightTheme.isActive);
   }
   LightThemeView.addHandler(controlTheme);
 };
@@ -147,12 +149,6 @@ const controlFooterLinks = new ModalControl(),
   controlNavigation = new ModalControl(),
   controlSmallScreenMenu = new ModalControl();
 
-const initPdfViewer = async function () {
-  await PdfViewerView.init();
-  // pdfViewer initialization happens here because pdfViewerView instance is needed to set the correct theme on the pdfViewer
-  PdfViewerView.setLightTheme(lightTheme.isActive);
-};
-
 const controlCookieMessage = {
   updateCanShowCookieMessage(bool) {
     bool
@@ -165,7 +161,7 @@ const controlCookieMessage = {
     return true;
   },
 };
-const initApp = function () {
+const initApp = async function () {
   SmallScreenMenu.init(controlSmallScreenMenu);
   HeaderView.init(controlNavigation);
   Slider.addHandler();
@@ -173,24 +169,22 @@ const initApp = function () {
   FooterView.init(controlFooterLinks);
   ScrollReveal.init(controlIntersections);
   LazyLoading.init(controlLazyLoading);
-  Typewriter.writeScript(SCRIPT);
   CookieMessage.init(controlCookieMessage);
+  Typewriter.writeScript(SCRIPT);
 };
 
-const initializeUI = function () {
+const initializeUI = async function () {
   initTheme();
-  initPdfViewer();
-  WelcomeLogoView.startAnimation();
-  setTimeout(() => {
-    InitialAnimation.init();
-  }, 2800);
+  await WelcomeLogoView.startAnimation();
+  await WelcomeLogoView.endAnimation();
+  await InitialAnimation.init();
+  initApp();
 };
 
-const initializeCore = function (params) {
-  setTimeout(() => {
-    initApp();
-  }, 4400);
-};
+// const initializeCore = function () {
+//   setTimeout(() => {
+//   }, 4400);
+// };
 
 initializeUI();
-initializeCore();
+// initializeCore();

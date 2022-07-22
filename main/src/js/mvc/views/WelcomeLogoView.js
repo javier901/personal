@@ -9,6 +9,10 @@ class WelcomeLogoView extends Views {
   rightBracket = document.querySelector(".welcome__logo__right-bracket");
 
   startAnimation() {
+    let resolvePromise;
+    const promise = new Promise((resolve, _) => {
+      resolvePromise = resolve;
+    });
     this.rootYScroll = false;
     this.toggleReveal(this.logoContainerWrapper);
     this.toggleReveal(this.logoContainer);
@@ -17,14 +21,18 @@ class WelcomeLogoView extends Views {
     }, 1000);
     setTimeout(() => {
       this.toggleReveal(this.rightBracket);
+      setTimeout(() => {
+        resolvePromise(true);
+      }, 400);
     }, 1300);
-
-    setTimeout(() => {
-      this.endAnimation();
-    }, 1900);
+    return promise;
   }
 
   endAnimation() {
+    let resolvePromise;
+    const promise = new Promise((resolve, _) => {
+      resolvePromise = resolve;
+    });
     this.rotate(this.logoContainerWrapper);
     setTimeout(() => {
       this.toggleReveal(this.logoContainer);
@@ -33,7 +41,9 @@ class WelcomeLogoView extends Views {
       this.rootYScroll = true;
       window.scrollTo(0, 0);
       this.removeWelcome();
+      resolvePromise(true);
     }, 1400);
+    return promise;
   }
   removeWelcome() {
     this.container.remove();
