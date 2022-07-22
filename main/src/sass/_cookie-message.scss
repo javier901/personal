@@ -30,8 +30,7 @@
   @include btn;
   background-color: var(--accent-color);
   color: var(--call-to-action-text-color);
-  width: 100px;
-  min-width: 100px;
+  white-space: nowrap;
   &:active {
     color: var(--accent-color);
   }
