@@ -261,8 +261,9 @@
 
       .footer__links {
         display: flex;
-        gap: 24px;
         width: fit-content;
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
       .footer__link__subgroup {
