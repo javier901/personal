@@ -5,7 +5,8 @@ import forkifyUrl from "../../img/section-4/forkify.png";
 
 export const LIGHT_THEME_NAME_IN_LOCAL_STORAGE = "lightTheme";
 
-export const WRITING_SPEED_IN_MILLISECONDS = 100;
+// The time that will be waited in ms before inserting a character.
+export const WRITING_SPEED_IN_MILLISECONDS = 90;
 
 export const FORM_API =
   "https://getform.io/f/003c358e-025f-4b54-a072-542dd32bccbd";
@@ -103,6 +104,7 @@ export const COLORS = {
   ],
 };
 
+// 1 subarray per color, to make new line insert "\n at the end."
 export const SCRIPT = [
   ["red", "import "],
   ["code-art__base-color", "Developer "],
@@ -114,8 +116,11 @@ export const SCRIPT = [
   ["red", "extends "],
   ["blue", "Developer "],
   ["code-art__base-color", "{ \n"],
-  ["blue", "\n  constructor"],
-  ["code-art__base-color", "() {\n\n"],
+  ["blue", "  constructor"],
+  ["code-art__base-color", "() {\n"],
+  ["gray", "    super"],
+  ["yellow", "()"],
+  ["code-art__base-color", ";\n"],
   ["gray", "    this."],
   ["code-art__base-color", "age "],
   ["red", "= new "],
@@ -132,28 +137,37 @@ export const SCRIPT = [
   ["code-art__base-color", "{ \n"],
   ["code-art__base-color", "      teamOriented: "],
   ["purple", "10"],
-  ["code-art__base-color", ";\n"],
+  ["gray", ",\n"],
   ["code-art__base-color", "      determination: "],
   ["purple", "10"],
-  ["code-art__base-color", "; \n"],
+  ["gray", ",\n"],
   ["code-art__base-color", "      persistance: "],
   ["purple", "10"],
-  ["code-art__base-color", ";\n"],
-  ["code-art__base-color", "    };\n\n"],
+  ["gray", ",\n"],
+  ["code-art__base-color", "      };\n"],
   ["gray", "    this."],
   ["code-art__base-color", "hasPassion"],
   ["red", " = "],
   ["purple", "true"],
+  ["code-art__base-color", ";\n"],
+  ["code-art__base-color", "    }\n"],
+  ["code-art__base-color", "    #givesUp "],
+  ["red", "= "],
+  ["purple", "null"],
+  ["code-art__base-color", ";\n"],
+  ["code-art__base-color", "    lovesPhotography "],
+  ["red", "= "],
+  ["purple", "true"],
   ["code-art__base-color", ";\n\n"],
-  ["code-art__base-color", "    }\n\n"],
   ["green", "    code"],
   ["orange", "(hrs) "],
   ["code-art__base-color", "{...\n"],
-  ["code-art__base-color", "    }\n"],
+  ["code-art__base-color", "    }\n\n"],
   ["green", "    drinkCoffee"],
   ["orange", "(cups) "],
   ["code-art__base-color", "{...\n"],
-  ["code-art__base-color", "    }\n\n"],
+  ["code-art__base-color", "    }\n"],
+  ["code-art__base-color", "}\n\n"],
   ["red", "export default new "],
   ["green", "OmarMoquete"],
   ["red", "()"],

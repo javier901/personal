@@ -1,23 +1,21 @@
 import Views from "./Views.js";
-import { SCRIPT, WRITING_SPEED_IN_MILLISECONDS } from "../../config.js";
+import { WRITING_SPEED_IN_MILLISECONDS } from "../../config.js";
 class Typewriter extends Views {
   writeScript(script) {
-    const charArray = [];
+    const charArray = [],
+      typewriter = document.querySelector(".typewriter"),
+      caret = document.querySelector(".typewriter__caret");
     let i = 0;
 
     script.forEach((word) => {
-      const typewriter = document.querySelector(".typewriter");
-
-      const caret = document.querySelector(".typewriter__caret");
-
       const wordElement = document.createElement("label");
-
+      // Add color class in script
       wordElement.classList.add(`${word.at(0)}`);
-
       const insertedElement = typewriter.insertBefore(wordElement, caret);
 
-      // make an array of characters of current word
-      const chars = [...word.at(1).split()[0]];
+      // Make an array of characters of current word array
+      // Example [...script[1]]
+      const chars = [...word.at(1)];
       chars.forEach((char) => {
         charArray.push([char, insertedElement]);
       });
