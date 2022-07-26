@@ -13,7 +13,8 @@
   /////
   opacity: 0;
   transform: translateY(100%);
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    opacity 0.6s ease;
 }
 .cookie-message__content {
   display: flex;

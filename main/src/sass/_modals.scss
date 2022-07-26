@@ -114,7 +114,7 @@
     flex-direction: column;
     padding: 14px;
     gap: 14px;
-    overflow: auto;
+    overflow-x: hidden;
 
     p {
       font-size: 1em;
