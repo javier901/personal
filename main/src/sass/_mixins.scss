@@ -19,13 +19,7 @@
 @mixin vertical-banners__common-styles {
   position: fixed;
   bottom: 14vh;
-}
-
-@mixin hover-active {
-  transition: all 0.1s ease;
-  width: 36px;
-  height: 36px;
-  opacity: 1;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55), color 0s;
 }
 
 @mixin shake-animation {
@@ -148,7 +142,7 @@
   background-color: transparent;
   color: var(--accent-color);
   border-radius: 4px;
-  transition: all 0.12s ease;
+  transition: transform 0.12s ease, background-color 0.12s ease;
 
   // If hovering and pointer. Solves sticky hover problem in touch devices.
   @media (hover: hover) and (pointer: fine) {

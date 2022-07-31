@@ -32,7 +32,7 @@ class Views {
     // Excludes numbers and illegal characters
     // const regEx = /^([ \u00c0-\u01ffa-zA-Z'\-])+$/;
     const regEx =
-      /^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\/<>{}[\]~`"¿?:;1234567890|=]{2,20}$/;
+      /^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\/<>{}[\]~`"¿?:;1234567890|=]{2,30}$/;
     return word.match(regEx) ? true : false;
   }
 

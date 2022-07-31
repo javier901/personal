@@ -46,7 +46,7 @@ class InitialAnimation extends Views {
     const selectedDescendants =
       window.innerWidth <= 600 ? smallScreenDescendants : allDescendants;
 
-    let time = 150;
+    let time = 50;
     selectedDescendants.forEach((descendant) => {
       setTimeout(() => {
         descendant.classList.remove("initial-animation__header__descendant");

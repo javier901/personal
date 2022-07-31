@@ -126,13 +126,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 6px;
       overflow: hidden;
       transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
       svg {
-        width: 24px;
-        height: 24px;
+        width: 26px;
+        height: 26px;
       }
 
       .dark-theme-slider__container {
@@ -168,7 +168,7 @@
     }
   }
   .fixed-header-offset {
-    transform: translateY(-100%);
+    transform: translateY(-120%);
   }
 
   .fixed-header-no-offset {
@@ -183,13 +183,12 @@
     backdrop-filter: blur(5px);
     background-color: var(--fixed-header-color);
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   }
 
   .vertical-banner__left {
     @include vertical-banners__common-styles;
     left: 10px;
-    transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     z-index: 100;
     .vertical-banner__left__icons {
       display: flex;
@@ -218,11 +217,11 @@
       // If hovering and pointer. Solves sticky hover problem in touch devices.
       @media (hover: hover) and (pointer: fine) {
         svg:hover {
-          @include hover-active;
+          transform: scale(1.3);
         }
       }
       svg:active {
-        @include hover-active;
+        transform: scale(1.3);
       }
     }
   }
@@ -233,7 +232,6 @@
     @include vertical-banners__common-styles;
     color: var(--text-color-low-emphasis);
     user-select: text;
-    transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     z-index: 100;
   }
 

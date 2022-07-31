@@ -2,6 +2,7 @@
 import eztasksUrl from "../../img/section-4/eztasks.png";
 import ampleUrl from "../../img/section-4/ample.png";
 import forkifyUrl from "../../img/section-4/forkify.png";
+import expenseTrackerUrl from "../../img/section-4/expense-tracker.png";
 
 export const LIGHT_THEME_NAME_IN_LOCAL_STORAGE = "lightTheme";
 
@@ -26,7 +27,7 @@ export const COLORS = {
     textColorHighEmphasis: "rgba(255, 255, 255)",
     textColorMediumEmphasis: "rgba(255, 255, 255, 0.6)",
     textColorLowEmphasis: "rgba(255, 255, 255, 0.4)",
-    fixedHeaderColor: "rgba(27, 27, 27, 0.3)",
+    fixedHeaderColor: "rgba(43, 43, 43, 0.5)",
     introductionWindowColor: "rgba(43, 43, 43, 0.6)",
     osxWindow: "#3b3b3b",
     osxBorderColor: "transparent",
@@ -42,7 +43,7 @@ export const COLORS = {
     callToActionHoverAccentColor: "#64ffda",
     diagonalColor: "#1b1b1b",
     oddSiblingColor: "#232323",
-    navChildHoverColor: "#333",
+    navChildHoverColor: "#757575",
   },
 
   lightThemeColors: {
@@ -71,7 +72,7 @@ export const COLORS = {
     callToActionHoverAccentColor: "#444",
     diagonalColor: "#f7f7f8",
     oddSiblingColor: "#f7f7f8",
-    navChildHoverColor: "#d8d8d8",
+    navChildHoverColor: "#ccc",
   },
 
   cssRules: [
@@ -322,18 +323,26 @@ export const WINDOW_MARKUP = {
   `,
 };
 
+// Images markup must be in the same order as they are supposed to appear.
 export const PROJECT_IMAGES_MARKUP = [
+  `<img
+  class="project-img"
+  src="${ampleUrl}"
+  alt="Project screenshots"
+/>`,
+
+  `<img
+class="project-img"
+src="${expenseTrackerUrl}"
+alt="Project screenshots"
+/>`,
+
   `<img
   class="project-img"
   src="${eztasksUrl}"
   alt="Project screenshots"
 />`,
 
-  `<img
-  class="project-img"
-  src="${ampleUrl}"
-  alt="Project screenshots"
-/>`,
   `<img
 class="project-img"
 src="${forkifyUrl}"

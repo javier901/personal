@@ -77,7 +77,7 @@
       justify-self: center;
       gap: 10px;
       z-index: 5;
-      transition: all 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
     }
 
     .skill-card__content {
@@ -140,7 +140,7 @@
     .technology-description h2 {
       font-size: 1rem;
       font-weight: inherit;
-      transition: all 0.2s ease-out;
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
     }
 
     /////////// ::before color
