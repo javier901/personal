@@ -44,8 +44,8 @@ class LightThemeView extends Views {
     const iconElement = document.querySelector(`link[rel="icon"]`);
 
     bool
-      ? (iconElement.href = "public/favicons/fav-icon-light.png")
-      : (iconElement.href = "public/favicons/fav-icon-dark.png");
+      ? (iconElement.href = "./favicons/fav-icon-light.png")
+      : (iconElement.href = "./favicons/fav-icon-dark.png");
     return this;
   }
 }
