@@ -200,11 +200,11 @@
         background-color: rgb(205, 103, 153, 0.5);
       }
     }
-    .skill-card__styled-components {
-      &::before {
-        background-color: rgba(191, 104, 170, 0.5);
-      }
-    }
+    // .skill-card__styled-components {
+    //   &::before {
+    //     background-color: rgba(191, 104, 170, 0.5);
+    //   }
+    // }
     .skill-card__vscode {
       &::before {
         background-color: rgba(31, 156, 240, 0.5);
