@@ -144,7 +144,6 @@
     }
 
     /////////// ::before color
-
     .skill-card__css3 {
       &::before {
         background-color: rgba(60, 156, 215, 0.5);
@@ -170,11 +169,11 @@
         background-color: rgba(247, 222, 30, 0.5);
       }
     }
-    .skill-card__lightroom {
-      &::before {
-        background-color: rgba(197, 202, 233, 0.5);
-      }
-    }
+    // .skill-card__lightroom {
+    //   &::before {
+    //     background-color: rgba(197, 202, 233, 0.5);
+    //   }
+    // }
 
     .skill-card__npm {
       &::before {
@@ -186,11 +185,11 @@
         background-color: rgba(248, 113, 113, 0.5);
       }
     }
-    .skill-card__photoshop {
-      &::before {
-        background-color: rgba(3, 168, 244, 0.5);
-      }
-    }
+    // .skill-card__photoshop {
+    //   &::before {
+    //     background-color: rgba(3, 168, 244, 0.5);
+    //   }
+    // }
     .skill-card__reactjs {
       &::before {
         background-color: rgba(0, 217, 255, 0.5);
@@ -199,6 +198,11 @@
     .skill-card__sass {
       &::before {
         background-color: rgb(205, 103, 153, 0.5);
+      }
+    }
+    .skill-card__styled-components {
+      &::before {
+        background-color: rgba(191, 104, 170, 0.5);
       }
     }
     .skill-card__vscode {
