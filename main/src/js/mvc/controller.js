@@ -68,7 +68,7 @@ const controlFormSubmission = async function (formData) {
 const controlIntersections = function (elementsToObserve, behaviorCallback) {
   const options = {
     root: null,
-    threshold: 0.03,
+    threshold: 0.1,
   };
   const observer = new IntersectionObserver(behaviorCallback, options);
 
